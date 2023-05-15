@@ -4,7 +4,6 @@ import { I18nProvider } from './i18n/i18nProvider'
 import { LayoutSplashScreen } from './layout/MetronicSplashScreen'
 
 
-
 const App = () => {
 
   return (
