@@ -35,7 +35,7 @@ export const Header = () => {
       setCurrentPage(id);
       setTimeout(() => {
         setLinkClicked(false);
-      }, 2000); // Set a dela
+      }, 6000); // Set a dela
     },
     [currentPage]
   );
