@@ -1,0 +1,47 @@
+.footer-bacground {
+    opacity: 1;
+    background: transparent url(https://www.nistudio.net/images/back%20ground_new-u7081-fr.png?crc=3758811640) no-repeat center center;
+    background-size: cover;
+    height: 328px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+.first-footer-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-footer-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    padding: 10px 0 
+}
+
+.copy-right {
+    text-align: center;
+    color: #F15722;
+    background-color: transparent;
+    font-family: roboto, sans-serif;
+    font-weight: 400;
+}
+
+.copy-right p {
+    margin: 0;
+}
+
+.contact-info {
+ 
+    color: #F15722;
+  
+}

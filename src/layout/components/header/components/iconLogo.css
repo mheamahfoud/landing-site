@@ -1,0 +1,48 @@
+.icon-logo {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+
+  background-size: cover;
+}
+.img-cotainer-link {
+  cursor: pointer;
+}
+.icon-logo {
+  z-index: 511;
+  width: 92px;
+  height: 92px;
+  position: relative;
+  top: -15px;
+  /* top: -15px;
+  left: 50%;
+  margin-left: -646px; */
+}
+/* @media screen and (min-width: 1301px) {
+
+}
+
+
+
+@media (min-width: 1201px) and (max-width: 1300px) {
+  .icon-logo {
+    z-index: 4475;
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    top: -14px;
+    left: 30px;
+  }
+}
+
+
+@media (min-width: 961px) and (max-width: 1200px) {
+    .icon-logo {
+        z-index: 516;
+        width: 90px;
+        height: 90px;
+        top: -14px;
+        left: 30px;
+    }
+  }
+ */

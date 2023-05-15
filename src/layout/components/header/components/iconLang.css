@@ -1,0 +1,47 @@
+
+  .icon-lang img {
+      border: 0px;
+      border-style: solid;
+      -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+      -o-transform-origin: left top;
+      transform-origin: left top;
+  }
+
+  .img-cotainer-link {
+    cursor: pointer;
+  }
+  .icon-lang {
+    z-index: 580;
+    height: 44px;
+    position: relative;
+     top: 10px;
+     margin: 0 20px;
+    /* left: 50%; 
+    margin-left: -534px  */
+  }
+/* @media screen and (min-width: 1301px) {
+
+
+}
+@media (min-width: 1201px) and (max-width: 1300px) {
+    .icon-lang {
+        z-index: 4544;
+        width: 0.01px;
+        height: 40px;
+        /* position: fixed;
+        top: 12px;
+        left: 140px; 
+    }
+  }
+
+ @media (min-width: 961px) and (max-width: 1200px) {
+    .icon-lang {
+        z-index: 585;
+        height: 40px;
+        /* top: 12px;
+        left: 140px;
+        position: fixed;
+     
+    }
+  } */

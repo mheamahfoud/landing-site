@@ -1,0 +1,19 @@
+//
+// Main init file of global bootstrap and theme functions, mixins, variables and config
+//
+
+// Custom functions & mixins
+
+
+
+// Bootstrap initializaton
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/_variables.scss";
+
+
+
+
+
+// Custom layout variables
+@import './layout/base/variables';
+

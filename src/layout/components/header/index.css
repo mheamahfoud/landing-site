@@ -1,0 +1,131 @@
+
+
+.MenuItem {
+  cursor: pointer;
+}
+a:visited {
+  color: #800080;
+  text-decoration: inherit;
+}
+a.nontext {
+  color: black;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+}
+a.nonblock.nontext,
+img.block {
+  display: block;
+}
+
+.NoWrap {
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.clearfix:after {
+  content: "\0020";
+  visibility: hidden;
+  display: block;
+  height: 0px;
+  clear: both;
+}
+
+.MenuItemContainer {
+  position: relative;
+}
+
+.navigation {
+  height: 62px;
+  width: 100%;
+  background-color: #1c1c1c;
+  z-index: 510;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+
+  /* position: absolute;
+  left: 0px;
+  right: 0px; */
+ 
+  height: 62px;
+  display: flex;
+  justify-content: space-around;
+}
+.left-menu {
+  z-index: 156;
+  height: 23px;
+  position: relative;
+  top: 14px;
+  /* position: fixed;
+  top: 14px;
+  left: 50%; */
+  border-width: 0px;
+  border-color: transparent;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  
+}
+
+/* @media screen and (min-width: 1301px) {
+
+  
+a {
+  display: block;
+}
+
+/* @media (min-width: 1201px) and (max-width: 1300px) {
+  .left-menu {
+    z-index: 4476;
+    width: 518px;
+    height: 23px;
+    position: fixed;
+    top: 15px;
+    right: 127px;
+    border-color: transparent;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .navigation {
+    background-color: #1c1c1c;
+    z-index: 4474;
+    height: 62px;
+    /* position: fixed;
+    top: 0px;
+    left: 0px;
+   right: 0px; 
+  
+
+}
+
+@media (min-width: 961px) and (max-width: 1200px) {
+  .left-menu {
+    z-index: 517;
+    width: 518px;
+    /* height: 23px;
+    position: fixed;
+    top: 15px;
+    right: 127px; 
+    border-color: transparent;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .navigation {
+    z-index: 515;
+    height: 62px;
+    /* position: fixed;
+    top: 0px; 
+    background-color: #1c1c1c;
+    /* left: 0px;
+    right: 0px; 
+  }
+
+}  */

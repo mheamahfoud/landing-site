@@ -1,0 +1,37 @@
+.custom-button-style {
+  z-index: 439;
+  width: 268px;
+  max-height: 26px;
+  background-color: #f15722;
+  border-radius: 10px;
+  text-align: center;
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  margin: 25px 0;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  cursor: pointer;
+}
+.custom-button-style p {
+    text-align: center;
+    color: #F8F6E1;
+    background-color: #F15722;
+    -webkit-transition-delay: 0s;
+    -webkit-transition-timing-function: ease;
+    -webkit-transition-duration: 0.3s;
+    font-weight: 400;
+    background-image: url(https://www.nistudio.net/images/blank.gif?crc=4208392903);
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    border-radius: 10px;
+    font-family: roboto, sans-serif;
+    line-height: 21px;
+    font-size: 16px;
+}
+.custom-button-style:hover p {
+    padding-top: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 11px;
+}

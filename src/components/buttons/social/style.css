@@ -1,0 +1,30 @@
+.facebook {
+    background-color: #3B5998;
+}
+.twitter {
+    background-color: #1DA1F2;
+}
+.instagram {
+    background-color: #E12F67;
+}
+.youtube {
+    background-color: #CD201F;
+}
+.social-link-container {
+    text-align: center;
+    border-radius: 100px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 1301px) {
+    .social-link-container {
+        z-index: 489;
+        width: 40px;
+        min-height: 40px;
+
+    }
+
+}
