@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import { CardContainer } from "./CardAbum/CardAbumContainer";
-import { CardCircleContainer } from "./CardAbum/CardCircleContainer";
+import { SquareCardContainer } from "./CardContainer/Square";
 interface Props {
+  id:number,
   url: string;
   title:string
+  onClick:(id:number)=>void
    
 }
 interface TitleContainerProps {
   display: boolean;
 }
 const TilteContainr = styled.div<TitleContainerProps>`
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
   background-color: rgba(28, 28, 28, 0.89);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   &:hover {
@@ -29,8 +30,8 @@ const Title = styled.p`
   text-align: center;
 `;
 
-export const CircleCard = (props: Props) => {
-    const {title,url}=props;
+export const CardAlbum = (props: Props) => {
+    const {id,title,url , onClick}=props;
   const [showDiv, setShowDiv] = useState(false);
 
   const handleHover = () => {
@@ -41,15 +42,16 @@ export const CircleCard = (props: Props) => {
     setShowDiv(false);
   };
   return (
-    <CardCircleContainer
-      className="d-flex justify-content-center align-items-center rounded-circle"
+    <SquareCardContainer
+      className="d-flex justify-content-center align-items-center"
       onMouseMove={handleHover}
       onMouseLeave={handleLeave}
       url={url}
+      onClick={()=> onClick(id)}
     >
-      <TilteContainr display={showDiv} className="rounded-circle">
+      <TilteContainr display={showDiv}>
         <Title>{title}</Title>
       </TilteContainr>
-    </CardCircleContainer>
+    </SquareCardContainer>
   );
 };

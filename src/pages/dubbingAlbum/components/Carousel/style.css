@@ -1,0 +1,35 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.pagination-container.top {
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.pagination-container.bottom {
+  position: relative;
+  background-color: #f9f9f9;
+}
+.pagination-container .pagination .page-link {
+  border-color: #f15722;
+  color: #f15722;
+}
+.pagination-container .pagination .page-item.active .page-link {
+  background-color: #f15722;
+  color: #f8f6e1;
+}
+
+.pagination-container .pagination .page-link:hover {
+  background-color: #f8f6e1;
+}
+
+
+.pagination-container .pagination .page-link:active,
+.pagination-container .pagination .page-link:focus {
+  background-color: transparent;
+  box-shadow: 0 0 10px transparent;
+}

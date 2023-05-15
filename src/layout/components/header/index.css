@@ -1,8 +1,6 @@
 
 
-.MenuItem {
-  cursor: pointer;
-}
+
 a:visited {
   color: #800080;
   text-decoration: inherit;
@@ -18,10 +16,7 @@ img.block {
   display: block;
 }
 
-.NoWrap {
-  white-space: nowrap;
-  word-wrap: normal;
-}
+
 
 .clearfix:after {
   content: "\0020";
