@@ -18,5 +18,8 @@ const Container = styled.div`
   cursor: pointer;
 `;
 export const ButtonModal: React.FC<Props> = ({ children,onClick }) => {
-  return <Container onClick={onClick}><p onMouseDown={(event) => event.preventDefault()}>{children}</p></Container>;
+  return <Container onClick={onClick}><p style={{ textTransform: 'none' }} onMouseDown={(event) => event.preventDefault()}>
+    {children}
+    
+    </p></Container>;
 };

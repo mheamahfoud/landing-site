@@ -2,9 +2,16 @@ import { useCallback, useState } from "react";
 import { episodes } from "./util";
 import { WrapperCard } from "./WrapperCard";
 import CardPagination from "../../../components/cards/pagination/CardPagination";
-import {  Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import "./style.css";
 import { ButtonModal } from "../../../components/buttons/modal";
+import LeftSectionModal from "../LeftSectionModal";
+import styled from "styled-components";
+const Title = styled.h3`
+    color: #FFFFFF;
+    background-color: transparent;
+    position: relative;
+`;
 export const CardList = () => {
   const handleClick = useCallback((id: number) => {
     const index = episodes.findIndex((x) => x.id == id);
@@ -47,29 +54,34 @@ export const CardList = () => {
         dialogClassName="custom-modal"
         centered
       >
-        <div className="top-section background-image row">
-        
-            <div className="col-md-6 col-sm-6 col-xs-12">
-              <h1>{episodes[currentCardIndex].name}</h1>
-              <h5>Age: {episodes[currentCardIndex].age}</h5>
-              {/* Additional card content */}
+        <div className="top-section background-image">
+          <div style={{}}>
+            <Title>The Cheetah Diaries</Title>
+          </div>
+          <div  className="section-field " >
+            <div className="item">
+              <LeftSectionModal />
+
             </div>
-            <div className="col-md-6 col-sm-6 col-xs-12">
+            <div className="item img-display-container" >
               <img
-                style={{ width: "310px", height: "192px" }}
+              className="img-display"
+                
                 src={episodes[currentCardIndex].imgSrc}
               />
             </div>
-          
+          </div>
+
+
         </div>
         <div className="bottom-section">
           <ButtonModal onClick={handlePrevCard}>{"<"}</ButtonModal>
 
-          <ButtonModal onClick={handleCloseModal}>{"x"}</ButtonModal>
+          <ButtonModal onClick={handleCloseModal}>{<span>&times;</span>}</ButtonModal>
 
           <ButtonModal onClick={handleNextCard}>{">"}</ButtonModal>
         </div>
       </Modal>
-    </WrapperCard>
+    </WrapperCard >
   );
 };
