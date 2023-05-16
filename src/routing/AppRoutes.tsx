@@ -25,7 +25,6 @@ const AppRoutes: FC = () => {
       <Routes>
         <Route element={<App />}>
         <Route path='/*' element={<PrivateRoutes />} />
-              <Route index element={<Navigate to='/landing' />} />
          </Route>
       </Routes>
     </BrowserRouter>

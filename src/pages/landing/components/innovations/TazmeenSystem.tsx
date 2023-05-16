@@ -12,11 +12,10 @@ const Container = styled.div`
   background-color: transparent;
   position: relative;
   color: #7f7f7f;
-  margin-right: -10000px;
   border-style: solid;
   border-color: #f15722;
   border-width: 1px;
-  width: min-content;
+
 `;
 const Title = styled.p`
   font-size: 28px;

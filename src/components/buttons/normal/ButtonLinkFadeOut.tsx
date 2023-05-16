@@ -1,10 +1,9 @@
 import { styled } from "styled-components";
 const Container = styled.a`
-  z-index: 439;
-  width: 268px;
-  max-height: 26px;
+  width: 200px;
+  height: 30px;
   background-color: #f15722;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
   font-family: roboto, sans-serif;
   font-weight: 400;
@@ -12,8 +11,9 @@ const Container = styled.a`
   font-style: normal;
   font-weight: normal;
   cursor: pointer;
-  &:hover  {
-    font-size: 11px;
+  &:hover p {
+    font-size: larger;
+    /* Example: change the text color to red */
   }
 `;
 
@@ -21,14 +21,12 @@ const Title = styled.p`
   text-align: center;
   color: #f8f6e1;
   background-color: #f15722;
-
-
 `;
-export const ButtonLink = ({ ...props }) => {
+export const ButtonLinkFadeOut = ({ ...props }) => {
   const { title, onClick } = props;
   return (
     <Container
-      className="nonblock nontext transition rounded-corners clearfix "
+      className="d-inline-flex justify-content-center align-items-center"
       onClick={onClick}
     >
       <Title>{title}</Title>

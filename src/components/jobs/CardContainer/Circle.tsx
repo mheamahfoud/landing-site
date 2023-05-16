@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 type Props = {
   url: string;
 };
-export const CardCircleContainer = styled.div<Props>`
+export const CircleCardContainer = styled.div<Props>`
   width: 320px;
   height: 320px;
   filter: alpha(opacity=100);

@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { ButtonLink } from "../../../../components/buttons/normal/ButtonLink";
+import { ButtonLinkFadeOut } from "../../../../components/buttons/normal/ButtonLinkFadeOut";
 const Container = styled.div`
   height: fit-content;
   border: solid;
@@ -13,11 +13,10 @@ const Container = styled.div`
   background-color: transparent;
   position: relative;
   color: #7f7f7f;
-  margin-right: -10000px;
   border-style: solid;
   border-color: #f15722;
   border-width: 1px;
-  width: min-content;
+
 `;
 const Title = styled.p`
   font-size: 28px;
@@ -33,8 +32,8 @@ export const VoiceLibrary = () => {
     <Container>
       <Title>Voice Library</Title>
       <Paragraph>Our company owns a huge library of actors voices.</Paragraph>
-      <ButtonLink title={"Add your voice"} onClick={() => {}} />
-      <ButtonLink title={"NiS Specialties"} onClick={() => {}} />
+      <ButtonLinkFadeOut title={"Add your voice"} onClick={() => {}} />
+      <ButtonLinkFadeOut title={"NiS Specialties"} onClick={() => {}} />
     </Container>
   );
 };

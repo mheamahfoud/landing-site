@@ -11,10 +11,10 @@ import DubbingService from "./components/dubbingSerivices";
 
 import { Jobs } from "./components/jobs";
 import DubbingAlbum from "./components/dubbingAlbum";
-import Services  from "./components/services";
+import Services from "./components/services";
 import { BackGround } from "./components/backGround";
 import Innovations from "./components/innovations";
-
+import { useLocation } from "react-router-dom";
 const ContainerAnimationSlider = styled.div`
   ${desktop({
     height: "90vh",
@@ -31,27 +31,37 @@ const ContainerAnimationSlider = styled.div`
 `;
 
 const Landing: FC = () => {
-  const parentRef: any = useRef(null);
-
+  const location = useLocation();
+  useEffect(() => {
+    const sectionId = location.hash.substr(1);
+    if (sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   return (
     <>
       <Slider />
-      <ContainerAnimationSlider className="d-flex flex-column justify-content-center align-items-center animation-logo">
-        <div
-          className="d-flex flex-column justify-content-center align-items-center"
-          style={{ textAlign: "center", position: "relative", bottom: "5%" }}
-        >
-          <AnimationLogo />
-          <SentenceRotator
-            sentences={[
-              "Speed in performance",
-              "Quality In Implementation",
-              "Punctuality",
-            ]}
-          />
-        </div>
-        <VerticalSentence />
-      </ContainerAnimationSlider>
+      <section id="home">
+        <ContainerAnimationSlider className="d-flex flex-column justify-content-center align-items-center animation-logo">
+          <div
+            className="d-flex flex-column justify-content-center align-items-center"
+            style={{ textAlign: "center", position: "relative", bottom: "5%" }}
+          >
+            <AnimationLogo />
+            <SentenceRotator
+              sentences={[
+                "Speed in performance",
+                "Quality In Implementation",
+                "Punctuality",
+              ]}
+            />
+          </div>
+          <VerticalSentence />
+        </ContainerAnimationSlider>
+      </section>
 
       <div
         className="d-flex justify-content-center"
@@ -62,11 +72,21 @@ const Landing: FC = () => {
         }}
       >
         <div className="d-flex flex-column align-items-center">
-          <AboutUs />
-          <DubbingService />
-          <Jobs />
-          <DubbingAlbum />
-          <Services />
+          <section id="about">
+            <AboutUs />
+          </section>
+          <section id="dubservice">
+            <DubbingService />
+          </section>
+          <section>
+            <Jobs />
+          </section>
+          <section>
+            <DubbingAlbum />
+          </section>
+          <section id="services">
+            <Services />
+          </section>
         </div>
       </div>
       <BackGround />
@@ -79,8 +99,9 @@ const Landing: FC = () => {
         }}
       >
         <div className="d-flex flex-column align-items-center">
-          <Innovations />
-        
+          <section id="innovation">
+            <Innovations />
+          </section>
         </div>
       </div>
     </>
