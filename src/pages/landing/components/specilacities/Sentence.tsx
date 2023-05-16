@@ -17,12 +17,13 @@ const Container = styled.div`
   margin: 10px 0;
 `;
 const Sentence = ({ text }) => {
-  const firstChar = text.charAt(0);
+
+  const firstChar = text?.charAt(0);
   return (
     <Container>
       <p style={{ color: "white" }}>
         <span style={{ color: "#F15722" }}>{firstChar}</span>
-        {text.substring(1)}
+        {text?.substring(1)}
       </p>
     </Container>
   );
