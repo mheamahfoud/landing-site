@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 import {
   DataUtil,
   getObjectPropertyValueByKey,
@@ -260,8 +262,8 @@ class ScrollComponent {
       }
     })
   }
-
-  public static destroyAll(attr: string = '[data-kt-scroll="true"]') {}
+//attr: string = '[data-kt-scroll="true"]'
+  public static destroyAll() {}
 
   public static bootstrap(attr: string = '[data-kt-scroll="true"]') {
     ScrollComponent.createInstances(attr)

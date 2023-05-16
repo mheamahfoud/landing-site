@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { episodes } from "./util";
 import { WrapperCard } from "./WrapperCard";
 import CardPagination from "../../../components/cards/pagination/CardPagination";
-import { Button, Card, Modal } from "react-bootstrap";
+import {  Modal } from "react-bootstrap";
 import "./style.css";
 import { ButtonModal } from "../../../components/buttons/modal";
 export const CardList = () => {
@@ -15,11 +15,7 @@ export const CardList = () => {
   const [showModal, setShowModal] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
-  const handleCardClick = (id: number) => {
-    const index = episodes.findIndex((x) => x.id == id);
-    setCurrentCardIndex(index);
-    setShowModal(true);
-  };
+
 
   const handleNextCard = () => {
     if (currentCardIndex < episodes.length - 1) {

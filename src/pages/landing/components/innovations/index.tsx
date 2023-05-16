@@ -12,7 +12,7 @@ const Container = styled.div`
   margin: 20px 0;
 `;
 
-const Top = styled.div``;
+
 const Cards = styled.div``;
 const CircleCards = styled.div``;
 const SquareCards = styled.div``;

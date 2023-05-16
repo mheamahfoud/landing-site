@@ -353,10 +353,10 @@ class MenuComponent {
     return getElementParents(item, '.menu-item.show').length > 0
   }
 
-  // Test of it is item sub element
-  private _isItemSubElement = (item: HTMLElement) => {
-    return item.classList.contains('menu-sub')
-  }
+  // // Test of it is item sub element
+  // private _isItemSubElement = (item: HTMLElement) => {
+  //   return item.classList.contains('menu-sub')
+  // }
 
   // Test if item has sub
   private _hasItemSub = (item: HTMLElement) => {
@@ -605,7 +605,7 @@ class MenuComponent {
   }
 
   // TODO: not done
-  private _destroy = () => {}
+  // private _destroy = () => {}
 
   // Update all item state classes if item sub type changed
   private _update = () => {
@@ -665,7 +665,7 @@ class MenuComponent {
   }
 
   // Mouseout handle
-  private _mouseout = (element: HTMLElement, e: MouseEvent) => {
+  private _mouseout = (element: HTMLElement) => {
     const item = this._getItemElement(element)
     if (!item) {
       return
@@ -686,7 +686,7 @@ class MenuComponent {
   }
 
   // Mouseover handle
-  private _mouseover = (element: HTMLElement, e: MouseEvent) => {
+  private _mouseover = (element: HTMLElement) => {
     const item = this._getItemElement(element)
     if (!item) {
       return
@@ -709,7 +709,7 @@ class MenuComponent {
   }
 
   // Dismiss handler
-  private _dismiss = (element: HTMLElement, e: Event) => {
+  private _dismiss = (element: HTMLElement) => {
     const item = this._getItemElement(element)
     if (!item) {
       return
@@ -733,7 +733,7 @@ class MenuComponent {
   }
 
   // Link handler
-  private _link = (element: HTMLElement, e: Event) => {
+  private _link = () => {
     if (EventHandlerUtil.trigger(this.element, 'kt.menu.link.click') === false) {
       return
     }
@@ -766,20 +766,20 @@ class MenuComponent {
     return this._click(element, e)
   }
 
-  public link = (element: HTMLElement, e: Event) => {
-    return this._link(element, e)
+  public link = () => {
+    return this._link()
   }
 
-  public dismiss = (element: HTMLElement, e: Event) => {
-    return this._dismiss(element, e)
+  public dismiss = (element: HTMLElement) => {
+    return this._dismiss(element)
   }
 
-  public mouseover = (element: HTMLElement, e: Event) => {
-    return this._mouseover(element, e as MouseEvent)
+  public mouseover = (element: HTMLElement) => {
+    return this._mouseover(element)
   }
 
-  public mouseout = (element: HTMLElement, e: Event) => {
-    return this._mouseout(element, e as MouseEvent)
+  public mouseout = (element: HTMLElement) => {
+    return this._mouseout(element)
   }
 
   // General Methods
@@ -960,7 +960,7 @@ class MenuComponent {
           const menuObj = MenuComponent.getInstance(item) as MenuComponent
           if (menuObj && menuObj.getItemSubType(item) === 'dropdown') {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const menu = menuObj.getElement()
+           // const menu = menuObj.getElement()
             const sub = menuObj.getItemSubElement(item) as HTMLElement
             if (item === e.target || item.contains(e.target as HTMLElement)) {
               continue
@@ -997,7 +997,7 @@ class MenuComponent {
         e.stopPropagation()
         const menu = MenuComponent.getInstance(this)
         if (menu && menu.link) {
-          return menu.link(this, e)
+          return menu.link()
         }
       }
     )
@@ -1007,10 +1007,10 @@ class MenuComponent {
       document.body,
       '[data-kt-menu-dismiss="true"]',
       'click',
-      function (this: HTMLElement, e: Event) {
+      function (this: HTMLElement) {
         const menu = MenuComponent.getInstance(this) as MenuComponent
         if (menu) {
-          return menu.dismiss(this, e)
+          return menu.dismiss(this)
         }
       }
     )
@@ -1020,10 +1020,10 @@ class MenuComponent {
       document.body,
       '[data-kt-menu-trigger], .menu-sub',
       'mouseover',
-      function (this: HTMLElement, e: Event) {
+      function (this: HTMLElement) {
         const menu = MenuComponent.getInstance(this) as MenuComponent
         if (menu && menu.getItemSubType(this) === 'dropdown') {
-          return menu.mouseover(this, e)
+          return menu.mouseover(this)
         }
       }
     )
@@ -1033,10 +1033,10 @@ class MenuComponent {
       document.body,
       '[data-kt-menu-trigger], .menu-sub',
       'mouseout',
-      function (this: HTMLElement, e: Event) {
+      function (this: HTMLElement) {
         const menu = MenuComponent.getInstance(this) as MenuComponent
         if (menu && menu.getItemSubType(this) === 'dropdown') {
-          return menu.mouseout(this, e)
+          return menu.mouseout(this)
         }
       }
     )

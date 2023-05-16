@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import "./index.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { MenuItems } from "./components/header/util/constant";
 import { useAuth } from "../ContextProvider";
 export const MasterLayout = () => {

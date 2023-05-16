@@ -2,9 +2,10 @@ import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 // Apps
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 import "./assets/sass/style.react.scss";
-import "./assets/sass/style.scss";
+//import "./assets/sass/style.scss";
 import { MetronicI18nProvider } from "./i18n/Metronici18n";
 import { AppRoutes } from "./routing/AppRoutes";
 import ErrorBoundary from "./ErrorBoundary";

@@ -1,16 +1,9 @@
 import { styled } from "styled-components";
 import "./style.css";
-import { InView, useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
-import React from "react";
 interface StyleProps {
   color?: string;
 } 
 
-interface props {
-  sectionNumber: string | undefined;
-  title: string | undefined;
-}
 const Container =styled.div<StyleProps>`
   text-align: center;
   color: #7f7f7f;
@@ -53,20 +46,15 @@ const MiddleChar = styled.span`
 `;
 const DubbingService = () => {
 
-  const { ref, inView } = useInView();
-  const [state, setstate] = useState(true);
-  useEffect(() => {
-    if (inView) {
-      setstate(false);
-    }
-  }, [inView]);
+
+
   return (
     <Container>
       <SectionNUmber>
         <p>{'02'}</p>
       </SectionNUmber>
 
-      <Title ref={ref} className={"slide-in"}>
+      <Title  className={"slide-in"}>
        
           return (
             <>

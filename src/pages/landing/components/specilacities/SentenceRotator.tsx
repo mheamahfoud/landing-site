@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./SentenceRotator.css";
 import Sentence from "./Sentence";
 
-const SentenceRotator = ({ sentences }) => {
+const SentenceRotator = ( sentences :any ) => {
   const [index, setIndex] = useState(0);
   const [currentSentence, setCurrentSentence] = useState(sentences[0]);
   const [fadeState, setFadeState] = useState("fade-in");

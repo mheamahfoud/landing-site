@@ -117,26 +117,26 @@ class StepperComponent {
     return index > this.currentStepIndex ? 'next' : 'previous'
   }
 
-  private getStepContent = (index: number) => {
-    const content = this.element.querySelectorAll('[data-kt-stepper-element="content"]')
-    if (!content) {
-      return false
-    }
+  // private getStepContent = (index: number) => {
+  //   const content = this.element.querySelectorAll('[data-kt-stepper-element="content"]')
+  //   if (!content) {
+  //     return false
+  //   }
 
-    if (content[index - 1]) {
-      return content[index - 1]
-    }
+  //   if (content[index - 1]) {
+  //     return content[index - 1]
+  //   }
 
-    return false
-  }
+  //   return false
+  // }
 
   private getLastStepIndex = () => {
     return this.totalStepsNumber
   }
 
-  private getTotalStepsNumber = () => {
-    return this.totalStepsNumber
-  }
+  // private getTotalStepsNumber = () => {
+  //   return this.totalStepsNumber
+  // }
 
   private refreshUI = () => {
     let state = ''
@@ -206,9 +206,9 @@ class StepperComponent {
     return this.currentStepIndex === 1
   }
 
-  private isBetweenStep = () => {
-    return this.isLastStep() === false && this.isFirstStep() === false
-  }
+  // private isBetweenStep = () => {
+  //   return this.isLastStep() === false && this.isFirstStep() === false
+  // }
 
   //   ///////////////////////
   //   // ** Public API  ** //
@@ -259,7 +259,7 @@ class StepperComponent {
     }
   }
 
-  public getElement = (index: number) => {
+  public getElement = () => {
     return this.element
   }
 

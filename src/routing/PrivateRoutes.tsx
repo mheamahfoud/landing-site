@@ -1,5 +1,5 @@
 
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { MasterLayout } from '../layout/MasterLayout'
 import { Landing } from '../pages/landing'
 

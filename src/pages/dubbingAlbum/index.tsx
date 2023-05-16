@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { HeaderDubbing } from "./components/HeaderDubbing";
 import { useLocation } from "react-router-dom";
 import { CardList } from "./components/CardList";

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import SectionTitle from "../../../../components/titles/SectionTitle";
-import MySlider, { Carousel } from "./Carousel";
+import  { Carousel } from "./Carousel";
 
 const Container = styled.div`
   position: relative;

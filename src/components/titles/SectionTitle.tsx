@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 import "./style.css";
-import { InView, useInView } from "react-intersection-observer";
 import { useEffect, useRef, useState } from "react";
 import NisTitle from "./NisTitle";
 interface StyleProps {

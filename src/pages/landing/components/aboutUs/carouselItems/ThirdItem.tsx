@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "styled-components";
 const Nis = styled.span`
   color: #f15722;

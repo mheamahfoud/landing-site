@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {Suspense} from 'react'
 import {Outlet} from 'react-router-dom'
 import { I18nProvider } from './i18n/i18nProvider'

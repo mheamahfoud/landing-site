@@ -2,9 +2,7 @@
 import { styled } from "styled-components";
 import CoverSkills from "../../../../assets/images/jobs-skills.png";
 import { CardSkill } from "../../../../components/cards/CardSkill";
- interface propsStyle {
-  width:number
-}
+
 const Container = styled.div`
   height: 321px;
   background-color: #1c1c1c;
@@ -35,7 +33,7 @@ const Paragraph = styled.p`
 `;
 const Bottom = styled.div``;
 
-export const Jobs = ({...props}) => {
+export const Jobs = () => {
   return (
     <Container>
       <Cover className="d-flex flex-column justify-content-evenly align-items-center">

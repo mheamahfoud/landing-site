@@ -6,7 +6,7 @@ import SeconditemImg from '../../../../assets/images/second-item-slider.jpg'
 export function Slider() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleSelect = (selectedIndex) => {
+  const handleSelect = (selectedIndex:number) => {
     setActiveIndex(selectedIndex);
   
   };

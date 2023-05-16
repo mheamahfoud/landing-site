@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Pagination } from "react-bootstrap";
+import { Pagination } from "react-bootstrap";
 
 import './style.css'
 import { ProjectCard } from "../ProjectCard";
@@ -74,7 +74,7 @@ const CardPagination: React.FC<CardPaginationProps> = ({
         </Pagination>
       </div>
       <div className="d-flex justify-content-center flex-wrap row">
-        {currentCards.map((item, index) => (
+        {currentCards.map((item) => (
           <div
             className="col-lg-4 col-md-4 col-sm-6 col-xs-12"
             style={{ position: "relative", margin: "12px 0" }}
