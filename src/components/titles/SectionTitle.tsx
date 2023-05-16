@@ -1,11 +1,10 @@
 import { styled } from "styled-components";
 import "./style.css";
 import { InView, useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NisTitle from "./NisTitle";
 interface StyleProps {
   color?: string;
-
 }
 interface props {
   sectionNumber: string | undefined;
@@ -19,7 +18,7 @@ const Container = styled.div<StyleProps>`
   position: relative;
   font-family: raleway, sans-serif;
   font-weight: 900;
-  position:'relative';
+  position: "relative";
 `;
 const SectionNUmber = styled.div`
   min-height: 139px;
@@ -35,7 +34,6 @@ const SectionNUmber = styled.div`
   position: relative;
   line-height: 0.9;
   width: 316px;
-
 `;
 const Title = styled.p`
   position: relative;
@@ -45,7 +43,6 @@ const Title = styled.p`
   width: 316px;
   bottom: 0;
   margin: 0;
-
 `;
 const FirstChar = styled.span`
   font-size: 40px;
@@ -58,39 +55,60 @@ const MiddleChar = styled.span`
   line-height: 36px;
 `;
 
-
 const SectionTitle = (props: props) => {
   const { sectionNumber, title, nisTitle } = props;
-  const { ref, inView } = useInView();
-  const [state, setstate] = useState(true);
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
   useEffect(() => {
-    if (inView) {
-      setstate(false);
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust the threshold as needed
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    }, options);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
-  }, [inView]);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+  useEffect(() => {
+    if (isVisible && !hasAnimated) {
+      // Apply the fade-in effect here
+      setHasAnimated(true);
+    }
+  }, [isVisible, hasAnimated]);
   return (
     <Container>
       <SectionNUmber>
         <p>{sectionNumber}</p>
       </SectionNUmber>
 
-
-
       <div>
-        <Title ref={ref} className={"slide-in"}>
-          {nisTitle && (<NisTitle />)} {" "}
+        <Title
+              className={`title-section ${hasAnimated ? 'animated' : ''}`}
+
+     
+         ref={sectionRef}>
+          {nisTitle && <NisTitle />}{" "}
           {title.split(" ").map((word) => {
             return (
               <>
                 <FirstChar>{word.charAt(0)}</FirstChar>
                 <MiddleChar>{word.slice(1)} </MiddleChar>
-
               </>
             );
           })}
         </Title>
       </div>
-
     </Container>
   );
 };

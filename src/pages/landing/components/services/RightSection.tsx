@@ -1,66 +1,81 @@
 import { styled } from "styled-components";
-import SectionTitle from "../../../../components/titles/SectionTitle";
 import "./style.css";
-import { MainColor } from "../../../../helpers";
-import LeftSection from "./LeftSection";
-import { ImageContainer } from "./ImageContainer";
-const NisTitel = styled.span`
-  color: ${MainColor};
+import { useEffect, useRef, useState } from "react";
+import { paragraphs } from "./paragraphs";
+const Container = styled.div`
+  background-image: url(https://www.nistudio.net/images/wave-2-u2312-fr.png?crc=298485572);
+  background-repeat: no-repeat;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  /* position: relative; */
+  filter: alpha(opacity=100);
+  background-color: transparent;
+  background-position: center center;
+  /* margin-right: -10000px; */
+  /* opacity: 1; */
+  background-size: contain;
 `;
-const Container = styled.div``;
-
-const Paragraph = styled.div`
-  line-height: 24px;
-  font-size: 20px;
-  color: #2f2c24;
-  line-height: 24px;
-  font-weight: bold;
-  margin:0 10px;
-`;
-
-const Music = styled.div`
+const ParagraphContainer = styled.div`
   margin: 15px 0;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 `;
 const RightSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust the threshold as needed
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    }, options);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const animateParagraphs = () => {
+        const paragraphElements = Array.from(
+          sectionRef.current?.querySelectorAll(".section-paragraph") ?? []
+        );
+
+        paragraphElements.forEach((paragraph, index) => {
+          setTimeout(() => {
+            paragraph.classList.add("animate");
+          }, index * 1000); // Adjust the delay as needed
+        });
+      };
+
+      animateParagraphs();
+    }
+  }, [isVisible]);
   return (
-    <Container className="d-flex flex-column  flex-fill-item">
-      <Music className="d-flex flex-gap-item">
-        <ImageContainer
-          url="https://www.nistudio.net/images/music%20icone.png?crc=3837975431"
-          title="Music"
-        />
-        <Paragraph>
-          <NisTitel>NiS</NisTitel> performed soundtracks and music production
-          for a large number of drama works; Syrian, Egyptian, Gulf and works
-          with dubbing. The company has a cadre of professional musicians in
-          this industry field.
-        </Paragraph>
-      </Music>
-      <Music className="d-flex flex-gap-item">
-        <ImageContainer
-          url="https://www.nistudio.net/images/songs%20icone.png?crc=204213642"
-          title="Songs"
-        />
-        <Paragraph >
-          <NisTitel>NiS</NisTitel> recorded tens of songs, besides intro music
-          for drama works and cartoon series.
-        </Paragraph>
-      </Music>
-      <Music className="d-flex flex-gap-item">
-        <ImageContainer
-          url="https://www.nistudio.net/images/sfx%20icone.png?crc=211516958"
-          title="SFX"
-        />
-        <Paragraph>
-          <Paragraph>
-            <NisTitel>NiS</NisTitel> possesses the largest world sound effect
-            libraries, added to the libraries that are created inside{" "}
-            <NisTitel>NiS</NisTitel>. It also has a professional team concerned
-            with producing sound effects. The company had conducted tens of
-            drama works, movies and cartoon series.
-          </Paragraph>
-        </Paragraph>
-      </Music>
+    <Container
+      ref={sectionRef}
+      className={`d-flex flex-column  flex-fill-item section ${
+        isVisible ? "visible" : ""
+      }`}
+    >
+      {paragraphs.map(({ id, paragraph }) => (
+        <ParagraphContainer
+          key={id}
+          className={`d-flex flex-gap-item section-paragraph`}
+        >
+          {paragraph}
+        </ParagraphContainer>
+      ))}
     </Container>
   );
 };

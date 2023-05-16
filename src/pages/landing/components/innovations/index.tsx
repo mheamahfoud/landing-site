@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import SectionTitle from "../../../../components/titles/SectionTitle";
-import { InnovationCard } from "../../../../components/jobs/InnovationCard";
+import { InnovationCard } from "../../../../components/cards/InnovationCard";
 import { TazmeenSystem } from "./TazmeenSystem";
 import { NISSFX } from "./NISSFX";
 import "./style.css";

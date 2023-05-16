@@ -1,4 +1,4 @@
-@keyframes slide-in {
+/* @keyframes slide-in {
     from {
       transform: translateY(100%);
     }
@@ -9,5 +9,18 @@
   
   .slide-in {
     animation: slide-in 1s ease-out;
+  } */
+  .title-section.animated {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
   
+  @keyframes fadeIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      animation: slide-in 1s ease-out;
+    }
+  }

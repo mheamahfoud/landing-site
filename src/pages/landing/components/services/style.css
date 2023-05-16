@@ -1,7 +1,4 @@
-.flex-fill-item {
-  flex: 1;
-
-}
-.flex-gap-item {
-
+.section-paragraph.animate {
+  opacity: 1;
+  transform: scale(1);
 }

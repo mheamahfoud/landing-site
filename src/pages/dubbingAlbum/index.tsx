@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { HeaderDubbing } from "./components/HeaderDubbing";
 import { useLocation } from "react-router-dom";
-import { CardMenu } from "./components/CardMenu";
+import { CardList } from "./components/CardList";
 export const DubbingAlbum: FC = () => {
   const location = useLocation();
   const { url } = location.state;
@@ -17,9 +17,7 @@ export const DubbingAlbum: FC = () => {
           zIndex: "2",
         }}
       >
-             <CardMenu/>
-
-     
+        <CardList />
       </div>
     </div>
   );

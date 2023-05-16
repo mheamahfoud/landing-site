@@ -1,7 +1,7 @@
 
 import { styled } from "styled-components";
 import CoverSkills from "../../../../assets/images/jobs-skills.png";
-import { CardSkill } from "../../../../components/jobs/CardSkill";
+import { CardSkill } from "../../../../components/cards/CardSkill";
  interface propsStyle {
   width:number
 }

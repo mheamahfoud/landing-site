@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, } from "react";
 import { Slider } from "./components/slider/Slider";
 import AnimationLogo from "../../components/animationLogo";
 import { styled } from "styled-components";
@@ -10,7 +10,7 @@ import AboutUs from "./components/aboutUs";
 import DubbingService from "./components/dubbingSerivices";
 
 import { Jobs } from "./components/jobs";
-import DubbingAlbum from "./components/dubbingAlbum";
+import DubbingAlbum from "./components/dubbingCategories";
 import Services from "./components/services";
 import { BackGround } from "./components/backGround";
 import Innovations from "./components/innovations";

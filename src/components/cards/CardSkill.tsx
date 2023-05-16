@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import './style.css'
+import NumberDisplay from "../animations/NumberDisplay";
 interface props {
   children: React.ReactNode;
   quantity: number;
@@ -39,7 +40,7 @@ export const CardSkill = (props: props) => {
   return (
     <Container className="d-flex flex-column">
       <Quantity>
-        <span>{quantity}</span>
+        <NumberDisplay value={quantity} />
       </Quantity>
       <Seperator />
       <Title>{children}</Title>

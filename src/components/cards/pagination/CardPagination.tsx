@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Card, Pagination } from "react-bootstrap";
-import { ProjectCard } from "../../../../components/jobs/ProjectCard";
+
 import './style.css'
+import { ProjectCard } from "../ProjectCard";
 interface CardData {
   id: number;
   title: string;
@@ -11,11 +12,13 @@ interface CardData {
 interface CardPaginationProps {
   cardsPerPage: number;
   cards: CardData[];
+  onClick:(id:number)=>void;
 }
 
 const CardPagination: React.FC<CardPaginationProps> = ({
   cardsPerPage,
   cards,
+  onClick,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -26,7 +29,6 @@ const CardPagination: React.FC<CardPaginationProps> = ({
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-  const handleClick = () => {};
   const totalPageCount = Math.ceil(cards.length / cardsPerPage);
 
   const renderPaginationButtons = () => {
@@ -79,7 +81,7 @@ const CardPagination: React.FC<CardPaginationProps> = ({
           >
             <ProjectCard
               key={item.id}
-              onClick={handleClick}
+              onClick={()=> onClick(item.id)}
               title={item.title}
               url={item.imgSrc}
               id={item.id}
