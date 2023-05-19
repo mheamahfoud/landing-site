@@ -2,7 +2,7 @@ import { FC, useEffect, } from "react";
 import { Slider } from "./components/slider/Slider";
 import AnimationLogo from "../../components/animationLogo";
 import { styled } from "styled-components";
-import { desktop, laptop, mobile, tablet } from "../../responsive";
+import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
 import SentenceRotator from "./components/specilacities/SentenceRotator";
 import VerticalSentence from "./components/specilacities/VerticalSentence";
 import AboutUs from "./components/aboutUs";
@@ -38,8 +38,14 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
         ${desktop({ width: '1300px' })}
-  
-
+        ${laptop({ width: '1300px' })}
+        ${tablet({ width: '1010px' })}
+        ${mobile({ width: '725px' })}
+        ${smallMobile({ width: '525px' })}
+        ${xSmallMobile({ width: '525px' })}
+        ${xXSmallMobile({ width: '525px' })}
+        ${xxxSmallMobile({ width: '316px' })}
+        ${xxxxSmallMobile({ width: '250px' })}
 `;
 
 const Landing: FC = () => {
@@ -93,7 +99,7 @@ const Landing: FC = () => {
         </InnerContainer>
       </Container>
 
-
+{/* 
       <section>
         <Jobs />
       </section>
@@ -120,7 +126,7 @@ const Landing: FC = () => {
           </section>
 
         </InnerContainer>
-      </Container>
+      </Container> */}
 
 
     </>

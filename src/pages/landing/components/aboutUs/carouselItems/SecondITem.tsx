@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import Image from './assset/item-2.jpg';
+import { ImageContainer, ImageCover } from "./styles/ImageContainer";
 const Nis = styled.span`
   color: #f15722;
 `;
@@ -17,28 +19,31 @@ const Paragraph = styled.p`
 `;
 
 
-const ImageContainer = styled.span`
-  float: right;
-  padding: 2px;
+
+
+
+const ContainerText = styled.div`
+  position: relative;
+  width: 370px;
 `;
 
-const ImageCover = styled.span`
-  border-style: solid;
-  border-color: #f15722;
-  background-color: transparent;
-  border-radius: 25px 0px 25px 25px;
-  border-width: 2px 0px 0px 2px;
-  overflow: hidden;
-  display: block;
+const Text = styled.span`
+  position: relative;
+  z-index: 1;
+  margin-right: 10px; /* Add margin between text and line */
+
+
 `;
+
 const VerticalLine = styled.span`
-  z-index: 180;
   width: 2px;
-  height: 197px;
+  height:200px;
   background-color: #f15722;
   position: absolute;
-  left: 395px;
+  right: 0;
+  top: 0;
 `;
+
 export const SecondItem = () => {
   return (
     <Container>
@@ -46,29 +51,31 @@ export const SecondItem = () => {
         <ImageContainer>
           <ImageCover>
             <img
-              className="block"
-              id="u566393_img"
-              alt=""
-              width="387"
-              height="232"
-              data-muse-src="images/about%20us-1.jpg?crc=293713022"
-              src="https://www.nistudio.net/images/about%20us-2.jpg?crc=142062504"
-              data-widget-id="pamphletu1358"
+
+              src={Image}
+
             />
           </ImageCover>
         </ImageContainer>
-        <VerticalLine />
-        <Nis>NiS</Nis>{" "}
-        <span>
-          Among all the companies that work in the dubbing field, in the Arab
-          world and the world at large,  <Nis>NiS</Nis>{" "} is remarkable with using
-          cutting-edge techniques and software apps, especially those that serve
-          administering and organizing the process of dubbing. In all NiS
-          branches, our studios adopt an unconventional method through utilizing
-          "Tazmeen System", which is one of its kind in the world of dubbing.
-          The most prominent feature of "Tazmeen System" is its compatibility
-          with all audio-editing softwares used globally.
-        </span>
+        <ContainerText>
+          <Text>
+            <span>
+              <Nis>NiS</Nis>  Among all the companies that work in the dubbing field, in the Arab
+              world and the world at large,  <Nis>NiS</Nis>{" "} is remarkable with using
+              cutting-edge techniques and software apps, especially those that serve
+              administering and organizing the process of dubbing. In all NiS
+              branches, our studios adopt an unconventional method through utilizing
+              "Tazmeen System", which is one of its kind in the world of dubbing.
+              The most prominent feature of "Tazmeen System" is its compatibility
+              with all audio-editing softwares used globally.
+            </span>
+          </Text>
+          <VerticalLine />
+
+
+        </ContainerText>
+
+
       </Paragraph>
       <p ></p>
       <Paragraph>

@@ -1,6 +1,8 @@
 import { css } from "styled-components";
 
 const size = {
+  xsss: "401px",
+  xss: "569px",
   xs: "641px",
   xxsm: "769px",
   xsm: "865px",
@@ -46,7 +48,20 @@ export const xSmallMobile = (inner: any) => css`
 `;
 
 export const xXSmallMobile = (inner: any) => css`
-  @media ((max-width: 768px)) {
+  @media ((min-width: ${size.xss}) and (max-width: 640px)) {
+    ${inner};
+  }
+`;
+
+export const xxxSmallMobile = (inner: any) => css`
+
+@media ((min-width: ${size.xsss}) and (max-width: 568px)) {
+    ${inner};
+  }
+`;
+export const xxxxSmallMobile = (inner: any) => css`
+
+  @media ((max-width: 400px)) {
     ${inner};
   }
 `;

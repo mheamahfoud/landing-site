@@ -3,6 +3,7 @@ import "./style.css";
 import { useEffect, useRef, useState } from "react";
 import NisTitle from "./NisTitle";
 import { SectionNUmber } from "./styles/SectionNumber";
+import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile } from "../../responsive";
 interface StyleProps {
   color?: string;
 }
@@ -19,8 +20,13 @@ const Container = styled.div<StyleProps>`
   font-family: raleway, sans-serif;
   font-weight: 900;
   position: relative;
-  width: 320px;
-  height: 250px;
+  ${desktop({ width: '320px',height:'250px' })}
+  ${laptop({ width: '320px',height:'250px' })}
+  ${tablet({ width: '320px',height:'250px' })}
+  ${mobile({ width: '303px',height:'200px' })}
+  ${smallMobile({ width: '303px',height:'200px' })}
+  ${xSmallMobile({ width: '303px',height:'200px' })}
+  ${xXSmallMobile({ width: '303px',height:'200px' })}
 `;
 
 const Title = styled.p`
@@ -34,14 +40,24 @@ const Title = styled.p`
   height: 30%;
 `;
 const FirstChar = styled.span`
-  font-size: 40px;
+  ${desktop({fontSize:'40px' ,lineHeight:'48px' })}
+  ${laptop({fontSize:'40px' ,lineHeight:'48px' })}
+  ${tablet({fontSize:'40px'  ,lineHeight:'48px'})}
+  ${mobile({ fontSize:'24px'  ,lineHeight:'34px'})}
+  ${smallMobile({ fontSize:'24px'  ,lineHeight:'34px'})}
+  ${xSmallMobile({ fontSize:'24px'  ,lineHeight:'34px'})}
+  ${xXSmallMobile({ fontSize:'24px'  ,lineHeight:'34px'})}
   color: ${(props) => props.color};
-  line-height: 48px;
 `;
 const MiddleChar = styled.span`
-  font-size: 30px;
+  ${desktop({fontSize:'30px' ,lineHeight:'36px' })}
+  ${laptop({fontSize:'30px' ,lineHeight:'36px' })}
+  ${tablet({fontSize:'30px'  ,lineHeight:'36px'})}
+  ${mobile({ fontSize:'24px'  ,lineHeight:'29px'})}
+  ${smallMobile({ fontSize:'24px'  ,lineHeight:'29px'})}
+  ${xSmallMobile({ fontSize:'24px'  ,lineHeight:'29px'})}
+  ${xXSmallMobile({ fontSize:'24px'  ,lineHeight:'29px'})}
   color: ${(props) => props.color};
-  line-height: 36px;
 `;
 
 const SectionTitle = (props: props) => {

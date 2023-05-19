@@ -3,6 +3,9 @@ import styled from "styled-components";
 interface props {
   children?: React.ReactNode;
 }
+
+
+
 const Container = styled.div`
   width: 50px;
   height: 50px;
@@ -11,9 +14,7 @@ const Container = styled.div`
   border-color: #f15722;
   background-color: transparent;
   &:hover {
-    border-width: 2px;
     border-color: #a3a1a1;
-    background-color: transparent;
   }
 `;
 export const ButtonSlider = (props: props) => {

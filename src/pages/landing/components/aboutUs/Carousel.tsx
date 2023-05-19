@@ -48,14 +48,14 @@ export const Carousel = () => {
         ))}
       </div>
       <div className="carousel-navigation-about df-flex justify-content-between align-items-center m-t">
-        <button
+        <div
           className="carousel-btn-about prev-about"
           onClick={goToPrevSlide}
         >
           <ButtonSlider>
             <Icon className="bi bi-chevron-left" />
           </ButtonSlider>
-        </button>
+        </div>
         <div className="carousel-indicators-about">
           {items.map((item, index) => (
             <span
@@ -69,14 +69,14 @@ export const Carousel = () => {
             </span>
           ))}
         </div>
-        <button
+        <div
           className="carousel-btn-about next-about"
           onClick={goToNextSlide}
         >
           <ButtonSlider>
             <Icon className="bi bi-chevron-right" />
           </ButtonSlider>
-        </button>
+        </div>
       </div>
     </div>
   );

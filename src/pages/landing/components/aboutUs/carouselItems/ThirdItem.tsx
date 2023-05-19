@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import Image from './assset/item-3.jpg';
+import { ImageContainer, ImageCover } from "./styles/ImageContainer";
 const Nis = styled.span`
   color: #f15722;
 `;
@@ -9,6 +11,7 @@ const Container = styled.div`
   color: #7f7f7f;
   font-size: 17px;
   position: relative;
+  width: 100%;
 `;
 const Paragraph = styled.p`
   line-height: 27px;
@@ -18,29 +21,30 @@ const Paragraph = styled.p`
   margin: 0;
 `;
 
-const ImageContainer = styled.span`
-  float: right;
-  padding: 2px;
+
+
+const ContainerText = styled.div`
+  position: relative;
+  width: 370px;
 `;
 
-const ImageCover = styled.span`
-  border-style: solid;
-  border-color: #f15722;
-  background-color: transparent;
-  border-radius: 25px 0px 25px 25px;
-  border-width: 2px 0px 0px 2px;
-  overflow: hidden;
-  display: block;
+const Text = styled.span`
+  position: relative;
+  z-index: 1;
+  margin-right: 10px; /* Add margin between text and line */
+
+
 `;
 
 const VerticalLine = styled.span`
-  z-index: 180;
   width: 2px;
-  height: 197px;
+  height:200px;
   background-color: #f15722;
   position: absolute;
-  left: 395px;
+  right: 0;
+  top: 0;
 `;
+
 
 export const ThirdItem = () => {
   return (
@@ -49,25 +53,26 @@ export const ThirdItem = () => {
         <ImageContainer>
           <ImageCover>
             <img
-              className="block"
-              id="u566393_img"
-              alt=""
-              width="387"
-              height="232"
-              data-muse-src="images/about%20us-1.jpg?crc=293713022"
-              src="https://www.nistudio.net/images/about%20us-3.jpg?crc=67194214"
-              data-widget-id="pamphletu1358"
+
+              src={Image}
+
             />
           </ImageCover>
         </ImageContainer>
-        <VerticalLine />
-        <Nis>NiS</Nis>{" "}
-        <span>
-          has done more than 13 thousand hours of dubbing with different
-          variations: movies, drama series, documentaries and cartoon films.
-          Those works have been screened on the most important TV channels in
-          the Arab world.
-        </span>
+
+        <ContainerText>
+          <Text>
+            <span>
+              has done more than 13 thousand hours of dubbing with different
+              variations: movies, drama series, documentaries and cartoon films.
+              Those works have been screened on the most important TV channels in
+              the Arab world.
+            </span>
+
+          </Text>
+          <VerticalLine />
+        </ContainerText>
+
       </Paragraph>
       <Paragraph>
         Extra services offerd by <Nis>NiS</Nis> :
