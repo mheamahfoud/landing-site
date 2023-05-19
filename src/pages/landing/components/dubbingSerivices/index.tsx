@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 import SectionTitle from "../../../../components/titles/SectionTitle";
 import Right from "./Right";
+import { desktop, laptop, tablet, mobile, xSmallMobile, xXSmallMobile, smallMobile, xxxSmallMobile, xxxxSmallMobile, xMiddleColumn, middleColumn } from "../../../../responsive";
+import { BigImage, SmallImage, ContainerImage } from "./styles/ContainerImage";
 
 const Container = styled.div`
   position: relative;
@@ -12,60 +14,30 @@ const Left = styled.div`
 
 `;
 
-const ImageContainer = styled.div`
-    background-image: url(https://www.nistudio.net/images/img_4862.jpg?crc=3871607457);
-    min-height: 254px;
-    width: 366px;
-    visibility: visible;
-    animation-duration: 1s;
-    animation-delay: 0.2s;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    opacity: 1;
-    background-position: center center;
-    background-size: contain;
-    &:hover {
-    opacity: 1;
-    background-color: #545454;
-    }
- 
-`;
-const ImageContainer2 = styled.div`
-    background-image: url(https://www.nistudio.net/images/img_4733-new.jpg?crc=495623009);
-    width: 252px;
-    height: 222px;
-    visibility: visible;
-    animation-duration: 1s;
-    animation-delay: 0.2s;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    opacity: 1;
-    background-position: center center;
-    background-size: contain;
-    &:hover {
-    opacity: 1;
-    background-color: #545454;
-
-    }
-   
+const ContainerRight = styled.div`
+  ${desktop({ width: '625px', padding: '50px 0' })}
+  ${laptop({ width: '625px', padding: '50px 0' })}
+  ${tablet({ width: '625px', padding: '10px 0' })}
+  ${mobile({ width: '625px', padding: '0' })}
+  ${smallMobile({ width: '625px', padding: '0' })}
+  ${xSmallMobile({ width: '625px', padding: '0' })}
+  ${xXSmallMobile({ width: '625px', padding: '0' })}
+  ${xxxSmallMobile({ width: '625px', padding: '0' })}
+  ${xxxxSmallMobile({ width: '625px', padding: '0' })}
 `;
 const DubbingService = () => {
   return (
-    <Container className="d-flex flex-column gap-3">
-
-        <SectionTitle title={"Dubbing Service"} sectionNumber="02" nisTitle={true} />
-
-
-
+    <Container className="d-flex flex-column">
+      <SectionTitle title={"Dubbing Service"} sectionNumber="02" nisTitle={true} />
 
       <div className="d-flex  justify-content-between">
-        <div >
-          <ImageContainer />
-        </div>
-        <div style={{width:'564px'}}>
+        <ContainerImage >
+          <BigImage />
+          <SmallImage />
+        </ContainerImage>
+        <ContainerRight >
           <Right />
-        </div>
-
+        </ContainerRight>
 
 
       </div>

@@ -1,15 +1,10 @@
 import { styled } from "styled-components";
 import SectionTitle from "../../../../components/titles/SectionTitle";
 import  { Carousel } from "./Carousel";
-import { desktop, laptop, tablet,mobile, xSmallMobile, xXSmallMobile, smallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+import { desktop, laptop, tablet,mobile, xSmallMobile, xXSmallMobile, smallMobile, xxxSmallMobile, xxxxSmallMobile, xMiddleColumn, middleColumn } from "../../../../responsive";
 
 const Container = styled.div`
- ${tablet({ flexDirection: 'column' })}
- ${mobile({ flexDirection: 'column' })}
- ${smallMobile({ flexDirection: 'column' })}
- ${xSmallMobile({ flexDirection: 'column' })}
- ${xXSmallMobile({ flexDirection: 'column' })}
- ${xXSmallMobile({ flexDirection: 'column' })}
+ ${middleColumn({ flexDirection: 'column' })}
 `;
 
 const Left = styled.div`
@@ -21,10 +16,10 @@ const Right = styled.div`
   ${laptop({ width: '810px',padding:'50px 0' })}
   ${tablet({ width: '810px',padding:'10px 0' })}
   ${mobile({ width: '720px',padding:'0' })}
-  ${smallMobile({ width: '525px',padding:'0' })}
-  ${xSmallMobile({ width: '525px',padding:'0' })}
+  ${smallMobile({ width: '712px',padding:'0' })}
+  ${xSmallMobile({ width: '600px',padding:'0' })}
   ${xXSmallMobile({ width: '525px',padding:'0' })}
-  ${xxxSmallMobile({ width: '316px',padding:'0' })}
+  ${xxxSmallMobile({ width: '350px',padding:'0' })}
   ${xxxxSmallMobile({ width: '250px',padding:'0' })}
 `;
 

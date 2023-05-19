@@ -65,3 +65,31 @@ export const xxxxSmallMobile = (inner: any) => css`
     ${inner};
   }
 `;
+
+
+export const middleFont = (inner: any) => css`
+
+  @media ((max-width: 864px)) {
+    ${inner};
+  }
+`;
+
+export const xmiddleFont = (inner: any) => css`
+
+  @media ((min-width: 865px)) {
+    ${inner};
+  }
+`;
+
+export const middleColumn = (inner: any) => css`
+
+  @media ((max-width: 1201px)) {
+    ${inner};
+  }
+`;
+export const xMiddleColumn = (inner: any) => css`
+
+  @media ((min-width: 1200px)) {
+    ${inner};
+  }
+`;

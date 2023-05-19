@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { desktop, laptop, smallMobile, tablet, xSmallMobile, xXSmallMobile , mobile} from "../../../../../../responsive";
+import { desktop, laptop, smallMobile, tablet, xSmallMobile, xXSmallMobile , mobile, xxxSmallMobile, xxxxSmallMobile} from "../../../../../../responsive";
 
 export const ImageContainer = styled.span`
   padding: 2px;
@@ -15,11 +15,20 @@ export const ImageCover = styled.span`
   border-width: 2px 0px 0px 2px;
   overflow: hidden;
   display: block;
-  ${desktop({ width: '390px'  })}
+ 
+`;
+
+
+export const ImageText = styled.img`
+ ${desktop({ width: '390px'  })}
   ${laptop({ width: '390px' })}
   ${tablet({ width: '390px' })}
   ${mobile({ width: '322px'})}
-  ${smallMobile({ width: '280px',height:'168px' })}
+  ${smallMobile({ width: '350x',height:'210px' })}
   ${xSmallMobile({ width: '280px' ,height:'168px'})}
-  ${xXSmallMobile({ width: '322px',height:'197px'})}
+  ${xXSmallMobile({ width: '280px',height:'168px'})}
+
+  ${xxxSmallMobile({ width: '270px',height:'162px'})}
+
+  ${xxxxSmallMobile({ width: '186px',height:'112px'})}
 `;

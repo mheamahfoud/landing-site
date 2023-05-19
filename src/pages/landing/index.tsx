@@ -41,11 +41,11 @@ const InnerContainer = styled.div`
         ${laptop({ width: '1300px' })}
         ${tablet({ width: '1010px' })}
         ${mobile({ width: '725px' })}
-        ${smallMobile({ width: '525px' })}
-        ${xSmallMobile({ width: '525px' })}
+        ${smallMobile({ width: '712px' })}
+        ${xSmallMobile({ width: '600px' })}
         ${xXSmallMobile({ width: '525px' })}
-        ${xxxSmallMobile({ width: '316px' })}
-        ${xxxxSmallMobile({ width: '250px' })}
+        ${xxxSmallMobile({ width: '350px' })}
+        ${xxxxSmallMobile({ width: '300px' })}
 `;
 
 const Landing: FC = () => {
@@ -87,10 +87,10 @@ const Landing: FC = () => {
       >
         <InnerContainer className="d-flex flex-column align-items-center">
 
-          <section id="about">
+          <section id="about" className="w-100">
             <AboutUs />
           </section>
-          <section id="dubservice">
+          <section id="dubservice" className="w-100">
             <DubbingService />
           </section>
 

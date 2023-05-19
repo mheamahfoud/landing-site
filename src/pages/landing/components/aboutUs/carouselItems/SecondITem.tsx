@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import Image from './assset/item-2.jpg';
-import { ImageContainer, ImageCover } from "./styles/ImageContainer";
+import { ImageContainer, ImageCover, ImageText } from "./styles/ImageContainer";
 const Nis = styled.span`
   color: #f15722;
 `;
@@ -24,7 +24,6 @@ const Paragraph = styled.p`
 
 const ContainerText = styled.div`
   position: relative;
-  width: 370px;
 `;
 
 const Text = styled.span`
@@ -50,7 +49,7 @@ export const SecondItem = () => {
       <Paragraph>
         <ImageContainer>
           <ImageCover>
-            <img
+            <ImageText
 
               src={Image}
 

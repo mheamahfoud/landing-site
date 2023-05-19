@@ -1,40 +1,44 @@
 import React from "react";
 import { styled } from "styled-components";
 import Image from './assset/item-1.jpg'
-import { ImageContainer, ImageCover } from "./styles/ImageContainer";
+import { ImageContainer, ImageCover, ImageText } from "./styles/ImageContainer";
 import { ContainerText, TextP, VerticalLine } from "./styles/TextContainer";
+import { middleFont, xmiddleFont } from "../../../../../responsive";
+
 const Nis = styled.span`
   color: #f15722;
 `;
-const Container = styled.div`
+
+const Paragraph = styled.p`
+  line-height: 23px;
+  margin: 0;
+`;
+
+const ContainerItem = styled.div`
   z-index: 164;
   min-height: 415px;
   background-color: transparent;
   color: #7f7f7f;
   font-size: 17px;
   position: relative;
-
+  ${middleFont({fontSize:'14px'})}
+  ${xmiddleFont({fontSize:'17px'})}
 `;
-const Paragraph = styled.p`
-  line-height: 23px;
-  margin: 0;
-`;
-
-
 
 
 export const FirstItem = () => {
   return (
-    <Container>
-      <Paragraph>
-
-        <ImageContainer>
+    <ContainerItem>
+      <ImageContainer>
           <ImageCover>
-            <img
+            <ImageText
               src={Image}
             />
           </ImageCover>
         </ImageContainer>
+      <Paragraph>
+
+        
         <ContainerText>
           <TextP>
             <span>
@@ -64,6 +68,6 @@ export const FirstItem = () => {
         its distinguished quality of output, compliance with the deadline for
         delivery and competing prices.
       </Paragraph>
-    </Container>
+    </ContainerItem>
   );
 };

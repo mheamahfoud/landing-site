@@ -50,6 +50,7 @@ export const Carousel = () => {
       <div className="carousel-navigation-about df-flex justify-content-between align-items-center m-t">
         <div
           className="carousel-btn-about prev-about"
+          style={{position:'relative' , zIndex:'5'}}
           onClick={goToPrevSlide}
         >
           <ButtonSlider>
