@@ -15,25 +15,25 @@ const Left = styled.div`
 `;
 
 const ContainerRight = styled.div`
-  ${desktop({ width: '625px', padding: '50px 0' })}
-  ${laptop({ width: '625px', padding: '50px 0' })}
-  ${tablet({ width: '625px', padding: '10px 0' })}
-  ${mobile({ width: '625px', padding: '0' })}
-  ${smallMobile({ width: '625px', padding: '0' })}
-  ${xSmallMobile({ width: '625px', padding: '0' })}
-  ${xXSmallMobile({ width: '625px', padding: '0' })}
-  ${xxxSmallMobile({ width: '625px', padding: '0' })}
-  ${xxxxSmallMobile({ width: '625px', padding: '0' })}
+  ${desktop({ width: '535px'  })}
+  ${laptop({ width: '535px' })}
+  ${tablet({ width: '425px' })}
+  ${mobile({ width: '425px'})}
+  ${smallMobile({ width: '425px'})}
+  ${xSmallMobile({ width: '425px'})}
+  ${xXSmallMobile({ width: '425px' })}
+  ${xxxSmallMobile({ width: '425px' })}
+  ${xxxxSmallMobile({ width: '425px'})}
 `;
 const DubbingService = () => {
   return (
-    <Container className="d-flex flex-column">
+    <Container className="d-flex flex-column " style={{gap:'20px'}}>
       <SectionTitle title={"Dubbing Service"} sectionNumber="02" nisTitle={true} />
 
-      <div className="d-flex  justify-content-between">
+      <div className="d-flex justify-content-between">
         <ContainerImage >
           <BigImage />
-          <SmallImage />
+          {/* <SmallImage /> */}
         </ContainerImage>
         <ContainerRight >
           <Right />

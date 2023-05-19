@@ -37,15 +37,15 @@ const Container = styled.div`
 `;
 
 const InnerContainer = styled.div`
-        ${desktop({ width: '1300px' })}
-        ${laptop({ width: '1300px' })}
-        ${tablet({ width: '1010px' })}
-        ${mobile({ width: '725px' })}
-        ${smallMobile({ width: '712px' })}
+        ${desktop({ width: '1160px' })}
+        ${laptop({ width: '1155px' })}
+        ${tablet({ width: '800px' })}
+        ${mobile({ width: '700px' })}
+        ${smallMobile({ width: '700px' })}
         ${xSmallMobile({ width: '600px' })}
-        ${xXSmallMobile({ width: '525px' })}
-        ${xxxSmallMobile({ width: '350px' })}
-        ${xxxxSmallMobile({ width: '300px' })}
+        ${xXSmallMobile({ width: '520px' })}
+        ${xxxSmallMobile({ width: '330px' })}
+        ${xxxxSmallMobile({ width: '330px' })}
 `;
 
 const Landing: FC = () => {

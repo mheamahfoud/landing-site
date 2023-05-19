@@ -19,7 +19,7 @@ const Dot = styled.span`
 `;
 const Right: FC = () => {
     return (
-        <Container className="col-md-5" style={{ width: '550px' }} >
+        <Container className=""  >
             <Paragraph> <Nis>Nis</Nis> <span id="u1790-2"> offers services in the field of audio dubbing for all artistic works:</span></Paragraph>
             <Paragraph><span id="u1790-4">Drama, movies, documentaries, cartoon films… etc; transforming any original language into the following languages</span> <span id="u1790-6">and accents:</span></Paragraph>
             <Paragraph><Dot>• </Dot><span id="u1790-9">Classical Arabic</span></Paragraph>
