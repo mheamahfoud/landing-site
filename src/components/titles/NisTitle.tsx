@@ -8,11 +8,10 @@ const MiddleChar = styled.span`
 export default function NisTitle() {
   return (
     <>
-        
-        <MiddleChar color={'#F15722'}>
-           NiS 
-        </MiddleChar>
-       
+      <MiddleChar color={'#F15722'}>
+        NiS
+      </MiddleChar>
+
     </>
   )
 }

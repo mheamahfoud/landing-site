@@ -9,15 +9,14 @@ const Container = styled.div`
   color: #7f7f7f;
   font-size: 17px;
   position: relative;
+  display: flex;
 `;
 const Paragraph = styled.p`
   line-height: 23px;
-
   margin: 0;
 `;
 
 const ImageContainer = styled.span`
-  float: right;
   padding: 2px;
 `;
 
@@ -43,6 +42,15 @@ export const FirstItem = () => {
   return (
     <Container>
       <Paragraph>
+        <span>
+          {" "}
+          <Nis>NiS</Nis> was established in 2003.&nbsp; It specializes in the
+          industry field of dubbing and audio services for all genres of
+          artistic works; i.e. movies, drama series, documentaries, cartoon
+          films, commercial ads, computer games … etc. Our company works on the
+          dubbing process, transforming the audio tracks from their original
+          languages into classical Arabic and to some other Arabic dialects.
+        </span>
         <ImageContainer>
           <ImageCover>
             <img
@@ -57,17 +65,9 @@ export const FirstItem = () => {
             />
           </ImageCover>
         </ImageContainer>
-        <VerticalLine />
 
-        <span>
-          {" "}
-          <Nis>NiS</Nis> was established in 2003.&nbsp; It specializes in the
-          industry field of dubbing and audio services for all genres of
-          artistic works; i.e. movies, drama series, documentaries, cartoon
-          films, commercial ads, computer games … etc. Our company works on the
-          dubbing process, transforming the audio tracks from their original
-          languages into classical Arabic and to some other Arabic dialects.
-        </span>
+
+
       </Paragraph>
       <p></p>
       <Paragraph>

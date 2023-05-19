@@ -3,7 +3,6 @@ import { Slider } from "./components/slider/Slider";
 import AnimationLogo from "../../components/animationLogo";
 import { styled } from "styled-components";
 import { desktop, laptop, mobile, tablet } from "../../responsive";
-import "./index.css";
 import SentenceRotator from "./components/specilacities/SentenceRotator";
 import VerticalSentence from "./components/specilacities/VerticalSentence";
 import AboutUs from "./components/aboutUs";
@@ -17,17 +16,30 @@ import Innovations from "./components/innovations";
 import { useLocation } from "react-router-dom";
 const ContainerAnimationSlider = styled.div`
   ${desktop({
-    height: "90vh",
-  })}
+  height: "90vh",
+})}
   ${laptop({
-    height: "85vh",
-  })}
+  height: "85vh",
+})}
   ${tablet({
-    height: "70vh",
-  })}
+  height: "70vh",
+})}
  ${mobile({
-    height: "50vh",
-  })}
+  height: "50vh",
+})}
+`;
+
+const Container = styled.div`
+      position: relative;
+      background: white;
+      z-index: 2;
+      overflow-x: auto;
+`;
+
+const InnerContainer = styled.div`
+        ${desktop({ width: '1300px' })}
+  
+
 `;
 
 const Landing: FC = () => {
@@ -63,47 +75,54 @@ const Landing: FC = () => {
         </ContainerAnimationSlider>
       </section>
 
-      <div
+      <Container
         className="d-flex justify-content-center"
-        style={{
-          position: "relative",
-          background: "white",
-          zIndex: "2",
-        }}
+
       >
-        <div className="d-flex flex-column align-items-center">
+        <InnerContainer className="d-flex flex-column align-items-center">
+
           <section id="about">
             <AboutUs />
           </section>
           <section id="dubservice">
             <DubbingService />
           </section>
-          <section>
-            <Jobs />
-          </section>
+
+
+
+        </InnerContainer>
+      </Container>
+
+
+      <section>
+        <Jobs />
+      </section>
+      <Container className="d-flex justify-content-center">
+        <InnerContainer className="d-flex flex-column align-items-center">
           <section>
             <DubbingAlbum />
           </section>
           <section id="services">
             <Services />
           </section>
-        </div>
-      </div>
+
+        </InnerContainer>
+      </Container>
+
       <BackGround />
-      <div
+
+      <Container
         className="d-flex justify-content-center"
-        style={{
-          position: "relative",
-          background: "white",
-          zIndex: "2",
-        }}
       >
-        <div className="d-flex flex-column align-items-center">
+        <InnerContainer className="d-flex flex-column align-items-center">
           <section id="innovation">
             <Innovations />
           </section>
-        </div>
-      </div>
+
+        </InnerContainer>
+      </Container>
+
+
     </>
   );
 };

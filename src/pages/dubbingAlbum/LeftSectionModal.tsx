@@ -3,7 +3,8 @@ import { MainColor } from "../../helpers";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
+  justify-content: space-between;
 
 
 `;
@@ -24,7 +25,6 @@ const ContentField = styled.span`
 const LeftSectionModal = () => {
     return (
         <Container>
-            
             <TitleField ><ContentField id="u242294">Genre:</ContentField> Series – Nature</TitleField>
             <TitleField ><ContentField id="u242294-4">Episode Count:</ContentField> 13 Ep × 45 Min</TitleField>
             <TitleField ><ContentField id="u242294-7">Language:</ContentField> Arabic</TitleField>

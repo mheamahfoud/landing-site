@@ -5,7 +5,6 @@ import RightSection from "./RightSection";
 const Container = styled.div`
   position: relative;
   background: white;
-  width: 1300px;
   font-size: 18px;
   color: #7f7f7f;
   margin:10px 0;

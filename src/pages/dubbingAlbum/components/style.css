@@ -5,12 +5,9 @@
   background-size: cover;
 }
 
-.top-section {
+.top-section-project-details{
   padding: 15px
 }
-
-
-
 .item{
   flex: 1;
 
@@ -40,12 +37,12 @@
     max-width: 100%;
   
   }
-  .top-section {
+  .top-section-project-details{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
   }
-  .section-field {
+  .project-deteails-content {
     display: flex;
     justify-content: center;
   }
@@ -60,12 +57,12 @@
     max-width: 100%;
   
   }
-  .top-section {
+  .top-section-project-details{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
   }
-  .section-field {
+  .project-deteails-content {
     display: flex;
     justify-content: center;
   }
@@ -93,13 +90,13 @@
     max-width: 100%;
   
   }
-  .top-section {
+  .top-section-project-details{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
   }
-  .section-field {
+  .project-deteails-content {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -135,13 +132,13 @@
     max-width: 100%;
   
   }
-  .top-section {
+  .top-section-project-details{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
   }
-  .section-field {
+  .project-deteails-content {
     display: flex;
     justify-content: center;
     flex-direction: column;

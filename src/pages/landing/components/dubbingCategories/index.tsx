@@ -9,7 +9,6 @@ import { DubbingCategories } from "../../../../helpers";
 const Container = styled.div`
   position: relative;
   background: white;
-  width: 1300px;
   z-index: 2;
 `;
 

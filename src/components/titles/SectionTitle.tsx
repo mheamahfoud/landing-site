@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import "./style.css";
 import { useEffect, useRef, useState } from "react";
 import NisTitle from "./NisTitle";
+import { SectionNUmber } from "./styles/SectionNumber";
 interface StyleProps {
   color?: string;
 }
@@ -17,31 +18,20 @@ const Container = styled.div<StyleProps>`
   position: relative;
   font-family: raleway, sans-serif;
   font-weight: 900;
-  position: "relative";
-`;
-const SectionNUmber = styled.div`
-  min-height: 139px;
-  font-size: 250px;
-  text-align: center;
-  color: #7f7f7f;
-  background-color: transparent;
-  opacity: 0.08;
-  font-family: raleway, sans-serif;
-  filter: alpha(opacity=8);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=8)";
-  font-weight: 900;
   position: relative;
-  line-height: 0.9;
-  width: 316px;
+  width: 320px;
+  height: 250px;
 `;
+
 const Title = styled.p`
   position: relative;
   background: white;
-  z-index: 148;
+  z-index: 2;
   position: absolute;
-  width: 316px;
   bottom: 0;
   margin: 0;
+  width: 101%;
+  height: 30%;
 `;
 const FirstChar = styled.span`
   font-size: 40px;
@@ -60,6 +50,7 @@ const SectionTitle = (props: props) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
+  
   useEffect(() => {
     const options = {
       root: null,
@@ -79,12 +70,15 @@ const SectionTitle = (props: props) => {
       observer.disconnect();
     };
   }, []);
+
   useEffect(() => {
     if (isVisible && !hasAnimated) {
-      // Apply the fade-in effect here
+
       setHasAnimated(true);
     }
   }, [isVisible, hasAnimated]);
+
+
   return (
     <Container>
       <SectionNUmber>
@@ -93,10 +87,8 @@ const SectionTitle = (props: props) => {
 
       <div>
         <Title
-              className={`title-section ${hasAnimated ? 'animated' : ''}`}
-
-     
-         ref={sectionRef}>
+          className={`title-section ${hasAnimated ? 'animated' : ''}`}
+          ref={sectionRef}>
           {nisTitle && <NisTitle />}{" "}
           {title.split(" ").map((word) => {
             return (

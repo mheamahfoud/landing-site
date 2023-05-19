@@ -8,7 +8,6 @@ import { VoiceLibrary } from "./VoiceLibrary";
 const Container = styled.div`
   position: relative;
   background: white;
-  width: 1300px;
   margin: 20px 0;
 `;
 

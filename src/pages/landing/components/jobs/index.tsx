@@ -7,7 +7,8 @@ const Container = styled.div`
   height: 321px;
   background-color: #1c1c1c;
   margin: 20px 0;
-  width:100vw;
+  width: 100vw;
+  white-space: nowrap;
 
 `;
 const Cover = styled.div`

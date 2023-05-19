@@ -6,12 +6,14 @@ export const BackGround = () => {
       style={{
         position: "relative",
         zIndex: "2",
+        width: "100vw",
+        whiteSpace:'nowrap',
       }}
     >
       <div className="d-flex flex-column align-items-center">
         <div
           style={{
-            width: "100vw",
+          
             height: "200px",
           }}
         ></div>
