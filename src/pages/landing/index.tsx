@@ -47,6 +47,7 @@ const InnerContainer = styled.div`
         ${xXSmallMobile({ width: '520px' })}
         ${xxxSmallMobile({ width: '330px' })}
         ${xxxxSmallMobile({ width: '330px' })}
+        gap: 20px;
 `;
 
 const Landing: FC = () => {
@@ -91,9 +92,9 @@ const Landing: FC = () => {
           <section id="about" className="w-100">
             <AboutUs />
           </section>
-          <section id="dubservice" className="w-100">
+          {/* <section id="dubservice" className="w-100">
             <DubbingService />
-          </section>
+          </section> */}
 
 
 

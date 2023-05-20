@@ -55,7 +55,7 @@ const DubbingAlbum = () => {
   }, []);
   return (
     <Container className="row d-flex justify-content-center ">
-      <Left className="">
+      <Left className="d-flex">
         <SectionTitle title={"Dubbing Album"} sectionNumber="03" />
       </Left>
 

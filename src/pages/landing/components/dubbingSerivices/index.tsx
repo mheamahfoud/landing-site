@@ -29,7 +29,10 @@ const ContainerRight = styled.div`
 const DubbingService = () => {
   return (
     <Container className="d-flex flex-column " style={{gap:'20px'}}>
+      <div className="d-flex" >
       <SectionTitle title={"Dubbing Service"} sectionNumber="02" nisTitle={true} />
+      </div>
+     
 
       <div className="d-flex justify-content-between">
         <ImageContainer >

@@ -28,57 +28,57 @@ const Seperator = styled.div`
   height: 1px;
 `;
 const Quantity = styled.div`
-
+   flex-grow: 1;
   ${desktop({
   width: '285px',
-  minHeight: '83px',
+  height:'70px',
   fontSize: '60px', lineHeight: '72px'
 })}
   ${laptop({
   width: '213px',
-  minHeight: '83px',
+   height:'70px',
   fontSize: '50px', lineHeight: '60px'
 })}
   ${tablet({
   width: '213px',
-  minHeight: '83px',
+  minHeight :'70px',
   fontSize: '45px', lineHeight: '54px'
 })}
   ${mobile({
   width: '213px',
-  minHeight: '83px',
+  height:'60px',
   fontSize: '45px', lineHeight: '54px'
 })}
 ${smallMobile({
   width: '213px',
-  minHeight: '83px',
+   height:'60px',
   fontSize: '45px', lineHeight: '54px'
 })}
 ${xSmallMobile({
   width: '213px',
-  minHeight: '83px',
+  minHeight :'60px',
   fontSize: '35px', lineHeight: '43px'
 })}
 ${xXSmallMobile({
   width: '213px',
-  minHeight: '83px',
+  height:'60px',
   fontSize: '35px', lineHeight: '43px'
 })}
 ${xxxSmallMobile({
   width: '213px',
-  minHeight: '83px',
+  height:'60px',
   fontSize: '35px', lineHeight: '43px'
 })}
 ${xxxxSmallMobile({
   width: '213px',
-  minHeight: '83px',
+  height:'60px',
   fontSize: '35px', lineHeight: '43px'
-})}
-  ;
+})}`;
+  
  
   
-`;
-const Title = styled.div``;
+
+const Title = styled.div`  height:83px`;
 export const CardSkill = (props: props) => {
   const { children, quantity } = props;
   return (

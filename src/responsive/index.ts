@@ -93,3 +93,11 @@ export const xMiddleColumn = (inner: any) => css`
     ${inner};
   }
 `;
+
+
+
+export const tabletColumn = (inner: any) => css`
+  @media ((max-width: 1200px)) {
+    ${inner};
+}
+`;

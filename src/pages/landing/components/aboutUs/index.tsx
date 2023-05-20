@@ -1,15 +1,11 @@
 import { styled } from "styled-components";
 import SectionTitle from "../../../../components/titles/SectionTitle";
 import  { Carousel } from "./Carousel";
-import { desktop, laptop, tablet,mobile, xSmallMobile, xXSmallMobile, smallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+import { desktop, laptop, tablet,mobile, xSmallMobile, xXSmallMobile, smallMobile, xxxSmallMobile, xxxxSmallMobile, tabletColumn } from "../../../../responsive";
 
 const Container = styled.div`
- ${tablet({ flexDirection: 'column' })}
- ${mobile({ flexDirection: 'column' })}
- ${smallMobile({ flexDirection: 'column' })}
- ${xSmallMobile({ flexDirection: 'column' })}
- ${xXSmallMobile({ flexDirection: 'column' })}
- ${xXSmallMobile({ flexDirection: 'column' })}
+ ${tabletColumn({ flexDirection: 'column' })}
+ margin: 20px 0;
 `;
 
 const Left = styled.div`
