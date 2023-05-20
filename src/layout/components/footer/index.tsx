@@ -9,33 +9,43 @@ import { CopyRight } from "./components/CopyRight";
 import { ButtonLinkFadeIn } from "../../../components/buttons/normal/ButtonLinkFadeIn";
 import { xxxSmallMobile } from "../../../responsive";
 const FooterStyle = styled.div`
-  height: 328px;
+
   background-color: #000000;
   position: relative;
   z-index: 100;
-  ${xxxSmallMobile({height:'460px'})}
+
 `;
 
 const Container = styled.div`
   ${xxxSmallMobile({flexDirection:'column'})}
 `;
 
+const ContainerButton = styled.div`
+  gap: 35px;
+`;
+
+const ContainerMiddle = styled.div`
+  gap: 70px;
+  ${xxxSmallMobile({ gap: '40px'})}
+`;
+
+
 export const Footer = () => {
   return (
     <FooterStyle>
       <div className="footer-bacground">
         <Container className="d-flex justify-content-around align-items-center h-100 ">
-          <div className="d-flex flex-column  align-items-center justify-content-evenly h-100">
+          <ContainerButton className="d-flex flex-column  align-items-center justify-content-evenly h-100">
             <ButtonLinkFadeIn title={"Add your voice"} onClick={() => {}} />
             <ButtonLinkFadeIn title={"Visit info"} onClick={() => {}} />
             <ButtonLinkFadeIn title={"Nis Location"} onClick={() => {}} />
-          </div>
+          </ContainerButton>
 
-          <div className="middle-footer-content">
+          <ContainerMiddle className="d-flex flex-column justify-contetnt-between h-100 align-items-center">
             <Logo />
             <SocialGroup />
             <CopyRight />
-          </div>
+          </ContainerMiddle>
 
           <ContactInfo />
         </Container>
@@ -43,3 +53,4 @@ export const Footer = () => {
     </FooterStyle>
   );
 };
+

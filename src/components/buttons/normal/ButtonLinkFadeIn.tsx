@@ -10,8 +10,8 @@ ${smallMobile({ width: '201px', height: '20px'})}
 
 ${xSmallMobile({ width: '190px', height: '22px'})}
 ${xXSmallMobile({ width: '140px', height: '20px'})}
-${xxxSmallMobile({ width: '140px', height: '20px'})}
-${xxxxSmallMobile({ width: '140px', height: '20px'})}
+${xxxSmallMobile({ width: '129px', height: '20px'})}
+${xxxxSmallMobile({ width: '129px', height: '20px'})}
  text-decoration: none;
   font-style: normal;
   font-weight: normal;
@@ -34,7 +34,9 @@ ${tablet({ fontSize:'16px',lineHeight:'21px' })}
 ${mobile({ fontSize:'14px',lineHeight:'18px' })}
 ${smallMobile({  fontSize:'14px',lineHeight:'18px' })}
 ${xSmallMobile({  fontSize:'normal',lineHeight:'18px' ,paddingTop:"2px" })}
-${xXSmallMobile({  fontSize:'normal',lineHeight:'18px',paddingTop:"2px" })}
+${xXSmallMobile({  fontSize:'12px',lineHeight:'16px',paddingTop:"2px" })}
+${xxxSmallMobile({  fontSize:'12px',lineHeight:'16px',paddingTop:"2px" })}
+${xxxxSmallMobile({  fontSize:'12px',lineHeight:'16px',paddingTop:"2px" })}
 background-color: #f15722;
   border-radius: 10px;
   text-align: center;
