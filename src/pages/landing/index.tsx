@@ -37,9 +37,10 @@ const Container = styled.div`
 `;
 
 const InnerContainer = styled.div`
-        ${desktop({ width: '1160px' })}
-        ${laptop({ width: '1155px' })}
-        ${tablet({ width: '800px' })}
+
+        ${desktop({ width: '1195px' })}
+        ${laptop({ width: '1160px' })}
+        ${tablet({ width: '900px' })}
         ${mobile({ width: '700px' })}
         ${smallMobile({ width: '700px' })}
         ${xSmallMobile({ width: '600px' })}
@@ -99,7 +100,7 @@ const Landing: FC = () => {
         </InnerContainer>
       </Container>
 
-{/* 
+
       <section>
         <Jobs />
       </section>
@@ -108,14 +109,14 @@ const Landing: FC = () => {
           <section>
             <DubbingAlbum />
           </section>
-          <section id="services">
+          {/* <section id="services">
             <Services />
-          </section>
+          </section> */}
 
         </InnerContainer>
       </Container>
 
-      <BackGround />
+      {/* <BackGround />
 
       <Container
         className="d-flex justify-content-center"

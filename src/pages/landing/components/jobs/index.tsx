@@ -2,14 +2,18 @@
 import { styled } from "styled-components";
 import CoverSkills from "../../../../assets/images/jobs-skills.png";
 import { CardSkill } from "../../../../components/cards/CardSkill";
+import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
 
 const Container = styled.div`
-  height: 321px;
   background-color: #1c1c1c;
-  margin: 20px 0;
-  width: 100vw;
   white-space: nowrap;
-
+  position: relative;
+  height: 314px;
+  ${smallMobile({height:'400px'})}
+  ${xSmallMobile({height:'400px'})}
+  ${xxxSmallMobile({height:'400px'})}
+  ${xxxxSmallMobile({height:'400px'})}
+  ${xXSmallMobile({height:'400px'})}
 `;
 const Cover = styled.div`
   opacity: 1;
@@ -29,8 +33,17 @@ const Top = styled.div`
   min-height: 35px;
 `;
 const Paragraph = styled.p`
-  line-height: 36px;
-  font-size: 20px;
+  ${desktop({fontSize:'20px',lineHeight:'36px'})}
+  ${laptop({fontSize:'20px',lineHeight:'36px'})}
+  ${tablet({fontSize:'16px',lineHeight:'29px'})}
+  ${mobile({fontSize:'14px',lineHeight:'25px'})}
+  ${smallMobile({fontSize:'14px',lineHeight:'25px'})}
+  ${xSmallMobile({fontSize:'14px',lineHeight:'25px'})}
+  ${xxxSmallMobile({fontSize:'14px',lineHeight:'25px'})}
+  ${xxxxSmallMobile({fontSize:'14px',lineHeight:'25px'})}
+  ${xXSmallMobile({fontSize:'14px',lineHeight:'25px'})}
+  white-space: break-spaces;
+  padding: 20px 20px;
 `;
 const Bottom = styled.div``;
 
@@ -48,23 +61,23 @@ export const Jobs = () => {
             </span>
           </Paragraph>
         </Top>
-        <Bottom className="d-flex flec-column">
+        <Bottom className="d-flex justify-content-center align-items-center flex-wrap">
           <CardSkill quantity={7500}>
-            <p>Hours Of Drama Series</p>
-            <p>(138 Projects)</p>
+            <p style={{margin:'0px'}}>Hours Of Drama Series</p>
+            <p style={{margin:'0px'}}>(138 Projects)</p>
           </CardSkill>
           <CardSkill
             //skill={"Documentary Hours"}
             quantity={6000}
           >
-            <p>Documentary Hours</p>
+            <p style={{margin:'0px'}}>Documentary Hours</p>
           </CardSkill>
           <CardSkill
             // skill={"Hours of TV cartoons(138 Projects)"}
             quantity={500}
           >
-            <p>Hours of TV cartoons</p>
-            <p>(138 Projects)</p>
+            <p style={{margin:'0px'}}>Hours of TV cartoons</p>
+            <p style={{margin:'0px'}}>(138 Projects)</p>
           </CardSkill>
           <CardSkill
             //skill={"Film"}

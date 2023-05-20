@@ -2,8 +2,9 @@ import { styled } from "styled-components";
 import SectionTitle from "../../../../components/titles/SectionTitle";
 import Right from "./Right";
 import { desktop, laptop, tablet, mobile, xSmallMobile, xXSmallMobile, smallMobile, xxxSmallMobile, xxxxSmallMobile, xMiddleColumn, middleColumn } from "../../../../responsive";
-import { BigImage, SmallImage, ContainerImage } from "./styles/ContainerImage";
-
+import {  BigImageContainer,  Image,  ImageContainer, SmallImageContainer } from "./styles/ContainerImage";
+import BigImageSrc from '../../../../assets/images/DubbingService-Big1.jpg';
+import SmallImageSrc from '../../../../assets/images/DubbingService-Small1.jpg';
 const Container = styled.div`
   position: relative;
   background: white;
@@ -31,10 +32,14 @@ const DubbingService = () => {
       <SectionTitle title={"Dubbing Service"} sectionNumber="02" nisTitle={true} />
 
       <div className="d-flex justify-content-between">
-        <ContainerImage >
-          <BigImage />
-          {/* <SmallImage /> */}
-        </ContainerImage>
+        <ImageContainer >
+          <BigImageContainer >
+            <Image src={BigImageSrc}/>
+            </BigImageContainer>
+           <SmallImageContainer > 
+            <Image src={SmallImageSrc}/>
+            </SmallImageContainer>
+        </ImageContainer>
         <ContainerRight >
           <Right />
         </ContainerRight>

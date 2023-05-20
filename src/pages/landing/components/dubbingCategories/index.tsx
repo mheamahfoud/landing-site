@@ -5,6 +5,7 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { DubbingAlbumPath } from "../../../../routing/RouteNames";
 import { DubbingCategories } from "../../../../helpers";
+import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
 
 const Container = styled.div`
   position: relative;
@@ -16,8 +17,34 @@ const Left = styled.div`
   background-color: "red";
 `;
 const Bottom = styled.div`
-  padding: 50px 0;
+  ${desktop({gap:'90px'})}
+  ${laptop({gap:'90px'})}
+  ${tablet({gap:'25px'})}
 `;
+const TopContainerCard = styled.div`
+
+  ${desktop({gap:'90px'})}
+  ${laptop({gap:'90px'})}
+  ${tablet({justifyContent:'space-evenly'})}
+  ${mobile({justifyContent:'space-evenly'})}
+  ${smallMobile({justifyContent:'space-evenly'})}
+  ${xSmallMobile({justifyContent:'space-between'})}
+  ${xXSmallMobile({justifyContent:'space-between'})}
+  ${xxxSmallMobile({flexDirection:'column',gap:'20px'})}
+  ${xxxxSmallMobile({flexDirection:'column',gap:'20px'})}
+`;
+const BottomContainerCard = styled.div`
+  ${desktop({gap:'90px' , marginLeft:'250px'})}
+  ${laptop({gap:'90px', marginLeft:'250px'})}
+  ${tablet({justifyContent:'space-evenly'})}
+  ${mobile({justifyContent:'space-evenly'})}
+  ${smallMobile({justifyContent:'space-evenly'})}
+  ${xSmallMobile({justifyContent:'space-between'})}
+  ${xXSmallMobile({justifyContent:'space-between'})}
+  ${xxxSmallMobile({flexDirection:'column',gap:'20px'})}
+  ${xxxxSmallMobile({flexDirection:'column',gap:'20px'})}
+`;
+
 
 const DubbingAlbum = () => {
   const navigate = useNavigate();
@@ -34,16 +61,12 @@ const DubbingAlbum = () => {
 
       {
         <Bottom
-          className="d-flex flex-column "
-          style={{
-            gap: "150px",
-          }}
+          className="d-flex flex-column" style={{gap:'20px'}}
+         
         >
-          <div
-            className="d-flex"
-            style={{
-              gap: "150px",
-            }}
+          <TopContainerCard
+            className="d-flex flex-wrap "
+         
           >
             {DubbingCategories.filter((x) => x.id < 3).map((item) => {
               return (
@@ -55,13 +78,10 @@ const DubbingAlbum = () => {
                 />
               );
             })}
-          </div>
-          <div
-            className="d-flex"
-            style={{
-              gap: "150px",
-              margin: "0 150px",
-            }}
+          </TopContainerCard>
+          <BottomContainerCard
+            className="d-flex flex-wrap "
+          
           >
             {DubbingCategories.filter((x) => x.id > 2).map((item) => {
               return (
@@ -73,7 +93,7 @@ const DubbingAlbum = () => {
                 />
               );
             })}
-          </div>
+          </BottomContainerCard>
         </Bottom>
       }
     </Container>

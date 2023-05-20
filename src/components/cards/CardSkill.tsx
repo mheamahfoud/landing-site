@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import './style.css'
 import NumberDisplay from "../animations/NumberDisplay";
+import { desktop, laptop, middleFont, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xmiddleFont, xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
 interface props {
   children: React.ReactNode;
   quantity: number;
@@ -27,12 +28,55 @@ const Seperator = styled.div`
   height: 1px;
 `;
 const Quantity = styled.div`
-  font-size: 60px;
-  line-height: 72px;
-  width: 285px;
-  min-height: 83px;
-  font-size: 60px;
-  line-height: 72px;
+
+  ${desktop({
+  width: '285px',
+  minHeight: '83px',
+  fontSize: '60px', lineHeight: '72px'
+})}
+  ${laptop({
+  width: '213px',
+  minHeight: '83px',
+  fontSize: '50px', lineHeight: '60px'
+})}
+  ${tablet({
+  width: '213px',
+  minHeight: '83px',
+  fontSize: '45px', lineHeight: '54px'
+})}
+  ${mobile({
+  width: '213px',
+  minHeight: '83px',
+  fontSize: '45px', lineHeight: '54px'
+})}
+${smallMobile({
+  width: '213px',
+  minHeight: '83px',
+  fontSize: '45px', lineHeight: '54px'
+})}
+${xSmallMobile({
+  width: '213px',
+  minHeight: '83px',
+  fontSize: '35px', lineHeight: '43px'
+})}
+${xXSmallMobile({
+  width: '213px',
+  minHeight: '83px',
+  fontSize: '35px', lineHeight: '43px'
+})}
+${xxxSmallMobile({
+  width: '213px',
+  minHeight: '83px',
+  fontSize: '35px', lineHeight: '43px'
+})}
+${xxxxSmallMobile({
+  width: '213px',
+  minHeight: '83px',
+  fontSize: '35px', lineHeight: '43px'
+})}
+  ;
+ 
+  
 `;
 const Title = styled.div``;
 export const CardSkill = (props: props) => {

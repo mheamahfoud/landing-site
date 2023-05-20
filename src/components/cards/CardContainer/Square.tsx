@@ -1,10 +1,20 @@
 import { styled } from "styled-components";
+import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
 type Props = {
   url: string;
 };
 export const SquareCardContainer = styled.div<Props>`
-  width: 400px;
-  height: 300px;
+  ${desktop({ width:'400px',height: '320px' })}
+  ${laptop({ width:'390px',height: '310px' })}
+  ${tablet({ width:'380px',height: '310px' })}
+  ${mobile({ width:'300px',height: '245px' })}
+  ${smallMobile({ width:'300px',height: '245px' })}
+  ${xSmallMobile({ width:'290px',height: '242px' })}
+  ${xXSmallMobile({ width:'250px',height: '230px' })}
+  ${xxxSmallMobile({ width:'250px',height: '230px' })}
+  ${xxxxSmallMobile({ width:'240px',height: '205px' })}
+  
+
   filter: alpha(opacity=100);
   background-color: #f8f6e1;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -19,6 +29,8 @@ export const SquareCardContainer = styled.div<Props>`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+
+  
 `;
 
 // export const CardContainer = ({ children }: Props) => {
