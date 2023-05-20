@@ -1,13 +1,18 @@
 import { styled } from "styled-components";
-import { mobile } from "../../../../responsive";
+import { mobile, mobileFontSize, smallMobile, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
 const Container = styled.div`
             color: white;
             display: flex;
             flex-direction: column;
             gap: 15px;
-
-            ${mobile({fontSize:'12px',lineHeight:'14px'})}
-
+            
+        
+            ${smallMobile({fontSize:'12px',lineHeight:'14px'})}
+            ${xSmallMobile({fontSize:'12px',lineHeight:'14px'})}
+            ${xXSmallMobile({fontSize:'10px',lineHeight:'12px'})}
+            ${xxxSmallMobile({fontSize:'10px',lineHeight:'12px'})}
+            ${xxxxSmallMobile({fontSize:'10px',lineHeight:'12px'})} 
+           
 `;
 
 function ContactInfo() {

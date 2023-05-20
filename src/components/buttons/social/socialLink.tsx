@@ -13,7 +13,7 @@ import { socialLinkColors } from "../../../helpers";
 
 import styled from "styled-components";
 
-import { desktop,  } from "../../../responsive";
+import { desktop, laptop, mobile, mobileFontSize, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile, } from "../../../responsive";
 
 library.add(faFacebookF, faInstagram, faTwitter, faYoutube, faCircle);
 const Container = styled.a`
@@ -27,10 +27,53 @@ const Container = styled.a`
   background-color: ${(props) => socialLinkColors[props.color]};
  
   ${desktop({
-    width: "40px",
-    minHeight:"40px",
-    zIndex:"489"
-  })}
+  width: "40px",
+  minHeight: "40px",
+  zIndex: "489"
+})}
+    ${laptop({
+  width: "40px",
+  minHeight: "40px",
+  zIndex: "489"
+})}
+    ${tablet({
+  width: "38px",
+  minHeight: "40px",
+  zIndex: "489"
+})}
+      ${mobile({
+  width: "39px",
+  minHeight: "40px",
+  zIndex: "489"
+})}
+
+${smallMobile({
+  width: "39px",
+  minHeight: "40px",
+  zIndex: "489"
+})}
+
+${xSmallMobile({
+  width: "39px",
+  minHeight: "40px",
+  zIndex: "489"
+})}
+ ${xXSmallMobile({
+  width: "25px",
+  minHeight: "25px",
+  zIndex: "489"
+})}
+${xxxSmallMobile({
+  width: "25px",
+  minHeight: "25px",
+  zIndex: "489"
+})}
+${xxxxSmallMobile({
+  width: "25px",
+  minHeight: "25px",
+  zIndex: "489"
+})}
+
 `;
 
 const SocialLink = ({ name, url }) => {

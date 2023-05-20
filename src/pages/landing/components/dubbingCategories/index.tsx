@@ -30,8 +30,8 @@ const TopContainerCard = styled.div`
   ${smallMobile({justifyContent:'space-evenly'})}
   ${xSmallMobile({justifyContent:'space-between'})}
   ${xXSmallMobile({justifyContent:'space-between'})}
-  ${xxxSmallMobile({flexDirection:'column',gap:'20px'})}
-  ${xxxxSmallMobile({flexDirection:'column',gap:'20px'})}
+  ${xxxSmallMobile({flexDirection:'column',gap:'20px' ,alignItems:'center'})}
+  ${xxxxSmallMobile({flexDirection:'column',gap:'20px',alignItems:'center'})}
 `;
 const BottomContainerCard = styled.div`
   ${desktop({gap:'90px' , marginLeft:'250px'})}
@@ -41,8 +41,8 @@ const BottomContainerCard = styled.div`
   ${smallMobile({justifyContent:'space-evenly'})}
   ${xSmallMobile({justifyContent:'space-between'})}
   ${xXSmallMobile({justifyContent:'space-between'})}
-  ${xxxSmallMobile({flexDirection:'column',gap:'20px'})}
-  ${xxxxSmallMobile({flexDirection:'column',gap:'20px'})}
+  ${xxxSmallMobile({flexDirection:'column',gap:'20px',alignItems:'center'})}
+  ${xxxxSmallMobile({flexDirection:'column',gap:'20px',alignItems:'center'})}
 `;
 
 

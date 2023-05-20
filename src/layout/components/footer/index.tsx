@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-
+import imageBacground from '../../../assets/images/back-ground_footerr.png'
 import Logo from "../../../components/logo";
 import "./style.css";
 import ContactInfo from "./components/ContactInfo";
@@ -7,7 +7,7 @@ import { SocialGroup } from "./components/SocialGroup";
 import { CopyRight } from "./components/CopyRight";
 
 import { ButtonLinkFadeIn } from "../../../components/buttons/normal/ButtonLinkFadeIn";
-import { xxxSmallMobile } from "../../../responsive";
+import { xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
 const FooterStyle = styled.div`
 
   background-color: #000000;
@@ -16,8 +16,15 @@ const FooterStyle = styled.div`
 
 `;
 
+const Background =styled.div`
+      opacity: 1;
+    background: transparent url(${imageBacground}) no-repeat center center;
+    background-size: cover;
+`;
+
 const Container = styled.div`
-  ${xxxSmallMobile({flexDirection:'column'})}
+  ${xxxSmallMobile({flexDirection:'column', padding:'25px 0'})}
+  ${xxxxSmallMobile({flexDirection:'column' , padding:'25px 0'})}
 `;
 
 const ContainerButton = styled.div`
@@ -33,7 +40,7 @@ const ContainerMiddle = styled.div`
 export const Footer = () => {
   return (
     <FooterStyle>
-      <div className="footer-bacground">
+      <Background className="">
         <Container className="d-flex justify-content-around align-items-center h-100 ">
           <ContainerButton className="d-flex flex-column  align-items-center justify-content-evenly h-100">
             <ButtonLinkFadeIn title={"Add your voice"} onClick={() => {}} />
@@ -49,7 +56,7 @@ export const Footer = () => {
 
           <ContactInfo />
         </Container>
-      </div>
+      </Background>
     </FooterStyle>
   );
 };

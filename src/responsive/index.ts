@@ -101,3 +101,10 @@ export const tabletColumn = (inner: any) => css`
     ${inner};
 }
 `;
+
+
+export const mobileFontSize = (inner: any) => css`
+  @media ((max-width: 769px)) {
+    ${inner};
+}
+`;
