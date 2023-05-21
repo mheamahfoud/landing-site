@@ -5,6 +5,7 @@ import { Landing } from '../pages/landing'
 
 import { DubbingAlbum } from '../pages/dubbingAlbum'
 import { VisitorInfo } from '../pages/visitors'
+import { ContactInfoPage } from '../pages/contactInformation'
 const PrivateRoutes = () => {
   return (
     <Routes>
@@ -13,7 +14,7 @@ const PrivateRoutes = () => {
           
           <Route path='dubbing-album' element={<DubbingAlbum />} />
           <Route path='visitor-info' element={<VisitorInfo />} />
-          
+          <Route path='contact-info' element={<ContactInfoPage />} />
           <Route path='/' element={<Landing />} />
         </Route>
       {/* <Route path='*' element={<Navigate to='/error/404' />} /> */}

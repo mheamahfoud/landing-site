@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { ButtonLinkFadeOut } from "../../../../components/buttons/normal/ButtonLinkFadeOut";
-import VisitorInfoSrc from '../../../../assets/images/innovations/visitor-information.jpg'
+
 import {
   desktop,
   laptop,
@@ -50,7 +50,7 @@ export const VoiceLibrary = () => {
   const navigate = useNavigate();
   const handleClick = useCallback((id: number) => {
     navigate(VisitorInfoPath, {
-      state: { url: VisitorInfoSrc},
+     // state: { url: VisitorInfoSrc},
     });
   }, []);
   return (
@@ -58,7 +58,7 @@ export const VoiceLibrary = () => {
       <Title>Voice Library</Title>
       <Paragraph>Our company owns a huge library of actors voices.</Paragraph>
       <div style={{margin:'10px 0'}}>
-        <ButtonLinkFadeOut title={"Add your voice"} onClick={handleClick} />
+        <ButtonLinkFadeOut title={"Add your voice"} onClick={()=>{}} />
       </div>
       <div style={{margin:'10px 0'}}>
         <ButtonLinkFadeOut title={"NiS Specialties"} onClick={() => {}} />

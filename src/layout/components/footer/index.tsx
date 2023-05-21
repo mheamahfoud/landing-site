@@ -10,8 +10,12 @@ import { CopyRight } from "./components/CopyRight";
 
 import { ButtonLinkFadeIn } from "../../../components/buttons/normal/ButtonLinkFadeIn";
 import { xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { VerticalView } from "./VerticalView";
+import { useNavigate } from "react-router-dom";
+import { ContactInfoPath, VisitorInfoPath } from "../../../routing/RouteNames";
+import VisitorInfoSrc from '../../../assets/images/innovations/visitor-information.jpg'
+import ContactInfoSrc from '../../../assets/images/contact-info.png'
 
 const FooterStyle = styled.div`
 
@@ -44,6 +48,18 @@ const ContainerMiddle = styled.div`
 
 export const Footer = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: 549 });
+  const navigate = useNavigate();
+  const handleClick = useCallback(() => {
+    navigate(VisitorInfoPath, {
+      state: { url: VisitorInfoSrc},
+    });
+  }, []);
+
+  const handleLocation = useCallback(() => {
+    navigate(ContactInfoPath, {
+      state: { url: ContactInfoSrc},
+    });
+  }, []);
 
   return (
     <FooterStyle>
@@ -51,8 +67,8 @@ export const Footer = () => {
      { !isSmallScreen  ?   <Container className="d-flex justify-content-around align-items-center h-100 ">
           <ContainerButton className="d-flex flex-column  align-items-center justify-content-evenly h-100">
             <ButtonLinkFadeIn title={"Add your voice"} onClick={() => {}} />
-            <ButtonLinkFadeIn title={"Visit info"} onClick={() => {}} />
-            <ButtonLinkFadeIn title={"Nis Location"} onClick={() => {}} />
+            <ButtonLinkFadeIn title={"Visit info"} onClick={handleClick} />
+            <ButtonLinkFadeIn title={"Nis Location"} onClick={handleLocation} />
           </ContainerButton>
 
           <ContainerMiddle className="d-flex flex-column justify-contetnt-between h-100 align-items-center">
