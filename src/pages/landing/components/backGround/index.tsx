@@ -6,7 +6,7 @@ export const BackGround = () => {
       style={{
         position: "relative",
         zIndex: "2",
-        width: "100vw",
+        width: "100%",
         whiteSpace:'nowrap',
       }}
     >

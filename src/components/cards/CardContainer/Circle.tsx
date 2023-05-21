@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
 type Props = {
   url: string;
 };
@@ -19,5 +20,16 @@ export const CircleCardContainer = styled.div<Props>`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+
+
+  ${desktop({ width:'320px',height: '320px' })}
+  ${laptop({ width:'220px',height: '220px' })}
+  ${tablet({ width:'220px',height: '220px' })}
+  ${mobile({ width:'160px',height: '160px' })}
+  ${smallMobile({ width:'160px',height: '160px' })}
+  ${xSmallMobile({ width:'137px',height: '137px' })}
+  ${xXSmallMobile({ width:'160px',height: '160px' })}
+  ${xxxSmallMobile({ width:'160px',height: '160px' })}
+  ${xxxxSmallMobile({ width:'160px',height: '160px' })}
 `;
 

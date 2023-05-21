@@ -1,19 +1,30 @@
 import { styled } from "styled-components";
+import voiceLibrarySrc from "../../../../assets/images/innovations/voice-library.jpg";
+import TazmeenSystemSrc from "../../../../assets/images/innovations/tazmeen-system.png";
+import NisSFXSrc from "../../../../assets/images/innovations/nis-sfx.jpg";
 import SectionTitle from "../../../../components/titles/SectionTitle";
 import { InnovationCard } from "../../../../components/cards/InnovationCard";
 import { TazmeenSystem } from "./TazmeenSystem";
 import { NISSFX } from "./NISSFX";
 import "./style.css";
 import { VoiceLibrary } from "./VoiceLibrary";
+import { xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
 const Container = styled.div`
   position: relative;
   background: white;
   margin: 20px 0;
 `;
 
-
 const Cards = styled.div``;
-const CircleCards = styled.div``;
+const ContainerCard = styled.div`
+  gap: 30px;
+
+  ${xxxSmallMobile({flexDirection:'column',alignItems:'center'})}
+  ${xxxxSmallMobile({flexDirection:'column',alignItems:'center'})}
+`;
+const InnerContainerCard = styled.div`
+  gap: 30px;
+`;
 const SquareCards = styled.div``;
 const Innovations = () => {
   return (
@@ -27,37 +38,22 @@ const Innovations = () => {
         className="d-flex flex-column justify-content-between flex-wrap"
         style={{ gap: "30px" }}
       >
-        <CircleCards className="d-flex justify-content-between flex-wrap">
-          <div className="flex-fill-item">
-            <InnovationCard
-              title={"Voice Library"}
-              url={
-                "https://www.nistudio.net/images/voice%20library.jpg?crc=193653680"
-              }
-            />
-          </div>
-          <div className="flex-fill-item">
-            <InnovationCard
-              title={"Tazmeen System"}
-              url={
-                "https://www.nistudio.net/images/tazmeen%20system%20icon.png?crc=309523358"
-              }
-            />
-          </div>
-          <div className="flex-fill-item">
-            <InnovationCard
-              title={"Nis SFX"}
-              url={"	https://www.nistudio.net/images/nis-sfx.jpg?crc=12241689"}
-            />
-          </div>
-        </CircleCards>
+        <ContainerCard className="d-flex justify-content-between">
+          <InnerContainerCard className="flex-fill-item d-flex flex-column  align-items-center flex-wrap">
+            <InnovationCard title={"Voice Library"} url={voiceLibrarySrc} />
+            <VoiceLibrary />
+          </InnerContainerCard>
 
-        <SquareCards className="d-flex justify-content-between flex-wrap">
-          <div className="flex-fill-item"><VoiceLibrary /></div>
-          <div className="flex-fill-item"><TazmeenSystem /></div>
-          <div className="flex-fill-item"><NISSFX /></div>
-          {/* <div className="flex-fill-item">   <NISSFX /></div> */}
-        </SquareCards>
+          <InnerContainerCard className="flex-fill-item align-items-center d-flex flex-column">
+            <InnovationCard title={"Tazmeen System"} url={TazmeenSystemSrc} />
+            <TazmeenSystem />
+          </InnerContainerCard>
+
+          <InnerContainerCard className="flex-fill-item align-items-center d-flex flex-column">
+            <InnovationCard title={"Nis SFX"} url={NisSFXSrc} />
+            <NISSFX />
+          </InnerContainerCard>
+        </ContainerCard>
       </Cards>
     </Container>
   );

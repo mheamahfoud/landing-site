@@ -134,7 +134,7 @@ const Landing: FC = () => {
         </InnerContainer>
       </Container>
 
-       {/* <BackGround /> */}
+        <BackGround /> 
 
       <Container
         className="d-flex justify-content-center"
