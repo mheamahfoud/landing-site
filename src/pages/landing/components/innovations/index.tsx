@@ -18,16 +18,16 @@ const SquareCards = styled.div``;
 const Innovations = () => {
   return (
     <Container
-      className="row d-flex flex-column justify-content-center"
+      className="row d-flex flex-column justify-content-center flex-wrap"
       style={{ gap: "50px" }}
     >
       <SectionTitle title={"Our innovations"} sectionNumber="05" />
 
       <Cards
-        className="d-flex flex-column justify-content-between"
+        className="d-flex flex-column justify-content-between flex-wrap"
         style={{ gap: "30px" }}
       >
-        <CircleCards className="d-flex justify-content-between">
+        <CircleCards className="d-flex justify-content-between flex-wrap">
           <div className="flex-fill-item">
             <InnovationCard
               title={"Voice Library"}
@@ -52,7 +52,7 @@ const Innovations = () => {
           </div>
         </CircleCards>
 
-        <SquareCards className="d-flex justify-content-between gap-3">
+        <SquareCards className="d-flex justify-content-between flex-wrap">
           <div className="flex-fill-item"><VoiceLibrary /></div>
           <div className="flex-fill-item"><TazmeenSystem /></div>
           <div className="flex-fill-item"><NISSFX /></div>

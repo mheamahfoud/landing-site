@@ -19,14 +19,31 @@ const ContainerAnimationSlider = styled.div`
   height: "90vh",
 })}
   ${laptop({
-  height: "85vh",
+  height: "95vh",
 })}
   ${tablet({
   height: "70vh",
 })}
  ${mobile({
+  height: "70vh",
+})}
+ ${smallMobile({
+  height: "75vh",
+})}
+ ${xSmallMobile({
+  height: "75vh",
+})}
+
+${xXSmallMobile({
+  height: "75vh",
+})}
+ ${xxxSmallMobile({
   height: "50vh",
 })}
+ ${xxxxSmallMobile({
+  height: "50vh",
+})}
+
 `;
 
 const Container = styled.div`
@@ -72,11 +89,11 @@ const Landing: FC = () => {
           >
             <AnimationLogo />
             <SentenceRotator
-              sentences={[
-                "Speed in performance",
-                "Quality In Implementation",
-                "Punctuality",
-              ]}
+              sentences={["Speed in performance",
+              "Quality In Implementation",
+              "Punctuality"]
+                
+              }
             />
           </div>
           <VerticalSentence />
@@ -110,14 +127,14 @@ const Landing: FC = () => {
           <section>
             <DubbingAlbum />
           </section>
-          {/* <section id="services">
+          <section id="services">
             <Services />
-          </section> */}
+          </section>
 
         </InnerContainer>
       </Container>
 
-      {/* <BackGround />
+       {/* <BackGround /> */}
 
       <Container
         className="d-flex justify-content-center"
@@ -128,7 +145,7 @@ const Landing: FC = () => {
           </section>
 
         </InnerContainer>
-      </Container> */}
+      </Container> 
 
 
     </>

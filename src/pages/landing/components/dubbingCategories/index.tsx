@@ -11,10 +11,13 @@ const Container = styled.div`
   position: relative;
   background: white;
   z-index: 2;
+  margin: 10px 0;
 `;
 
 const Left = styled.div`
-  background-color: "red";
+  ${xXSmallMobile({alignItems:'center' , justifyContent:'center'})}
+  ${xxxSmallMobile({ alignItems:'center' , justifyContent:'center'})}
+  ${xxxxSmallMobile({alignItems:'center', justifyContent:'center'})}
 `;
 const Bottom = styled.div`
   ${desktop({gap:'90px'})}
@@ -28,10 +31,10 @@ const TopContainerCard = styled.div`
   ${tablet({justifyContent:'space-evenly'})}
   ${mobile({justifyContent:'space-evenly'})}
   ${smallMobile({justifyContent:'space-evenly'})}
-  ${xSmallMobile({justifyContent:'space-between'})}
-  ${xXSmallMobile({justifyContent:'space-between'})}
-  ${xxxSmallMobile({flexDirection:'column',gap:'20px' ,alignItems:'center'})}
-  ${xxxxSmallMobile({flexDirection:'column',gap:'20px',alignItems:'center'})}
+  ${xSmallMobile({flexDirection:'column',gap:'20px' ,alignItems:'center' , justifyContent:'center'})}
+  ${xXSmallMobile({flexDirection:'column',gap:'20px' ,alignItems:'center' , justifyContent:'center'})}
+  ${xxxSmallMobile({flexDirection:'column',gap:'20px' ,alignItems:'center' , justifyContent:'center'})}
+  ${xxxxSmallMobile({flexDirection:'column',gap:'20px',alignItems:'center', justifyContent:'center'})}
 `;
 const BottomContainerCard = styled.div`
   ${desktop({gap:'90px' , marginLeft:'250px'})}
@@ -39,8 +42,8 @@ const BottomContainerCard = styled.div`
   ${tablet({justifyContent:'space-evenly'})}
   ${mobile({justifyContent:'space-evenly'})}
   ${smallMobile({justifyContent:'space-evenly'})}
-  ${xSmallMobile({justifyContent:'space-between'})}
-  ${xXSmallMobile({justifyContent:'space-between'})}
+  ${xSmallMobile({flexDirection:'column',gap:'20px' ,alignItems:'center' , justifyContent:'center'})}
+  ${xXSmallMobile({flexDirection:'column',gap:'20px' ,alignItems:'center' , justifyContent:'center'})}
   ${xxxSmallMobile({flexDirection:'column',gap:'20px',alignItems:'center'})}
   ${xxxxSmallMobile({flexDirection:'column',gap:'20px',alignItems:'center'})}
 `;

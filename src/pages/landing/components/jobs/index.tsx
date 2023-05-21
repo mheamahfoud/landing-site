@@ -9,14 +9,7 @@ const Container = styled.div`
   background-color: #1c1c1c;
   white-space: nowrap;
   position: relative;
-  height: 314px;
-  ${smallMobile({ height: '400px' })}
-  ${xSmallMobile({ height: '400px' })}
-  ${xxxSmallMobile({ height: '400px' })}
-  ${xxxxSmallMobile({ height: '400px' })}
-  ${xXSmallMobile({ height: '400px' })}
-  ${xxxSmallMobile({ height: '400px' })}
-  ${xxxxSmallMobile({ height: '400px' })}
+
 `;
 const Cover = styled.div`
   opacity: 1;

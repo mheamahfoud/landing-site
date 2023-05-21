@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import { useMediaQuery } from 'react-responsive';
+
 import imageBacground from '../../../assets/images/back-ground_footerr.png'
 import Logo from "../../../components/logo";
 import "./style.css";
@@ -8,6 +10,9 @@ import { CopyRight } from "./components/CopyRight";
 
 import { ButtonLinkFadeIn } from "../../../components/buttons/normal/ButtonLinkFadeIn";
 import { xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
+import { useEffect, useState } from "react";
+import { VerticalView } from "./VerticalView";
+
 const FooterStyle = styled.div`
 
   background-color: #000000;
@@ -38,10 +43,12 @@ const ContainerMiddle = styled.div`
 
 
 export const Footer = () => {
+  const isSmallScreen = useMediaQuery({ maxWidth: 549 });
+
   return (
     <FooterStyle>
       <Background className="">
-        <Container className="d-flex justify-content-around align-items-center h-100 ">
+     { !isSmallScreen  ?   <Container className="d-flex justify-content-around align-items-center h-100 ">
           <ContainerButton className="d-flex flex-column  align-items-center justify-content-evenly h-100">
             <ButtonLinkFadeIn title={"Add your voice"} onClick={() => {}} />
             <ButtonLinkFadeIn title={"Visit info"} onClick={() => {}} />
@@ -55,7 +62,7 @@ export const Footer = () => {
           </ContainerMiddle>
 
           <ContactInfo />
-        </Container>
+        </Container> : <VerticalView/>}
       </Background>
     </FooterStyle>
   );

@@ -16,9 +16,11 @@ const Dot = styled.span`
 const MainTitle = styled.p`
   line-height: 32px;
   font-weight: bold;
+  margin: 0;
 `;
 const SecondaryTitle = styled.p`
   line-height: 22px;
+  margin: 0;
 `;
 const Summery = styled.p`
   line-height: 27px;
