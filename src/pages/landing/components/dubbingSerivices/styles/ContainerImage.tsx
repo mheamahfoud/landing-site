@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import BigImageSrc from '../../../../../assets/images/DubbingService-Big1.jpg';
 import SmallImageSrc from '../../../../../assets/images/DubbingService-Small1.jpg';
 import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../../responsive";
 

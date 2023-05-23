@@ -54,57 +54,65 @@ export const xXSmallMobile = (inner: any) => css`
 `;
 
 export const xxxSmallMobile = (inner: any) => css`
-
-@media ((min-width: ${size.xsss}) and (max-width: 568px)) {
+  @media ((min-width: ${size.xsss}) and (max-width: 568px)) {
     ${inner};
   }
 `;
 export const xxxxSmallMobile = (inner: any) => css`
-
   @media ((max-width: 400px)) {
     ${inner};
   }
 `;
 
-
 export const middleFont = (inner: any) => css`
-
   @media ((max-width: 864px)) {
     ${inner};
   }
 `;
 
 export const xmiddleFont = (inner: any) => css`
-
   @media ((min-width: 865px)) {
     ${inner};
   }
 `;
 
 export const middleColumn = (inner: any) => css`
-
   @media ((max-width: 1201px)) {
     ${inner};
   }
 `;
 export const xMiddleColumn = (inner: any) => css`
-
   @media ((min-width: 1200px)) {
     ${inner};
   }
 `;
 
-
-
 export const tabletColumn = (inner: any) => css`
   @media ((max-width: 1200px)) {
     ${inner};
-}
+  }
 `;
-
 
 export const mobileFontSize = (inner: any) => css`
   @media ((max-width: 769px)) {
     ${inner};
-}
+  }
+`;
+
+export const vedioResponsive = (inner: any) => css`
+  @media ((max-width: 860px)) {
+    ${inner};
+  }
+`;
+
+export const imageResponsive = (inner: any) => css`
+  @media ((max-width: 1250px)) {
+    ${inner};
+  }
+`;
+
+export const imageResponsive1 = (inner: any) => css`
+  @media ((min-width: 1100px)) {
+    ${inner};
+  }
 `;

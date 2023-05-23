@@ -1,5 +1,4 @@
 import { ButtonModal } from "../../../components/buttons/modal";
-import LeftSectionModal from "../LeftSectionModal";
 import styled from "styled-components";
 import { Modal } from "react-bootstrap";
 import "./style.css";

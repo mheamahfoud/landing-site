@@ -13,7 +13,7 @@ import {
   xxxxSmallMobile,
 } from "../../../../responsive";
 import { useCallback } from "react";
-import { VisitorInfoPath } from "../../../../routing/RouteNames";
+import { NisSepcialtyPath} from "../../../../routing/RouteNames";
 import { useNavigate } from "react-router-dom";
 const Container = styled.div`
   height: fit-content;
@@ -48,9 +48,8 @@ const Paragraph = styled.p`
 `;
 export const VoiceLibrary = () => {
   const navigate = useNavigate();
-  const handleClick = useCallback((id: number) => {
-    navigate(VisitorInfoPath, {
-     // state: { url: VisitorInfoSrc},
+  const handleSpecialty = useCallback(() => {
+    navigate(NisSepcialtyPath, {
     });
   }, []);
   return (
@@ -61,7 +60,7 @@ export const VoiceLibrary = () => {
         <ButtonLinkFadeOut title={"Add your voice"} onClick={()=>{}} />
       </div>
       <div style={{margin:'10px 0'}}>
-        <ButtonLinkFadeOut title={"NiS Specialties"} onClick={() => {}} />
+        <ButtonLinkFadeOut title={"NiS Specialties"} onClick={handleSpecialty} />
       </div>
     </Container>
   );

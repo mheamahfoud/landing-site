@@ -3,62 +3,45 @@ import { useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import { styled } from "styled-components";
 import ContactInfo from "./components/ContactInfo";
-import Map from "./components/Map";
-
-const Image = styled.img`
-    width: 522px;
-    height: 349px;
-    background-image: url('https://www.nistudio.net/images/niseg_main-u137788-fr.png?crc=4214744809');
-    background-repeat: no-repeat;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    position: relative;
-    z-index: 39;
-    filter: alpha(opacity=100);
-    background-color: transparent;
-    opacity: 1;
-    background-position: center center;
-    border-radius: 25px;
-    background-size: cover;
+import EmbeddedMap from "./components/Map";
+import { Image } from "./components/Image";
+import {
+  xXSmallMobile,
+  xxxSmallMobile,
+  xxxxSmallMobile,
+} from "../../responsive";
+const Container = styled.div`
+  position: "relative";
+  background: "white";
+  z-index: "2";
+  display: "flex";
+  flex-direction: "column";
+  align-items: "center";
+  width: "100%";
+`;
+const InnerContainer = styled.div`
+  width: 100%;
+`;
+const ContactContainer = styled.div`
+  margin: 5% 0;
+  ${xXSmallMobile({ flexDirection: "column" })}
+  ${xxxSmallMobile({ flexDirection: "column" })}
+  ${xxxxSmallMobile({ flexDirection: "column" })}
 `;
 export const ContactInfoPage: FC = () => {
-    const location = useLocation();
-    const { url } = location.state;
-    return (
-        <div>
-            {" "}
-            <Header url={url} />
-            <div
-                className="d-flex justify-content-center flex-column"
-                style={{
-                    position: "relative",
-                    background: "white",
-                    zIndex: "2",
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    width: '100%',
-                    margin: '30px 0'
-                }}
-            >
+  const location = useLocation();
+  const { url } = location.state;
+  return (
+    <Container>
+      <Header url={url} />
+      <InnerContainer className="d-flex justify-content-center align-items-center flex-column">
+        <ContactContainer className="d-flex justify-content-evenly align-items-center flex-row-reverse flex-wrap w-100  ">
+          <ContactInfo />
+          <Image />
+        </ContactContainer>
 
-                <div className="d-flex flex-wrap justify-content-between align-items-center" style={{ width: '70%' }}>
-
-                    <Image />
-
-                    <div>
-                        <ContactInfo />
-
-                    </div>
-
-                </div>
-
-                <div style={{ height: '400px', width: '100%' }}
-                >
-                    <Map />
-                </div>
-
-
-            </div>
-        </div>
-    );
+        <EmbeddedMap />
+      </InnerContainer>
+    </Container>
+  );
 };

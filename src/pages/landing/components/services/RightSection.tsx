@@ -3,7 +3,7 @@ import "./style.css";
 import { useEffect, useRef, useState } from "react";
 import { paragraphs } from "./paragraphs";
 import ImageBackgroundSrc from  '../../../../assets/images/background-services.png'
-import { desktop, laptop, tablet, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+import { desktop, laptop, tablet,  xxxxSmallMobile } from "../../../../responsive";
 
 const Container = styled.div`
   background-image: url(${ImageBackgroundSrc});

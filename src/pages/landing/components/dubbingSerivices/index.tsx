@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import SectionTitle from "../../../../components/titles/SectionTitle";
 import Right from "./Right";
-import { desktop, laptop, tablet, mobile, xSmallMobile, xXSmallMobile, smallMobile, xxxSmallMobile, xxxxSmallMobile, xMiddleColumn, middleColumn } from "../../../../responsive";
+import { desktop, laptop, tablet, mobile, xSmallMobile, xXSmallMobile, smallMobile, xxxSmallMobile, xxxxSmallMobile} from "../../../../responsive";
 import {  BigImageContainer,  Image,  ImageContainer, SmallImageContainer } from "./styles/ContainerImage";
 import BigImageSrc from '../../../../assets/images/DubbingService-Big1.jpg';
 import SmallImageSrc from '../../../../assets/images/DubbingService-Small1.jpg';
@@ -11,9 +11,7 @@ const Container = styled.div`
 
 `;
 
-const Left = styled.div`
 
-`;
 
 const ContainerRight = styled.div`
   ${desktop({ width: '535px'  })}

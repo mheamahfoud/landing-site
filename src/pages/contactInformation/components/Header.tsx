@@ -3,12 +3,7 @@ import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobi
 interface PropsStyle {
     url: string;
 }
-const Container = styled.div`
-  position: relative;
-  z-index: 2;
-  height: 279px;
-  background-color: #000000;
-`;
+
 
 const ImageContainer = styled.div<PropsStyle>`
   background:url(${(props) => props.url}) ;
@@ -44,10 +39,7 @@ ${xXSmallMobile({
     height: "50vh",
 })}
 `;
-const ContainerAnimationSlider = styled.div`
 
-
-`;
 export const Header = (props: PropsStyle) => {
     const { url } = props;
     return (

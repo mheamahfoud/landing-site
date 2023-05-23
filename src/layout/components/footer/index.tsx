@@ -10,7 +10,7 @@ import { CopyRight } from "./components/CopyRight";
 
 import { ButtonLinkFadeIn } from "../../../components/buttons/normal/ButtonLinkFadeIn";
 import { xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { VerticalView } from "./VerticalView";
 import { useNavigate } from "react-router-dom";
 import { ContactInfoPath, VisitorInfoPath } from "../../../routing/RouteNames";

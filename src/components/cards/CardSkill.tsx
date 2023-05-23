@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import './style.css'
 import NumberDisplay from "../animations/NumberDisplay";
-import { desktop, laptop, middleFont, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xmiddleFont, xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
+import { desktop, laptop,  mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile,  xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
 interface props {
   children: React.ReactNode;
   quantity: number;

@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "styled-components";
 import Image from './assset/item-1.jpg'
 import { ImageContainer, ImageCover, ImageText } from "./styles/ImageContainer";

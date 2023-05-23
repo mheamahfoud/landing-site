@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { styled } from 'styled-components';
 const Container =styled.div`
     overflow: hidden;
@@ -56,7 +56,7 @@ interface Props {
     title: string
 }
 
-const InputForm: FC<Props> = ({ title }) => {
+const InputForm: FC<Props> = ({  }) => {
     return (
         <Container>
             <InnerContainer >

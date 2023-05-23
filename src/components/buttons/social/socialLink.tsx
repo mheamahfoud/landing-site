@@ -13,7 +13,7 @@ import { socialLinkColors } from "../../../helpers";
 
 import styled from "styled-components";
 
-import { desktop, laptop, mobile, mobileFontSize, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile, } from "../../../responsive";
+import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile, } from "../../../responsive";
 
 library.add(faFacebookF, faInstagram, faTwitter, faYoutube, faCircle);
 const Container = styled.a`

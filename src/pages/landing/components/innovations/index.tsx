@@ -25,7 +25,6 @@ const ContainerCard = styled.div`
 const InnerContainerCard = styled.div`
   gap: 30px;
 `;
-const SquareCards = styled.div``;
 const Innovations = () => {
   return (
     <Container

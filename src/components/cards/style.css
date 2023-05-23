@@ -1,3 +1,3 @@
-/* p {
-    margin: 0;
-} */
+.hovererly1:hover .hovererly {
+    transform: scale(0.95);
+  }

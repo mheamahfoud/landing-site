@@ -8,7 +8,7 @@ import LeftSectionModal from "../LeftSectionModal";
 
 export const CardList = () => {
   const [showModal, setShowModal] = useState(false);
-  const cardsPerPage: number = 10;
+  const cardsPerPage: number = 24;
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   const handleClick = useCallback((id: number) => {

@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { mobile, mobileFontSize, smallMobile, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+import { smallMobile, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
 const Container = styled.div`
             color: white;
             display: flex;

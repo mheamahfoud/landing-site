@@ -6,8 +6,6 @@ import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobi
 import SentenceRotator from "./components/specilacities/SentenceRotator";
 import VerticalSentence from "./components/specilacities/VerticalSentence";
 import AboutUs from "./components/aboutUs";
-import DubbingService from "./components/dubbingSerivices";
-
 import { Jobs } from "./components/jobs";
 import DubbingAlbum from "./components/dubbingCategories";
 import Services from "./components/services";

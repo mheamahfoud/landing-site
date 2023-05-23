@@ -1,12 +1,9 @@
 import  { useState, useEffect } from "react";
-import { styled } from "styled-components";
 import PropTypes from "prop-types";
 import "./SentenceRotator.css";
 import Sentence from "./Sentence";
 
-const Container =styled.div`
 
-`;
 const SentenceRotator = ({ ...props} ) => {
   const {sentences}=props;
   const [index, setIndex] = useState(0);

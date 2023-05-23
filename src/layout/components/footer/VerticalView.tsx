@@ -6,7 +6,7 @@ import { SocialGroup } from "./components/SocialGroup";
 import { CopyRight } from "./components/CopyRight";
 
 import { ButtonLinkFadeIn } from "../../../components/buttons/normal/ButtonLinkFadeIn";
-import { xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
+
 
 
 const Container = styled.div`

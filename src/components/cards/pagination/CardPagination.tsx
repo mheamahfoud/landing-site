@@ -73,10 +73,10 @@ const CardPagination: React.FC<CardPaginationProps> = ({
           <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
         </Pagination>
       </div>
-      <div className="d-flex justify-content-center flex-wrap row">
+      <div className="d-flex justify-content-center flex-wrap ">
         {currentCards.map((item) => (
           <div
-            className="col-lg-4 col-md-4 col-sm-6 col-xs-12"
+            className=""
             style={{ position: "relative", margin: "12px 0" }}
           >
             <ProjectCard

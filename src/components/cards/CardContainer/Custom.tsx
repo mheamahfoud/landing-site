@@ -3,17 +3,16 @@ type Props = {
   url: string;
 };
 export const CustomCardContainer = styled.div<Props>`
+  position: absolute;
+  height: 100%;
   width: 100%;
-  height: 300px;
+
   filter: alpha(opacity=100);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   cursor: pointer;
-  background:url(${(props) => props.url}) ;
-  &:hover {
-    transform: scale(0.9);
-  }
+  background: url(${(props) => props.url});
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 `;
 
 // export const CardContainer = ({ children }: Props) => {
