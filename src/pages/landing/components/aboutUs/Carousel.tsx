@@ -47,7 +47,7 @@ export const Carousel = () => {
           </div>
         ))}
       </div>
-      <div className="carousel-navigation-about df-flex justify-content-between align-items-center m-t">
+      <div className="carousel-navigation-about df-flex justify-content-between align-items-center m-t" style={{padding:'0 10px',}}>
         <div
           className="carousel-btn-about prev-about"
           style={{position:'relative' , zIndex:'5'}}
@@ -72,6 +72,7 @@ export const Carousel = () => {
         </div>
         <div
           className="carousel-btn-about next-about"
+          
           onClick={goToNextSlide}
         >
           <ButtonSlider>

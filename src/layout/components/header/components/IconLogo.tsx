@@ -1,6 +1,6 @@
 import IconLogoImg from "../../../../assets/images/icon-logo.png";
 import { styled } from "styled-components";
-import { mobileHeader } from "../responsive";
+import {  smallMobileHeader } from "../responsive";
 const Container = styled.div`
   cursor: pointer;
 `;
@@ -11,7 +11,7 @@ const IConImage = styled.img`
   height: 92px;
   position: relative;
   top: -15px;
-  ${mobileHeader({width:'90px',height:'90px'})}
+  ${smallMobileHeader({width:'80px',height:'80px' , top :'-10px'})}
 `;
 const IconLogo = () => {
   return (

@@ -1,4 +1,7 @@
-import { Route, Routes } from "react-router-dom";
+import {
+  Route,
+  Routes,
+} from "react-router-dom";
 import { MasterLayout } from "../layout/MasterLayout";
 import { Landing } from "../pages/landing";
 
@@ -22,3 +25,15 @@ const PrivateRoutes = () => {
 };
 
 export { PrivateRoutes };
+
+// export  const PrivateRoutes1 = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route element={<MasterLayout />}>
+//       <Route path="dubbing-album" element={<DubbingAlbum  />}  loader={getDrama}/>
+//       <Route path="visitor-info" element={<VisitorInfo />} />
+//       <Route path="contact-info" element={<ContactInfoPage />} />
+//       <Route path="nis-specialties" element={<SpecialtyPage />} />
+//       <Route path="/" element={<Landing />} />
+//     </Route>
+//   )
+// );

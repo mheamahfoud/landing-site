@@ -23,20 +23,20 @@ const ImageContainer = styled.div<PropsStyle>`
     height: "70vh",
 })}
  ${smallMobile({
-    height: "75vh",
+    height: "50vh",
 })}
  ${xSmallMobile({
-    height: "75vh",
+    height: "50vh",
 })}
 
 ${xXSmallMobile({
-    height: "75vh",
+    height: "50vh",
 })}
  ${xxxSmallMobile({
-    height: "50vh",
+    height: "30vh",
 })}
  ${xxxxSmallMobile({
-    height: "50vh",
+    height: "30vh",
 })}
 `;
 

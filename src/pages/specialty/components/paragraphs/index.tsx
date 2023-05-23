@@ -6,7 +6,7 @@ const Container = styled.div`
   font-size: 17px;
   color: #7f7f7f;
   width: 400px;
-  ${vedioResponsive({fontSize:'14px', lineHeight:'18px'})}
+  ${vedioResponsive({fontSize:'14px', lineHeight:'18px', width:'300px'})}
 `;
 
 

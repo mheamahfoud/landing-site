@@ -1,51 +1,65 @@
 import { styled } from "styled-components";
-import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
+import {
+  desktop,
+  laptop,
+  mobile,
+  smallMobile,
+  tablet,
+  xSmallMobile,
+  xXSmallMobile,
+  xxxSmallMobile,
+  xxxxSmallMobile,
+} from "../../../responsive";
 const Container = styled.a`
-${desktop({ width: '273px', height: '24px' })}
-${laptop({ width: '273px', height: '24px' })}
-${tablet({ width: '273px', height: '24px' })}
+  ${desktop({ width: "273px", height: "24px" })}
+  ${laptop({ width: "273px", height: "24px" })}
+${tablet({ width: "273px", height: "24px" })}
 
-${mobile({ width: '201px', height: '20px' })}
-${smallMobile({ width: '201px', height: '20px'})}
+${mobile({ width: "201px", height: "20px" })}
+${smallMobile({ width: "201px", height: "20px" })}
 
-${xSmallMobile({ width: '190px', height: '22px'})}
-${xXSmallMobile({ width: '140px', height: '20px'})}
-${xxxSmallMobile({ width: '129px', height: '20px'})}
-${xxxxSmallMobile({ width: '129px', height: '20px'})}
+${xSmallMobile({ width: "190px", height: "22px" })}
+${xXSmallMobile({ width: "140px", height: "20px" })}
+${xxxSmallMobile({ width: "129px", height: "20px" })}
+${xxxxSmallMobile({ width: "129px", height: "20px" })}
  text-decoration: none;
   font-style: normal;
   font-weight: normal;
   text-align: center;
-cursor: pointer;
+  display: block;
+  cursor: pointer;
   &:hover p {
     font-size: smaller;
     /* Example: change the text color to red */
   }
-
- 
 `;
 
 const Title = styled.p`
-${desktop({ fontSize:'16px',lineHeight:'21px' })}
-${laptop({  fontSize:'16px',lineHeight:'21px' })}
-${tablet({ fontSize:'16px',lineHeight:'21px' })}
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Firefox */
+  ${desktop({ fontSize: "16px", lineHeight: "21px" })}
+  ${laptop({ fontSize: "16px", lineHeight: "21px" })}
+${tablet({ fontSize: "16px", lineHeight: "21px" })}
 
 
-${mobile({ fontSize:'14px',lineHeight:'18px' })}
-${smallMobile({  fontSize:'14px',lineHeight:'18px' })}
-${xSmallMobile({  fontSize:'normal',lineHeight:'18px' ,paddingTop:"2px" })}
-${xXSmallMobile({  fontSize:'12px',lineHeight:'16px',paddingTop:"2px" })}
-${xxxSmallMobile({  fontSize:'12px',lineHeight:'16px',paddingTop:"2px" })}
-${xxxxSmallMobile({  fontSize:'12px',lineHeight:'16px',paddingTop:"2px" })}
+${mobile({ fontSize: "14px", lineHeight: "18px" })}
+${smallMobile({ fontSize: "14px", lineHeight: "18px" })}
+${xSmallMobile({ fontSize: "normal", lineHeight: "18px", paddingTop: "2px" })}
+${xXSmallMobile({ fontSize: "12px", lineHeight: "16px", paddingTop: "2px" })}
+${xxxSmallMobile({ fontSize: "12px", lineHeight: "16px", paddingTop: "2px" })}
+${xxxxSmallMobile({ fontSize: "12px", lineHeight: "16px", paddingTop: "2px" })}
 background-color: #f15722;
   border-radius: 10px;
   text-align: center;
   font-family: roboto, sans-serif;
   font-weight: 400;
 
-  
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
   text-align: center;
   color: #f8f6e1;
   background-color: #f15722;
@@ -56,7 +70,10 @@ export const ButtonLinkFadeIn = ({ ...props }) => {
   return (
     <Container
       className="d-inline-flex justify-content-center align-items-center"
-      onClick={onClick}
+      onClick={(event) => {
+        event.preventDefault();
+        onClick();
+      }}
     >
       <Title>{title}</Title>
     </Container>

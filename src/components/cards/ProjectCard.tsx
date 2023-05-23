@@ -2,7 +2,8 @@ import { useState } from "react";
 import { styled } from "styled-components";
 import { CustomCardContainer } from "./CardContainer/Custom";
 import "./style.css";
-import { imageResponsive } from "../../responsive";
+import { imageResponsive, mobileImageResponsive } from "../../responsive";
+import { toAbsoluteServerUrl } from "../../helpers/AssetHelpers";
 interface Props {
   id: number;
   url: string;
@@ -22,7 +23,8 @@ const Container = styled.div`
   position: relative;
   width: 400px;
   height: 250px;
-  ${imageResponsive({ width: "250px" , height:'217px' })}
+  ${imageResponsive({ width: "350px" , height:'217px' })}
+  ${mobileImageResponsive({ width: "300px" , height:'180px' })}
 `;
 const TilteContainr = styled.div<TitleContainerProps>`
   width: 80%;
@@ -59,11 +61,12 @@ export const ProjectCard = (props: Props) => {
       className="hovererly1"
       onMouseMove={handleHover}
       onMouseLeave={handleLeave}
+      onClick={() => onClick(id)}
     >
       <CustomCardContainer
         className="d-flex justify-content-center align-items-center hovererly"
-        url={url}
-        onClick={() => onClick(id)}
+        url={toAbsoluteServerUrl(url)}
+
       />
 
       <TilteContainr display={showDiv}>

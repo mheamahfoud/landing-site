@@ -1,5 +1,6 @@
 import React  from "react";
 import styled from "styled-components";
+import { buttonSlider, xSmallMobile } from "../../../responsive";
 interface props {
   children?: React.ReactNode;
 }
@@ -16,6 +17,8 @@ const Container = styled.div`
   &:hover {
     border-color: #a3a1a1;
   }
+
+  ${buttonSlider({ width:'40px',height:'40px'})}
 `;
 export const ButtonSlider = (props: props) => {
   const { children } = props;

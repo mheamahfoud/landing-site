@@ -15,6 +15,7 @@ export const ImageCover = styled.span`
   border-width: 2px 0px 0px 2px;
   overflow: hidden;
   display: block;
+
  
 `;
 

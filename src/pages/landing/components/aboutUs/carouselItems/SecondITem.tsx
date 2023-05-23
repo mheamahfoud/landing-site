@@ -34,14 +34,14 @@ const Text = styled.span`
 
 `;
 
-const VerticalLine = styled.span`
-  width: 2px;
-  height:200px;
-  background-color: #f15722;
-  position: absolute;
-  right: 0;
-  top: 0;
-`;
+// const VerticalLine = styled.span`
+//   width: 2px;
+//   height:200px;
+//   background-color: #f15722;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+// `;
 
 export const SecondItem = () => {
   return (
@@ -69,7 +69,7 @@ export const SecondItem = () => {
               with all audio-editing softwares used globally.
             </span>
           </Text>
-          <VerticalLine />
+          {/* <VerticalLine /> */}
 
 
         </ContainerText>

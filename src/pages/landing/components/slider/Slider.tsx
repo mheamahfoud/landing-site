@@ -3,6 +3,19 @@ import "./style.css";
 import { useState } from "react";
 import FirstItemImg from '../../../../assets/images/first-item-slider.jpg'
 import SeconditemImg from '../../../../assets/images/second-item-slider.jpg'
+import styled from "styled-components";
+const FirstImage =styled.div`
+    background-image: url(${FirstItemImg}) ;
+    background-size: cover;
+    background-position: center;
+
+`;
+const SecondImage =styled.div`
+  background-image: url(${SeconditemImg}) ;
+    background-size: cover;
+    background-position: center;
+
+`;
 export function Slider() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -32,6 +45,9 @@ export function Slider() {
       </Carousel.Item>
 
       <Carousel.Item>
+        <div>
+
+        </div>
         <img
           className="slider-img"
           src={SeconditemImg}

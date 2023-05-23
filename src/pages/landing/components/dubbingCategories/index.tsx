@@ -15,9 +15,9 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  ${xXSmallMobile({alignItems:'center' , justifyContent:'center'})}
-  ${xxxSmallMobile({ alignItems:'center' , justifyContent:'center'})}
-  ${xxxxSmallMobile({alignItems:'center', justifyContent:'center'})}
+  ${xXSmallMobile({alignItems:'start' , })}
+  ${xxxSmallMobile({ alignItems:'start' ,})}
+  ${xxxxSmallMobile({alignItems:'start', })}
 `;
 const Bottom = styled.div`
   ${desktop({gap:'90px'})}

@@ -51,7 +51,7 @@ export const VedioContainerVertical: FC<Props> = ({
           <YouTubeVideo videoId={vedioId} />
         </div>
       </div>
-      <div >{children}</div>
+      <div  style={{width:'300px'}}>{children}</div>
     </Container>
   );
 };

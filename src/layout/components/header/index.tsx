@@ -20,9 +20,10 @@ const Container = styled.div<StyleProps>`
   height: 62px;
   width: 100%;
   background-color: ${(props) =>
-    props.iscrolledtotop == "true" ? "" : "#1c1c1c"};
+    props.iscrolledtotop == "true" ? "#1c1c1c" : "#1c1c1c"};
   z-index: 510;
-  position: fixed;
+  position: sticky;
+  top: 0;
   left: 0px;
   right: 0px;
   display: flex;
@@ -68,7 +69,7 @@ export const Header = () => {
           <IconLogo />
           <IconLang />
         </div>
-        {isSmallScreen && <div >
+        {isSmallScreen && <div className="d-flex align-items-center justify-content-center"  style={{margin:'0 8px'}}>
           <ButtonMenu onClick={() => {
             setShowModal(true)
           }} />

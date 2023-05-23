@@ -1,8 +1,18 @@
-import { FC, useEffect, } from "react";
+import { FC, useEffect } from "react";
 import { Slider } from "./components/slider/Slider";
 import AnimationLogo from "../../components/animationLogo";
 import { styled } from "styled-components";
-import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
+import {
+  desktop,
+  laptop,
+  mobile,
+  smallMobile,
+  tablet,
+  xSmallMobile,
+  xXSmallMobile,
+  xxxSmallMobile,
+  xxxxSmallMobile,
+} from "../../responsive";
 import SentenceRotator from "./components/specilacities/SentenceRotator";
 import VerticalSentence from "./components/specilacities/VerticalSentence";
 import AboutUs from "./components/aboutUs";
@@ -12,57 +22,58 @@ import Services from "./components/services";
 import { BackGround } from "./components/backGround";
 import Innovations from "./components/innovations";
 import { useLocation } from "react-router-dom";
+import DubbingService from "./components/dubbingSerivices";
 const ContainerAnimationSlider = styled.div`
   ${desktop({
-  height: "90vh",
-})}
+    height: "90vh",
+  })}
   ${laptop({
-  height: "95vh",
-})}
+    height: "95vh",
+  })}
   ${tablet({
-  height: "70vh",
-})}
+    height: "70vh",
+  })}
  ${mobile({
-  height: "70vh",
-})}
+    height: "70vh",
+  })}
  ${smallMobile({
-  height: "75vh",
-})}
+    height: "50vh",
+  })}
  ${xSmallMobile({
-  height: "75vh",
-})}
+    height: "50vh",
+  })}
 
 ${xXSmallMobile({
-  height: "75vh",
-})}
+    height: "50vh",
+  })}
  ${xxxSmallMobile({
-  height: "50vh",
-})}
+    height: "40vh",
+  })}
  ${xxxxSmallMobile({
-  height: "50vh",
-})}
-
+    height: "40vh",
+  })}
 `;
 
 const Container = styled.div`
-      position: relative;
-      background: white;
-      z-index: 2;
-      overflow-x: auto;
+  position: relative;
+  background: white;
+  z-index: 2;
+
 `;
 
 const InnerContainer = styled.div`
-
-        ${desktop({ width: '1195px' })}
-        ${laptop({ width: '1160px' })}
-        ${tablet({ width: '900px' })}
-        ${mobile({ width: '700px' })}
-        ${smallMobile({ width: '700px' })}
-        ${xSmallMobile({ width: '600px' })}
-        ${xXSmallMobile({ width: '520px' })}
-        ${xxxSmallMobile({ width: '330px' })}
-        ${xxxxSmallMobile({ width: '330px' })}
-        gap: 20px;
+  max-width: 1200px;
+  width: 80%;
+  /* ${desktop({ width: "1195px" })}
+        ${laptop({ width: "1160px" })}
+        ${tablet({ width: "900px" })}
+        ${mobile({ width: "700px" })}
+        ${smallMobile({ width: "700px" })}
+        ${xSmallMobile({ width: "600px" })}
+        ${xXSmallMobile({ width: "520px" })}
+        ${xxxSmallMobile({ width: "330px" })}
+        ${xxxxSmallMobile({ width: "330px" })} */
+  gap: 20px;
 `;
 
 const Landing: FC = () => {
@@ -87,35 +98,27 @@ const Landing: FC = () => {
           >
             <AnimationLogo />
             <SentenceRotator
-              sentences={["Speed in performance",
-              "Quality In Implementation",
-              "Punctuality"]
-                
-              }
+              sentences={[
+                "Speed in performance",
+                "Quality In Implementation",
+                "Punctuality",
+              ]}
             />
           </div>
           <VerticalSentence />
         </ContainerAnimationSlider>
       </section>
 
-      <Container
-        className="d-flex justify-content-center"
-
-      >
+      <Container className="d-flex justify-content-center">
         <InnerContainer className="d-flex flex-column align-items-center">
-
           <section id="about" className="w-100">
             <AboutUs />
           </section>
-          {/* <section id="dubservice" className="w-100">
+          <section id="dubservice" className="w-100">
             <DubbingService />
-          </section> */}
-
-
-
+          </section>
         </InnerContainer>
       </Container>
-
 
       <section>
         <Jobs />
@@ -128,24 +131,18 @@ const Landing: FC = () => {
           <section id="services">
             <Services />
           </section>
-
         </InnerContainer>
       </Container>
 
-        <BackGround /> 
+      <BackGround />
 
-      <Container
-        className="d-flex justify-content-center"
-      >
+      <Container className="d-flex justify-content-center">
         <InnerContainer className="d-flex flex-column align-items-center">
           <section id="innovation">
             <Innovations />
           </section>
-
         </InnerContainer>
-      </Container> 
-
-
+      </Container>
     </>
   );
 };

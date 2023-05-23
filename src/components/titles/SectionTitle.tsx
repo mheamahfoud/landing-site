@@ -13,7 +13,7 @@ interface props {
   nisTitle?: boolean;
 }
 const Container = styled.div<StyleProps>`
-  text-align: center;
+  text-align: start;
   color: #7f7f7f;
   background-color: transparent;
   position: relative;

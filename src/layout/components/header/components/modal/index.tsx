@@ -8,9 +8,7 @@ import { useAuth } from "../../../../../ContextProvider";
 import CloseButton from "./CloseButton";
 import "./style.css";
 import IconLogo from "../IconLogo";
-interface StyleProps {
-  showModal: boolean
-}
+
 const Container = styled.div`
       position: fixed;
       top: 0;
@@ -43,6 +41,7 @@ const ModalMenu: React.FC<Props> = ({ showModal, setShowModal }) => {
   );
   const [isScrolledToTop, setIsScrolledToTop] = useState(true);
   useEffect(() => {
+    console.log(isScrolledToTop)
     const handleScroll = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;

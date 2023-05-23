@@ -1,3 +1,7 @@
+img{
+  background-size: contain;
+  background-position: center;
+}
 .main-slider {
   position: fixed;
   top: 0;

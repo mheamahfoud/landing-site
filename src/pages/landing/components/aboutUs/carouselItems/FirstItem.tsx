@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import Image from './assset/item-1.jpg'
 import { ImageContainer, ImageCover, ImageText } from "./styles/ImageContainer";
-import { ContainerText, TextP, VerticalLine } from "./styles/TextContainer";
+import { ContainerText, TextP } from "./styles/TextContainer";
 import { middleFont, xmiddleFont } from "../../../../../responsive";
 
 const Nis = styled.span`
@@ -49,7 +49,7 @@ export const FirstItem = () => {
               languages into classical Arabic and to some other Arabic dialects.
             </span>
           </TextP>
-          <VerticalLine />
+          {/* <VerticalLine /> */}
 
 
         </ContainerText>

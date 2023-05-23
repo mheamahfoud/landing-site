@@ -106,13 +106,23 @@ export const vedioResponsive = (inner: any) => css`
 `;
 
 export const imageResponsive = (inner: any) => css`
-  @media ((max-width: 1250px)) {
+  @media ((min-width: ${size.xs}) and (max-width: 1250px)) {
+    ${inner};
+  }
+`;
+export const mobileImageResponsive = (inner: any) => css`
+  @media ((max-width:640px)) {
+    ${inner};
+  }
+`;
+export const imageResponsive1 = (inner: any) => css`
+  @media ((min-width: 1100px)) {
     ${inner};
   }
 `;
 
-export const imageResponsive1 = (inner: any) => css`
-  @media ((min-width: 1100px)) {
+export const buttonSlider = (inner: any) => css`
+  @media ((max-width: ${size.xxsm})) {
     ${inner};
   }
 `;

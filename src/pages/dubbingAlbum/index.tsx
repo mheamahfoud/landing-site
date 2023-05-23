@@ -2,6 +2,7 @@ import { FC } from "react";
 import { HeaderDubbing } from "./components/HeaderDubbing";
 import { useLocation } from "react-router-dom";
 import { CardList } from "./components/CardList";
+
 export const DubbingAlbum: FC = () => {
   const location = useLocation();
   const { url } = location.state;

@@ -11,7 +11,7 @@ interface CardData {
 
 interface CardPaginationProps {
   cardsPerPage: number;
-  cards: CardData[];
+  cards: any ,//CardData[];
   onClick:(id:number)=>void;
 }
 
@@ -82,8 +82,8 @@ const CardPagination: React.FC<CardPaginationProps> = ({
             <ProjectCard
               key={item.id}
               onClick={()=> onClick(item.id)}
-              title={item.title}
-              url={item.imgSrc}
+              title={item.info.value}
+              url={item.image}
               id={item.id}
             />
           </div>

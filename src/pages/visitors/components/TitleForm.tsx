@@ -12,8 +12,8 @@ const Title = styled.p`
 
     ${xSmallMobile({fontSize:'38px',lineHeight:'46px'})}
     ${xXSmallMobile({fontSize:'38px',lineHeight:'46px'})}
-    ${xxxSmallMobile({fontSize:'38px',lineHeight:'46px'})}
-    ${xxxxSmallMobile({fontSize:'38px',lineHeight:'46px'})}
+    ${xxxSmallMobile({fontSize:'25px',lineHeight:'36px'})}
+    ${xxxxSmallMobile({fontSize:'25px',lineHeight:'36px'})}
 `;
 const StyleWord = styled.span`
     color: ${MainColor};
