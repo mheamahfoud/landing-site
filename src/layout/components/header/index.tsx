@@ -7,6 +7,10 @@ import { MenuItems } from "./util/constant";
 import { styled } from "styled-components";
 import { useAuth } from "../../../ContextProvider";
 import { useNavigate } from "react-router-dom";
+import ButtonMenu from "./components/ButtonMenu";
+import { smallMobileHeader } from "./responsive";
+import ModalMenu from "./components/modal";
+import { useMediaQuery } from "react-responsive";
 
 interface StyleProps {
   iscrolledtotop?: string;
@@ -21,11 +25,13 @@ const Container = styled.div<StyleProps>`
   position: fixed;
   left: 0px;
   right: 0px;
-  height: 62px;
   display: flex;
   justify-content: space-around;
+  ${smallMobileHeader({ justifyContent: 'space-between', padding: '0 8px' })}
 `;
 export const Header = () => {
+
+  const isSmallScreen = useMediaQuery({ maxWidth: 767 })
   const navigate = useNavigate();
   const { currentPage, setCurrentPage, setLinkClicked } = useAuth();
   const handleClick = useCallback(
@@ -54,6 +60,7 @@ export const Header = () => {
     };
   }, []);
 
+  const [showModal, setShowModal] = useState<boolean>(false)
   return (
     <>
       <Container iscrolledtotop={isScrolledToTop.toString()}>
@@ -61,7 +68,14 @@ export const Header = () => {
           <IconLogo />
           <IconLang />
         </div>
-        <div className="MenuBar clearfix left-menu" id="">
+        {isSmallScreen && <div >
+          <ButtonMenu onClick={() => {
+            setShowModal(true)
+          }} />
+          <ModalMenu showModal={showModal} setShowModal={setShowModal} />
+
+        </div>}
+        {!isSmallScreen && <div className="MenuBar clearfix left-menu d-flex justify-content-between flex-nowrap" id="">
           {MenuItems.map((item, index) => {
             return (
               <LinkHeader
@@ -74,7 +88,7 @@ export const Header = () => {
               />
             );
           })}
-        </div>
+        </div>}
       </Container>
     </>
   );
