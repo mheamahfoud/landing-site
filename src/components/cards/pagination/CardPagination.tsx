@@ -3,11 +3,11 @@ import { Pagination } from "react-bootstrap";
 
 import './style.css'
 import { ProjectCard } from "../ProjectCard";
-interface CardData {
-  id: number;
-  title: string;
-  imgSrc: string;
-}
+// interface CardData {
+//   id: number;
+//   title: string;
+//   imgSrc: string;
+// }
 
 interface CardPaginationProps {
   cardsPerPage: number;

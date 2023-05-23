@@ -103,6 +103,7 @@ const SocialLink = ({ name, url }) => {
   return (
     <Container
       href={url}
+      target="_blank"
       color={name}
       className={`nonblock nontext transition rounded-corners d-flex justify-content-center align-items-center clearfix`}
     >

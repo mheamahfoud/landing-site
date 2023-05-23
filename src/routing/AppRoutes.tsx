@@ -6,10 +6,10 @@
  */
 
 import { FC } from "react";
-import { Routes, Route, BrowserRouter, RouterProvider } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { App } from "../App";
-import ErrorBoundary from "../ErrorBoundary";
+
 
 /**
  * Base URL of the website.

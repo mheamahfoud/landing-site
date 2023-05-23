@@ -17,5 +17,5 @@ export const getProjectDetails = async (id) => {
       lang: "en",
     }
   );
-  return res?.data;
+  return res?.data?.data;
 };

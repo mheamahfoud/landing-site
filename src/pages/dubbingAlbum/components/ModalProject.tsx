@@ -1,11 +1,12 @@
 import { ButtonModal } from "../../../components/buttons/modal";
 import styled from "styled-components";
-import { Modal } from "react-bootstrap";
+import { Modal, Spinner } from "react-bootstrap";
 import "./style.css";
 import { getProjectDetails } from "../../../services/categories";
 import { useQuery } from "react-query";
 import LeftSectionModal from "../LeftSectionModal";
 import { toAbsoluteServerUrl } from "../../../helpers/AssetHelpers";
+import { MainColor } from "../../../helpers";
 const Title = styled.h3`
   color: #ffffff;
   background-color: transparent;
@@ -19,10 +20,8 @@ interface Props {
   handleCloseModal: () => void;
   handlePrevCard: () => void;
   handleNextCard: () => void;
-  children: React.ReactNode;
 }
 const ModalProject: React.FC<Props> = ({
-  children,
   id,
   title,
   showModal,
@@ -30,8 +29,8 @@ const ModalProject: React.FC<Props> = ({
   handlePrevCard,
   handleNextCard,
 }) => {
-    alert(id)
-  const { data, isFetching } = useQuery(`${"categofdsfsdfries"}-${id}`, () => {
+
+  const { data} = useQuery(`${"categofdsfsdfries"}-${id}`, () => {
     return getProjectDetails(id);
   });
 
@@ -40,7 +39,7 @@ const ModalProject: React.FC<Props> = ({
       show={showModal}
       onHide={handleCloseModal}
       dialogClassName="custom-modal"
-      centered
+
     >
       {data && (
         <div className="top-section-project-details background-image">
@@ -48,19 +47,35 @@ const ModalProject: React.FC<Props> = ({
             <Title>{title}</Title>
           </div>
           <div className="project-deteails-content">
-              <div className="item">
-                <LeftSectionModal  info={data?.info}/>
-              </div>
-              <div className="item img-display-container">
-                <img
-                  className="img-display"
-                  src={toAbsoluteServerUrl(data?.image)}
-                />
-              </div>
+            <div className="item">
+              <LeftSectionModal info={data?.info} />
             </div>
+            <div className="item img-display-container">
+              <img
+                className="img-display"
+                src={toAbsoluteServerUrl(data?.image)}
+              />
+            </div>
+          </div>
+          <div className="row" style={{
+            fontSize: '9px',
+            lineHeight: '32px',
+            color: '#f8f6e1',
+          }}>
+            {
+              data?.actors.map((item) => {
+                return (
+                    <span  className="col-lg-2 col-md-2 col-sm-3 col-6" style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden',lineHeight:'20px' , fontSize:'13px' }}> {item?.name}</span>
+                )
+              })
+            }
+
+          </div>
         </div>
       )}
-      {!data && <h1>loading</h1>}
+      {!data && <div className="d-flex justify-content-center align-items-center  background-image "  style={{height:'100px'}}>
+        <Spinner   style={{color:MainColor}}/>
+      </div>}
 
       <div className="bottom-section">
         <ButtonModal onClick={handlePrevCard}>{"<"}</ButtonModal>

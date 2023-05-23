@@ -1,5 +1,7 @@
 
-
+.modal-dialog .custom-modal {
+  margin: auto;
+}
 .background-image {
   background-image: url('https://www.nistudio.net/images/panar.jpg?crc=109505155');
   background-size: cover;
@@ -17,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   transition: opacity 0.3s;
-  bottom: -15%;
+  bottom: -40px;
   z-index: 1000;
   position: absolute;
   width: 20%;
@@ -75,7 +77,7 @@
     display: flex;
     justify-content: space-between;
     transition: opacity 0.3s;
-    bottom: -10%;
+    bottom: -40px;
     z-index: 1000;
     position: absolute;
     width: 50%;
@@ -88,6 +90,7 @@
   .modal-dialog {
     width: 415px;
     max-width: 100%;
+    margin: auto;
   
   }
   .top-section-project-details{
@@ -117,7 +120,7 @@
     display: flex;
     justify-content: space-between;
     transition: opacity 0.3s;
-    bottom: -10%;
+    bottom: -40px;
     z-index: 1000;
     position: absolute;
     width: 50%;
@@ -126,10 +129,12 @@
   .img-display{
     width: 234px;
     height: 145px 
+    
   }
   .modal-dialog {
     width: 307px;
     max-width: 100%;
+    margin: auto;
   
   }
   .top-section-project-details{

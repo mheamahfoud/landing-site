@@ -2,17 +2,15 @@ import { useCallback, useState } from "react";
 import { WrapperCard } from "./WrapperCard";
 import CardPagination from "../../../components/cards/pagination/CardPagination";
 import ModalProject from "./ModalProject";
-import LeftSectionModal from "../LeftSectionModal";
 import {
   getProjectCategory,
-  getProjectDetails,
 } from "../../../services/categories";
 import { useQuery } from "react-query";
 import Spinner from "../../../layout/components/loader";
-import { toAbsoluteServerUrl } from "../../../helpers/AssetHelpers";
+// import { toAbsoluteServerUrl } from "../../../helpers/AssetHelpers";
 
 export const CardList = () => {
-  const { isFetching, refetch, data } = useQuery(`${"DRAMA"}-${4}`, () => {
+  const {  data } = useQuery(`${"DRAMA"}-${4}`, () => {
     return getProjectCategory(4);
   });
 
@@ -20,20 +18,30 @@ export const CardList = () => {
   const cardsPerPage: number = 24;
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const handleClick = useCallback((id: number) => {
-    const index = data?.findIndex((x) => x.id == id.toString());
-    alert(index)
+   if(data){
+    const index = data?.findIndex(x=>x.id==id);
     setCurrentCardIndex(index);
     setShowModal(true);
-  }, []);
+   }
+ 
+  }, [showModal,currentCardIndex,data
+  
+  ]);
   const handleNextCard = useCallback(() => {
     if (currentCardIndex < data.length - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
+    }
+    else{
+      setCurrentCardIndex(0);
     }
   }, [currentCardIndex]);
 
   const handlePrevCard = useCallback(() => {
     if (currentCardIndex > 0) {
       setCurrentCardIndex(currentCardIndex - 1);
+    }
+    else{
+      setCurrentCardIndex(data.length-1);
     }
   }, [currentCardIndex]);
 
@@ -58,7 +66,7 @@ export const CardList = () => {
               handleNextCard={handleNextCard}
               handlePrevCard={handlePrevCard}
               id={data[currentCardIndex]?.id}
-              currentCardIndex={currentCardIndex} children={""}            ></ModalProject>
+              currentCardIndex={currentCardIndex}/>
           )}
         </WrapperCard>
       )}

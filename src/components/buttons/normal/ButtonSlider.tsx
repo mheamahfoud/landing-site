@@ -1,6 +1,6 @@
 import React  from "react";
 import styled from "styled-components";
-import { buttonSlider, xSmallMobile } from "../../../responsive";
+import { buttonSlider } from "../../../responsive";
 interface props {
   children?: React.ReactNode;
 }
