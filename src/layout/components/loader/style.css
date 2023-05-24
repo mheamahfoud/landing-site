@@ -2,14 +2,14 @@
 
 
 .spinner {
-    position: fixed;
-    left: 50%;
-    top: 30%;
+    position: absolute;
+    left: 45%;
+    top: 40%;
 	--t: 2500ms;
 	--animation: rotate var(--t) linear infinite;
 	--animation2: scale var(--t) linear infinite alternate;
-	width: 10rem;
-	height: 10rem;
+	width: 5rem;
+	height: 5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;

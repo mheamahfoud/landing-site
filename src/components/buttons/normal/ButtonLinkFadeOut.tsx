@@ -33,8 +33,8 @@ const Container = styled.a`
   ${smallMobile({ width: "160px", height: "26px" })}
   ${xSmallMobile({ width: "160px", height: "26px" })}
   ${xXSmallMobile({ width: "160px", height: "26px" })}
-  ${xxxSmallMobile({ width: "120px", height: "19px" , fontSize:'12px' })}
-  ${xxxxSmallMobile({ width: "120px", height: "19px", fontSize:'12px'  })}
+  ${xxxSmallMobile({ width: "120px", height: "19px", fontSize: "12px" })}
+  ${xxxxSmallMobile({ width: "120px", height: "19px", fontSize: "12px" })}
 `;
 
 const Title = styled.p`
@@ -51,13 +51,17 @@ const Title = styled.p`
   display: contents;
 `;
 export const ButtonLinkFadeOut = ({ ...props }) => {
-  const { title, onClick } = props;
+  const { title, onClick, url } = props;
   return (
     <Container
+      target="_blank"
       className="d-inline-flex justify-content-center align-items-center"
+      href={url}
       onClick={(event) => {
-        event.preventDefault();
-        onClick();
+        if (!url) {
+          event.preventDefault();
+          onClick();
+        }
       }}
     >
       <Title>{title}</Title>

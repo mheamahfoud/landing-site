@@ -24,7 +24,7 @@ const CardPagination: React.FC<CardPaginationProps> = ({
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
+  const currentCards = cards?.slice(indexOfFirstCard, indexOfLastCard);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);

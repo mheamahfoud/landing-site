@@ -1,8 +1,7 @@
-import axios from "axios";
-
-export const getProjectCategory = async (id) => {
-  const res = await axios.post(
-    `https://nistudio.net/nis_website/api/list_project_category/${id}`,
+import { Http } from "../Http";
+export const getProjectCategory = async  (id) => {
+  const res = await Http.post<any>(
+    `list_project_category/${id}`,
     {
       lang: "en",
     }
@@ -11,8 +10,8 @@ export const getProjectCategory = async (id) => {
 };
 
 export const getProjectDetails = async (id) => {
-  const res = await axios.post(
-    `https://nistudio.net/nis_website/api/one_project_category/${id}`,
+  const res = await Http.post<any>(
+    `one_project_category/${id}`,
     {
       lang: "en",
     }

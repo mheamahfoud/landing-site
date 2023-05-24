@@ -1,10 +1,15 @@
-
+.modal-content {
+  height: 800px;
+}
 .modal-dialog .custom-modal {
   margin: auto;
+
+
 }
 .background-image {
   background-image: url('https://www.nistudio.net/images/panar.jpg?crc=109505155');
   background-size: cover;
+  height: 100%;
 }
 
 .top-section-project-details{
@@ -31,6 +36,9 @@
 }
 
 @media (min-width: 768px) {
+  .modal-content {
+    height: 650px;
+  }
   .img-display-container{
     text-align: end;
   }
@@ -41,7 +49,6 @@
   }
   .top-section-project-details{
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
   }
   .project-deteails-content {
@@ -51,6 +58,9 @@
 }
 
 @media ((min-width: 641px) and (max-width: 767px)) {
+  .modal-content {
+    height: 1500px;
+  }
   .img-display-container{
     text-align: end;
   }
@@ -116,6 +126,9 @@
 
  
 @media ((max-width: 540px) ) {
+  .modal-content {
+    height: 1700px;
+  }
   .bottom-section {
     display: flex;
     justify-content: space-between;

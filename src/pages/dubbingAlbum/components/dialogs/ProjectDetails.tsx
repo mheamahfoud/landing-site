@@ -1,10 +1,9 @@
 import { styled } from "styled-components";
-import { MainColor } from "../../helpers";
-import SocialLink from "../../components/buttons/social/socialLink";
+import { MainColor } from "../../../../helpers";
+import { CustomLink } from "../../../../components/buttons/normal/CustomLink";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
   justify-content: space-between;
 `;
 
@@ -14,14 +13,14 @@ const TitleField = styled.p`
   color: #f8f6e1;
   background-color: transparent;
   position: relative;
-  margin: 0;
+  margin: 2px 0;
 `;
 const ContentField = styled.span`
   font-size: 18px;
   line-height: 32px;
   color: ${MainColor};
 `;
-const LeftSectionModal = ({ ...props }) => {
+const ProjectDetails = ({ ...props }) => {
   const { info } = props;
   return (
     <Container>
@@ -34,8 +33,9 @@ const LeftSectionModal = ({ ...props }) => {
             </TitleField>}
 
             {info[index + 2]?.key == 'Link:' &&
-              <div >
-                <SocialLink name="youtube" url={info[index + 2]?.value} />
+              <div  style={{position:'absolute' , margin:'-5px   200px'}}>
+                <CustomLink url={info[index + 2]?.value} ><img src="https://www.nistudio.net/images/you%20tube.png?crc=195068780" ></img></CustomLink>
+           
               </div>
 
 
@@ -49,4 +49,4 @@ const LeftSectionModal = ({ ...props }) => {
   );
 };
 
-export default LeftSectionModal;
+export default ProjectDetails;

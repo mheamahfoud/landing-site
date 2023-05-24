@@ -10,6 +10,7 @@ import MusicBackgroud from "../../../../assets/images/categories/background/musi
 import SongsBackgroud from "../../../../assets/images/categories/background/song-back.png";
 import SFXBackgroud from "../../../../assets/images/categories/background/sfx-back.png";
 import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+import { Categories } from "../../../../helpers/Constants";
 
 const Paragraph = styled.div`
   color: #2f2c24;
@@ -31,7 +32,7 @@ const NisTitel = styled.span`
 export const paragraphs: { id: number, coverSrc:string , paragraph: React.ReactNode }[] = 
 [
   {
-    id: 1,
+    id: Categories.Music,
     coverSrc:MusicCover,
     paragraph: (
       <>
@@ -49,7 +50,7 @@ export const paragraphs: { id: number, coverSrc:string , paragraph: React.ReactN
     ),
   },
   {
-    id: 2,
+    id: Categories.Songs,
     coverSrc:SongsCover,
     paragraph: (
       <>
@@ -65,7 +66,7 @@ export const paragraphs: { id: number, coverSrc:string , paragraph: React.ReactN
     ),
   },
   {
-    id: 3,
+    id: Categories.SFX,
     coverSrc:SFXCover,
     paragraph: (
       <>

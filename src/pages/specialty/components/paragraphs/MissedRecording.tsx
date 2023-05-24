@@ -18,25 +18,20 @@ const Dash = styled.span`
   color: #f15722;
 `;
 
-export const Waiting = () => {
+export const MissedRecording = () => {
   return (
     <Container className="">
 
       <Paragraph>
-        <Dash>-</Dash> The artist's presence for the recording session ahead of
-        the set appointment
+        <Dash>-</Dash> In case the company finds errors or missed recordings in some utterances in previous sessions
       </Paragraph>
       <Paragraph>
-        <Dash>-</Dash> The artist is granted the privilege of "Compensable
-        Waiting"
+        <Dash>-</Dash> The session time remains effective when updating the missed recordings or corrections
       </Paragraph>
       <Paragraph>
-        <Dash>-</Dash> It starts from the recording session appointment until
-        the artist gets into the studio
+        <Dash>-</Dash> This marginal time is added to the due hourly fee
       </Paragraph>
-      <Paragraph>
-        <Dash>-</Dash> The "Waiting" time fee is added to the due hourly fee
-      </Paragraph>
+     
     </Container>
   );
 };

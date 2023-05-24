@@ -68,7 +68,7 @@ export const Footer = () => {
         {!isSmallScreen ? (
           <Container className="d-flex justify-content-around align-items-center h-100 ">
             <ContainerButton className="d-flex flex-column  align-items-center justify-content-evenly h-100">
-              <ButtonLinkFadeIn title={"Add your voice"} onClick={() => {}} />
+              <ButtonLinkFadeIn title={"Add your voice"}  url={'https://forms.gle/H5VgoDQQqySeieWB6'}/>
               <ButtonLinkFadeIn title={"Visit info"} onClick={handleClick} />
               <ButtonLinkFadeIn
                 title={"Nis Location"}

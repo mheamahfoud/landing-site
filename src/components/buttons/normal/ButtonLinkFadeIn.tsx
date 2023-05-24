@@ -66,13 +66,17 @@ background-color: #f15722;
   margin: 0;
 `;
 export const ButtonLinkFadeIn = ({ ...props }) => {
-  const { title, onClick } = props;
+  const { title, onClick, url } = props;
   return (
     <Container
+      target="_blank"
       className="d-inline-flex justify-content-center align-items-center"
+      href={url}
       onClick={(event) => {
-        event.preventDefault();
-        onClick();
+        if (!url) {
+          event.preventDefault();
+          onClick();
+        }
       }}
     >
       <Title>{title}</Title>

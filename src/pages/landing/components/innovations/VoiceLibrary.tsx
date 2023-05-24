@@ -57,7 +57,7 @@ export const VoiceLibrary = () => {
       <Title>Voice Library</Title>
       <Paragraph>Our company owns a huge library of actors voices.</Paragraph>
       <div style={{margin:'10px 0'}}>
-        <ButtonLinkFadeOut title={"Add your voice"} onClick={()=>{}} />
+        <ButtonLinkFadeOut title={"Add your voice"} url={'https://forms.gle/H5VgoDQQqySeieWB6'} />
       </div>
       <div style={{margin:'10px 0'}}>
         <ButtonLinkFadeOut title={"NiS Specialties"} onClick={handleSpecialty} />

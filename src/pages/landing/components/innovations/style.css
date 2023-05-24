@@ -2,3 +2,7 @@
     flex: 1;
   
   }
+
+  a:visited {
+    color: #7f7f7f;
+  }

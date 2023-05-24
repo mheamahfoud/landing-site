@@ -1,5 +1,16 @@
 import { styled } from "styled-components";
-import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+import {
+  desktop,
+  laptop,
+  mobile,
+  smallMobile,
+  tablet,
+  xSmallMobile,
+  xXSmallMobile,
+  xxxSmallMobile,
+  xxxxSmallMobile,
+} from "../../../../responsive";
+import { MainColor } from "../../../../helpers";
 const Container = styled.div`
   height: fit-content;
   border: solid;
@@ -10,27 +21,36 @@ const Container = styled.div`
   border-style: solid;
   border-color: #f15722;
   border-width: 1px;
-
+  padding: 5px 0;
 `;
 const Title = styled.p`
- ${desktop({ fontSize: "28px", lineHeight: "34px",fontWeight: 'bold' })}
-  ${laptop({ fontSize: "26px", lineHeight: "31px",fontWeight: 'bold'  })}
-  ${tablet({ fontSize: "22px", lineHeight: "26px",fontWeight: 'bold'  })}
-  ${mobile({ fontSize: "16px", lineHeight: "21px" ,fontWeight: 'bold' })}
+  ${desktop({ fontSize: "28px", lineHeight: "34px", fontWeight: "bold" })}
+  ${laptop({ fontSize: "26px", lineHeight: "31px", fontWeight: "bold" })}
+  ${tablet({ fontSize: "22px", lineHeight: "26px", fontWeight: "bold" })}
+  ${mobile({ fontSize: "16px", lineHeight: "21px", fontWeight: "bold" })}
   margin:0;
 `;
 const Paragraph = styled.p`
-margin:0;
+  margin: 0;
   text-indent: 5px;
-  ${desktop({ fontSize:'20px',lineHeight: '20px' })}
-  ${laptop({ fontSize:'16px',lineHeight: '21px' })}
-  ${tablet({ fontSize:'16px',lineHeight: '19px' })}
-  ${mobile({ fontSize:'14px',lineHeight: '14px' })}
-  ${smallMobile({ fontSize:'14px',lineHeight: '14px' })}
-  ${xSmallMobile({ fontSize:'10px',lineHeight: '12px' })}
-  ${xXSmallMobile({ fontSize:'10px',lineHeight: '12px' })}
-  ${xxxSmallMobile({ fontSize:'10px',lineHeight: '12px' })}
-  ${xxxxSmallMobile({ fontSize:'10px',lineHeight: '12px' })}
+  ${desktop({ fontSize: "20px", lineHeight: "20px" })}
+  ${laptop({ fontSize: "16px", lineHeight: "21px" })}
+  ${tablet({ fontSize: "16px", lineHeight: "19px" })}
+  ${mobile({ fontSize: "14px", lineHeight: "14px" })}
+  ${smallMobile({ fontSize: "14px", lineHeight: "14px" })}
+  ${xSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
+  ${xXSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
+  ${xxxSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
+  ${xxxxSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
+`;
+
+const Link = styled.a`
+  color: #7f7f7f;
+  font-size: 20px;
+  text-decoration: none;
+  &:hover {
+    color:${MainColor}
+  }
 `;
 export const TazmeenSystem = () => {
   return (
@@ -43,9 +63,12 @@ export const TazmeenSystem = () => {
         studios around the world, to serve all available languages.
       </Paragraph>
       <Paragraph>
-        <a className="nonblock" href="http://www.tazmeen.com" target="_blank" style={{display:'inline'}}>
-          <span id="u1516451">www.tazmeen.com</span>
-        </a>
+        <Link
+          href="http://www.tazmeen.com"
+          target="_blank"
+        >
+          <span >www.tazmeen.com</span>
+        </Link>
       </Paragraph>
     </Container>
   );

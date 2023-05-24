@@ -60,25 +60,38 @@ ${xSmallMobile({
   fontSize: '35px', lineHeight: '43px'
 })}
 ${xXSmallMobile({
-  width: '213px',
-  height:'60px',
-  fontSize: '35px', lineHeight: '43px'
+  width: '150px',
+  height:'40px',
+  fontSize: '35px', lineHeight: '36px'
 })}
 ${xxxSmallMobile({
-  width: '213px',
-  height:'60px',
-  fontSize: '35px', lineHeight: '43px'
+  width: '150px',
+  height:'40px',
+  fontSize: '35px', lineHeight: '36px'
 })}
 ${xxxxSmallMobile({
-  width: '213px',
-  height:'60px',
-  fontSize: '35px', lineHeight: '43px'
+  width: '150px',
+  height:'40px',
+  fontSize: '30px', lineHeight: '36px'
 })}`;
   
  
   
 
-const Title = styled.div`  height:83px`;
+const Title = styled.div` 
+ height:83px;
+${xXSmallMobile({
+  fontSize: '10px', lineHeight: '12px'
+})};
+${xxxSmallMobile({
+  fontSize: '10px', lineHeight: '12px'
+})};
+${xxxxSmallMobile({
+  fontSize: '10px', lineHeight: '12px'
+})}`;
+  
+
+
 export const CardSkill = (props: props) => {
   const { children, quantity } = props;
   return (

@@ -6,8 +6,12 @@ import {
   xxxxSmallMobile,
 } from "../../responsive";
 import { Header } from "./components/Header";
-import { Waiting } from "./components/paragraphs";
 import { VedioContainer } from "./components/vedio/VedioContainer";
+import { MissingAppointment } from "./components/paragraphs/MissingAppointment";
+import { TechnicalError } from "./components/paragraphs/TechnicalError";
+import { TransportationAllowance } from "./components/paragraphs/TransportationAllowance";
+import { MissedRecording } from "./components/paragraphs/MissedRecording";
+import { WaitingTime } from "./components/paragraphs/WaitingTime";
 const Container = styled.div`
   position: "relative";
   background: "white";
@@ -34,35 +38,35 @@ export const SpecialtyPage: FC = () => {
       <InnerContainer className="d-flex justify-content-center align-items-center flex-column">
         <ContactContainer className="d-flex justify-content-evenly align-items-center  flex-wrap w-100 flex-column">
           <VedioContainer vedioId="VpdoHyEV-HY" title="Compensable Waiting">
-            <Waiting />
+            <WaitingTime />
           </VedioContainer>
 
           <VedioContainer
-            vedioId="VpdoHyEV-HY"
+            vedioId="eEqfhrs14aU"
             title="Missing appointments by NiS is compensable"
           >
-            <Waiting />
+            <MissingAppointment />
           </VedioContainer>
 
           <VedioContainer
-            vedioId="VpdoHyEV-HY"
+            vedioId="4kGE5lPiU_M"
             title="Technical error is compensable"
           >
-            <Waiting />
+            <TechnicalError />
           </VedioContainer>
 
           <VedioContainer
-            vedioId="VpdoHyEV-HY"
+            vedioId="G04iUj4D4Es"
             title="Transportation allowance"
           >
-            <Waiting />
+            <TransportationAllowance />
           </VedioContainer>
 
           <VedioContainer
             vedioId="fnSnLTC4oic"
             title="Missed recordings and corrections are compensable"
           >
-            <Waiting />
+            <MissedRecording />
           </VedioContainer>
         </ContactContainer>
       </InnerContainer>
