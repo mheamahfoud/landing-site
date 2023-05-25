@@ -5,6 +5,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 `;
 
 const TitleField = styled.p`
@@ -14,6 +15,7 @@ const TitleField = styled.p`
   background-color: transparent;
   position: relative;
   margin: 2px 0;
+  position: relative;
 `;
 const ContentField = styled.span`
   font-size: 18px;
@@ -24,27 +26,32 @@ const ProjectDetails = ({ ...props }) => {
   const { info } = props;
   return (
     <Container>
-      {info.filter(x => x.key != 'Name Projects').map((item, index) => {
-
-        return (
-          <div className="d-flex justify-content-between">
-            {item.key != 'Link:' && <TitleField>
-              <ContentField id="u242294">{item.key}</ContentField> {item.value}
-            </TitleField>}
-
-            {info[index + 2]?.key == 'Link:' &&
-              <div  style={{position:'absolute' , margin:'-5px   200px'}}>
-                <CustomLink url={info[index + 2]?.value} ><img src="https://www.nistudio.net/images/you%20tube.png?crc=195068780" ></img></CustomLink>
-           
-              </div>
-
-
-            }
-
-          </div>
-        )
-      })}
-
+      {info
+        .filter((x) => x.key != "Name Projects")
+        .map((item, index) => {
+          return (
+            <>
+              {item.key != "Link:" && (
+                <TitleField >
+                  <ContentField id="u242294">{item.key}</ContentField>{" "}
+                  {item.value}
+                  {info[index + 2]?.key == "Link:" && (
+                    <div
+                      style={{ position: "absolute", left:'200px', top:'-12px'}}
+                    >
+                      <CustomLink url={info[index + 2]?.value}>
+                        <img
+                          height={"45px"}
+                          src="https://www.nistudio.net/images/you%20tube.png?crc=195068780"
+                        ></img>
+                      </CustomLink>
+                    </div>
+                  )}
+                </TitleField>
+              )}
+            </>
+          );
+        })}
     </Container>
   );
 };

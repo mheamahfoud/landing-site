@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Pagination } from "react-bootstrap";
 
 import './style.css'
@@ -11,16 +11,20 @@ import { ProjectCard } from "../ProjectCard";
 
 interface CardPaginationProps {
   cardsPerPage: number;
+  currentPage:number,
+  setCurrentPage : React.Dispatch<React.SetStateAction<number>>,
   cards: any ,//CardData[];
   onClick:(id:number)=>void;
 }
 
 const CardPagination: React.FC<CardPaginationProps> = ({
   cardsPerPage,
+  setCurrentPage,
+  currentPage,
   cards,
   onClick,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

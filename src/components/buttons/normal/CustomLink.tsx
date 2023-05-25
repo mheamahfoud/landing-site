@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 const Container = styled.a`
-  width:41px;
+  width:35px;
   border-width: 0px;
   background-color: transparent;
   position: relative;

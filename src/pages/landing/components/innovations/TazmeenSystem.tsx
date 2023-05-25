@@ -21,7 +21,7 @@ const Container = styled.div`
   border-style: solid;
   border-color: #f15722;
   border-width: 1px;
-  padding: 5px 0;
+  padding: 5px;
 `;
 const Title = styled.p`
   ${desktop({ fontSize: "28px", lineHeight: "34px", fontWeight: "bold" })}
@@ -46,7 +46,7 @@ const Paragraph = styled.p`
 
 const Link = styled.a`
   color: #7f7f7f;
-  font-size: 20px;
+  font-size: 24px;
   text-decoration: none;
   &:hover {
     color:${MainColor}

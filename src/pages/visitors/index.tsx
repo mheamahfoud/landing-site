@@ -49,10 +49,6 @@ export const VisitorInfo: FC = () => {
             variant="standard"
           />
           <InputStyle
-            placeholder="Default"
-            variant="standard"
-          />
-          <InputStyle
             placeholder="Enter Your Company Name"
             variant="standard"
           />

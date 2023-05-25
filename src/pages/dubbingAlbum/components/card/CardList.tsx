@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback,useState } from "react";
 import { WrapperCard } from "./WrapperCard";
 import CardPagination from "../../../../components/cards/pagination/CardPagination";
 import ModalProject from "../dialogs";
@@ -15,7 +15,9 @@ export const CardList: FC<Props> = ({ category_id }) => {
   });
 
   const [showModal, setShowModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage: number = 24;
+
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   const handleClick = useCallback(
@@ -31,20 +33,27 @@ export const CardList: FC<Props> = ({ category_id }) => {
 
   const handleNextCard = useCallback(() => {
     if (data) {
-      if (currentCardIndex < data?.length - 1) {
+      if (
+        currentCardIndex >= (currentPage - 1) * cardsPerPage &&
+        currentCardIndex < currentPage * cardsPerPage - 1
+      ) {
         setCurrentCardIndex(currentCardIndex + 1);
       } else {
-        setCurrentCardIndex(0);
+        setCurrentCardIndex((currentPage - 1) * cardsPerPage);
       }
     }
   }, [currentCardIndex, data]);
 
   const handlePrevCard = useCallback(() => {
     if (data) {
-      if (currentCardIndex > 0) {
+      if (
+        currentCardIndex > (currentPage-1) * cardsPerPage &&
+        currentCardIndex < (currentPage) * cardsPerPage
+
+      ) {
         setCurrentCardIndex(currentCardIndex - 1);
       } else {
-        setCurrentCardIndex(data.length - 1);
+        setCurrentCardIndex(currentPage * cardsPerPage - 1);
       }
     }
   }, [currentCardIndex, data]);
@@ -61,6 +70,8 @@ export const CardList: FC<Props> = ({ category_id }) => {
             cardsPerPage={cardsPerPage}
             cards={data}
             onClick={handleClick}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
           ></CardPagination>
           {showModal && (
             <ModalProject
@@ -76,7 +87,7 @@ export const CardList: FC<Props> = ({ category_id }) => {
         </WrapperCard>
       )}
       {!data && (
-        <div style={{ height: "400px" , width:'100%' , position:'relative'}}>
+        <div style={{ height: "400px", width: "100%", position: "relative" }}>
           <Spinner />
         </div>
       )}

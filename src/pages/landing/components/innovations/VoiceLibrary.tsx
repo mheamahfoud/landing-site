@@ -25,6 +25,7 @@ const Container = styled.div`
   border-style: solid;
   border-color: #f15722;
   border-width: 1px;
+  padding: 5px;
 `;
 const Title = styled.p`
   margin: 0;

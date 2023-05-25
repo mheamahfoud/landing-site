@@ -7,6 +7,7 @@ const Container = styled.div`
   background: white;
   font-size: 18px;
   color: #7f7f7f;
+  margin: 10px 0;
 `;
 
 const Services = () => {

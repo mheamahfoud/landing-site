@@ -66,8 +66,8 @@ const TopContainerCard = styled.div`
   })}
 `;
 const BottomContainerCard = styled.div`
-  ${desktop({ gap: "90px", marginLeft: "250px" })}
-  ${laptop({ gap: "90px", marginLeft: "250px" })}
+  ${desktop({ gap: "90px", marginLeft: "200px" })}
+  ${laptop({ gap: "90px", marginLeft: "150px" })}
   ${tablet({ justifyContent: "space-evenly" })}
   ${mobile({ justifyContent: "space-evenly" })}
   ${smallMobile({ justifyContent: "space-evenly" })}

@@ -63,7 +63,7 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   max-width: 1200px;
-  width: 80%;
+  width: 90%;
   /* ${desktop({ width: "1195px" })}
         ${laptop({ width: "1160px" })}
         ${tablet({ width: "900px" })}

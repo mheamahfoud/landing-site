@@ -19,7 +19,6 @@ library.add(faFacebookF, faInstagram, faTwitter, faYoutube, faCircle);
 const Container = styled.a`
   text-align: center;
   border-radius: 100px;
-  margin: 0 15px;
   cursor: pointer;
   :hover {
     color: white;

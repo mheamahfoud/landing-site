@@ -1,33 +1,36 @@
 import { FC } from "react";
+import {  styled } from "styled-components";
+import {  xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+const Content = styled.span`
+white-space: nowrap;
+  line-height: 20px;
+  font-size: 15px;
+ 
+  ${xSmallMobile({fontSize:'12px'})}
+  ${xXSmallMobile({fontSize:'12px'})}
+  ${xxxSmallMobile({fontSize:'12px'})}
+  ${xxxxSmallMobile({fontSize:'12px'})}
+`;
 interface Props {
   names: string[];
 }
 export const ActorsName: FC<Props> = ({ names }) => {
   return (
     <div
-      className="row"
+      className="row "
       style={{
         fontSize: "9px",
         lineHeight: "32px",
         color: "#f8f6e1",
-        margin:'25px 0'
+        marginTop: "15px",
       }}
     >
       {names.map((item) => {
         return (
-          <span
-            className="col-lg-2 col-md-2 col-sm-3 col-6"
-            style={{
-              whiteSpace: "nowrap",
-              textOverflow: "ellipsis",
-              overflow: "hidden",
-              lineHeight: "20px",
-              fontSize: "13px",
-            }}
-          >
+          <Content className="col-lg-2 col-md-3 col-sm-4 col-6" style={{}}>
             {" "}
             {item}
-          </span>
+          </Content>
         );
       })}
     </div>

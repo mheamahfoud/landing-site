@@ -31,10 +31,12 @@ const Background = styled.div`
 const Container = styled.div`
   ${xxxSmallMobile({ flexDirection: "column", padding: "25px 0" })}
   ${xxxxSmallMobile({ flexDirection: "column", padding: "25px 0" })}
+  margin-left: 0;
+  margin-right: 0;
 `;
 
 const ContainerButton = styled.div`
-  gap: 35px;
+gap: 35px;
 `;
 
 const ContainerMiddle = styled.div`
@@ -66,23 +68,30 @@ export const Footer = () => {
     <FooterStyle>
       <Background className="">
         {!isSmallScreen ? (
-          <Container className="d-flex justify-content-around align-items-center h-100 ">
-            <ContainerButton className="d-flex flex-column  align-items-center justify-content-evenly h-100">
-              <ButtonLinkFadeIn title={"Add your voice"}  url={'https://forms.gle/H5VgoDQQqySeieWB6'}/>
-              <ButtonLinkFadeIn title={"Visit info"} onClick={handleClick} />
-              <ButtonLinkFadeIn
-                title={"Nis Location"}
-                onClick={handleLocation}
-              />
-            </ContainerButton>
-
-            <ContainerMiddle className="d-flex flex-column justify-contetnt-between h-100 align-items-center">
-              <Logo />
-              <SocialGroup />
-              <CopyRight />
-            </ContainerMiddle>
-
-            <ContactInfo />
+          <Container className="row  h-100 ">
+            <div className="col-4">
+              <ContainerButton className="d-flex flex-column  align-items-end justify-content-center h-100">
+                <ButtonLinkFadeIn
+                  title={"Add your voice"}
+                  url={"https://forms.gle/H5VgoDQQqySeieWB6"}
+                />
+                <ButtonLinkFadeIn title={"Visit info"} onClick={handleClick} />
+                <ButtonLinkFadeIn
+                  title={"Nis Location"}
+                  onClick={handleLocation}
+                />
+              </ContainerButton>
+            </div>
+            <div className="col-4 text-center">
+              <ContainerMiddle className="d-flex flex-column justify-contetnt-between h-100 align-items-center">
+                <Logo />
+                <SocialGroup />
+                <CopyRight />
+              </ContainerMiddle>
+            </div>
+            <div className="col-4 d-flex  align-items-center" >
+              <ContactInfo />
+            </div>
           </Container>
         ) : (
           <VerticalView />

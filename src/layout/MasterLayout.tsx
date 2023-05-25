@@ -49,9 +49,9 @@ export const MasterLayout = () => {
       <div className="content">
         <Outlet />
       </div>
-      <section id="contact-us">
+ 
         <Footer />
-      </section>
+   
     </>
   );
 };
