@@ -49,7 +49,13 @@ const NumberDisplay: React.FC<NumberDisplayProps> = ({ value }) => {
     };
   }, [value, displayValue]);
 
-  return <span ref={numberRef}>{displayValue}</span>;
+  return <>
+  <span >+</span><span ref={numberRef}>{displayValue.toLocaleString("en-US")}</span>
+</>
+  
+ 
+  
+
 };
 
 export default NumberDisplay;

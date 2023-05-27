@@ -17,37 +17,43 @@ import { ImageOverLap } from "./ImageOverLap";
 const Container = styled.div`
   position: relative;
   background: white;
-  margin: 20px 0;
+
 `;
 
 const ContainerRight = styled.div`
-  ${desktop({ maxWidth: "535px" })}
-  ${laptop({ maxWidth: "535px" })}
-  ${tablet({ maxWidth: "425px" })}
-  ${mobile({ maxWidth: "350px" })}
-  ${smallMobile({ maxWidth: "300px" })}
-  ${xSmallMobile({ maxWidth: "301px" })}
-  ${xXSmallMobile({ maxWidth: "300px" })}
-  ${xxxSmallMobile({ maxWidth: "300px" })}
-  ${xxxxSmallMobile({ maxWidth: "300px" })}
+  ${desktop({ maxWidth: "535px", margin:"0 50px" })}
+  ${laptop({ maxWidth: "535px", margin:"0 50px" })}
+  ${tablet({ maxWidth: "425px", margin:"0 50px" })}
+  ${mobile({ maxWidth: "350px" , margin:"0 50px" })}
+  ${smallMobile({ maxWidth: "300px", margin:"0 50px"  })}
+  ${xSmallMobile({ maxWidth: "301px" , margin:"0 20px"})}
+  ${xXSmallMobile({ maxWidth: "250px", margin:"0 20px" })}
+  ${xxxSmallMobile({ maxWidth: "301px", margin:'0 25px'  })}
+  ${xxxxSmallMobile({ maxWidth: "250px" , margin:'0 25px' })}
+`;
+
+const Bottom =styled.div`
+  margin: 20px 0;
+  ${xxxSmallMobile({ flexDirection:'column' , gap:'50px'})}
+  ${xxxxSmallMobile({ flexDirection:'column' ,alignItems:'center'})}
 `;
 const DubbingService = () => {
   return (
-    <Container className="d-flex flex-column" style={{ gap: "20px" }}>
-      <div className="d-flex">
+    <Container className="" >
+   
         <SectionTitle
           title={"Dubbing Service"}
           sectionNumber="02"
           nisTitle={true}
         />
-      </div>
+    
 
-      <div className="d-flex justify-content-between flex-wrap" style={{ gap: "20px"  , margin:'20px 0'}}>
+      <Bottom className="d-flex  justify-content-start " >
         <ImageOverLap />
         <ContainerRight>
           <Right />
         </ContainerRight>
-      </div>
+      </Bottom>
     </Container>
   );
 };

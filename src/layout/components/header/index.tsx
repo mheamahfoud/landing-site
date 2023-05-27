@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import "./index.css";
 import LinkHeader from "./components/LinkHeader";
 import IconLogo from "./components/IconLogo";
-import IconLang from "./components/iconLang";
+// import IconLang from "./components/iconLang";
 import { MenuItems } from "./util/constant";
 import { styled } from "styled-components";
 import { useAuth } from "../../../ContextProvider";
@@ -67,7 +67,7 @@ export const Header = () => {
       <Container iscrolledtotop={isScrolledToTop.toString()}>
         <div style={{ display: "flex" }}>
           <IconLogo />
-          <IconLang />
+          {/* <IconLang /> */}
         </div>
         {isSmallScreen && <div className="d-flex align-items-center justify-content-center"  style={{margin:'0 8px'}}>
           <ButtonMenu onClick={() => {

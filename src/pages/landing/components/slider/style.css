@@ -6,6 +6,11 @@ img{
   position: fixed;
   top: 0;
 }
+.main-mobile-slider{
+  position: fixed;
+  top: 60px;
+}
+
 .carousel-inner {
   background-color: transparent;
   position: relative;
@@ -21,6 +26,15 @@ img{
   margin-top: -92px;
   margin-left: 0px;
 }
+
+.main-mobile-slider .carousel-item img {
+  animation: burns 60s;
+  width: 100vw;
+  height: 450px;
+  margin-top: -92px;
+  margin-left: 0px;
+}
+
 .centered-div {
   position: absolute;
   top: 50%;

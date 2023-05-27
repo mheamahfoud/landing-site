@@ -16,11 +16,13 @@ import {
 
 const Container = styled.div`
   ${tabletColumn({ flexDirection: "column" })}
+  ${xxxxSmallMobile({flexDirection: "column" ,alignItems:'center'})}
   margin: 20px 0;
 `;
 
 const Left = styled.div``;
 const Right = styled.div`
+ height: 100%;
   margin: 0 auto;
   ${desktop({ maxWidth: "810px"})}
   ${laptop({ maxWidth: "710px",})}
@@ -29,8 +31,9 @@ const Right = styled.div`
   ${smallMobile({ maxWidth: "610px", padding: "0" })}
   ${xSmallMobile({ maxWidth: "550px", padding: "0" })}
   ${xXSmallMobile({ maxWidth: "520px", padding: "0" })}
-  ${xxxSmallMobile({ maxWidth: "330px", padding: "0" })}
-  ${xxxxSmallMobile({ maxWidth: "330px", padding: "0" })}
+  ${xxxSmallMobile({ maxWidth: "350px", padding: "0" })}
+  ${xxxxSmallMobile({ maxWidth: "250px", padding: "0" })}
+
 `;
 
 const index = () => {
@@ -39,7 +42,7 @@ const index = () => {
       <Left className="d-flex">
         <SectionTitle title={"About Us"} sectionNumber="01" />
       </Left>
-      <Right className="">
+      <Right >
         <Carousel />
       </Right>
     </Container>

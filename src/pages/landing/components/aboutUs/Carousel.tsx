@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { styled } from "styled-components";
 import "./style.css";
 import { ButtonSlider } from "../../../../components/buttons/normal/ButtonSlider";
@@ -42,15 +42,22 @@ export const Carousel = () => {
             className={`carousel-item-about ${
               index === activeIndex ? "active" : ""
             }`}
+            style={{
+              opacity: index === activeIndex ? 1 : 0, // Apply opacity based on activeIndex
+              transition: "opacity 2s", // Add transition for a smooth fade effect
+            }}
           >
-            {<item.title/>}
+            {<item.title />}
           </div>
         ))}
       </div>
-      <div className="carousel-navigation-about df-flex justify-content-between align-items-center m-t" style={{padding:'0 10px',}}>
+      <div
+        className="carousel-navigation-about df-flex justify-content-between align-items-center m-t"
+        style={{ padding: "0 10px" }}
+      >
         <div
           className="carousel-btn-about prev-about"
-          style={{position:'relative' , zIndex:'5'}}
+          style={{ position: "relative", zIndex: "5" }}
           onClick={goToPrevSlide}
         >
           <ButtonSlider>
@@ -70,11 +77,7 @@ export const Carousel = () => {
             </span>
           ))}
         </div>
-        <div
-          className="carousel-btn-about next-about"
-          
-          onClick={goToNextSlide}
-        >
+        <div className="carousel-btn-about next-about" onClick={goToNextSlide}>
           <ButtonSlider>
             <Icon className="bi bi-chevron-right" />
           </ButtonSlider>

@@ -16,6 +16,10 @@ const Title = styled.h3`
   background-color: transparent;
   position: relative;
 `;
+
+const Containr =styled.div`
+
+`;
 interface Props {
   showModal: boolean;
   currentCardIndex: number;
@@ -88,7 +92,7 @@ const ModalProject: React.FC<Props> = ({
         style={{ height: "100%" }}
       >
         {data && (
-          <div>
+          <Containr className="d-flex flex-column">
             <div>
               <Title>{title}</Title>
             </div>
@@ -97,7 +101,7 @@ const ModalProject: React.FC<Props> = ({
               <div className="item" style={{ height: "inherit" }}>
                 <ProjectDetails info={data?.info} />
               </div>
-              <div className="item img-display-container" style={{padding:'8px 0'}}>
+              <div className="item img-display-container" style={{padding:'12px 0'}}>
                 <img
                   className="img-display"
                   src={toAbsoluteServerUrl(data?.image)}
@@ -107,7 +111,7 @@ const ModalProject: React.FC<Props> = ({
             {data?.actors && data?.actors.length > 0 && (
               <ActorsName names={data?.actors.map((x) => x.name)} />
             )}
-          </div>
+          </Containr>
         )}
         {!data && <Loader />}
         <div className="bottom-section">

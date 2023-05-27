@@ -27,7 +27,8 @@ const Container = styled.div`
 const Left = styled.div`
   ${xXSmallMobile({ alignItems: "start" })}
   ${xxxSmallMobile({ alignItems: "start" })}
-  ${xxxxSmallMobile({ alignItems: "start" })}
+  ${xxxxSmallMobile({ alignItems: "center", justifyContent:'center' })}
+
 `;
 const Bottom = styled.div`
   ${desktop({ gap: "90px" })}

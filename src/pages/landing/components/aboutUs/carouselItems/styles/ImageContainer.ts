@@ -15,13 +15,7 @@ export const ImageCover = styled.span`
   border-width: 2px 0px 0px 2px;
   overflow: hidden;
   display: block;
-
- 
-`;
-
-
-export const ImageText = styled.img`
- ${desktop({ width: '390px'  })}
+  ${desktop({ width: '390px'  })}
   ${laptop({ width: '390px' })}
   ${tablet({ width: '390px' })}
   ${mobile({ width: '322px'})}
@@ -29,7 +23,14 @@ export const ImageText = styled.img`
   ${xSmallMobile({ width: '280px' ,height:'168px'})}
   ${xXSmallMobile({ width: '280px',height:'168px'})}
 
-  ${xxxSmallMobile({ width: '270px',height:'162px'})}
+  ${xxxSmallMobile({ width: '270px',height:'162px' , marginBottom:'10px'})}
 
-  ${xxxxSmallMobile({ width: '186px',height:'112px'})}
+  ${xxxxSmallMobile({ width: '100%',height:'112px', marginBottom:'10px'})}
+ 
+`;
+
+
+export const ImageText = styled.img`
+
+width: 100%;
 `;

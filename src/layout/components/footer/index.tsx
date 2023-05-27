@@ -65,6 +65,7 @@ export const Footer = () => {
   };
 
   return (
+    <section id="contact-us">
     <FooterStyle>
       <Background className="">
         {!isSmallScreen ? (
@@ -98,5 +99,6 @@ export const Footer = () => {
         )}
       </Background>
     </FooterStyle>
+    </section>
   );
 };

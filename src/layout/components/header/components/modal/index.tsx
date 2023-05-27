@@ -33,6 +33,7 @@ const ModalMenu: React.FC<Props> = ({ showModal, setShowModal }) => {
       setLinkClicked(true);
       navigate(path);
       setCurrentPage(id);
+      setShowModal(false)
       setTimeout(() => {
         setLinkClicked(false);
       }, 6000); // Set a dela

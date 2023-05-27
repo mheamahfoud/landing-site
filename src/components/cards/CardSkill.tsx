@@ -26,6 +26,15 @@ const Seperator = styled.div`
   background-color: #f15722;
   position: relative;
   height: 1px;
+  ${desktop({
+  width: '213px',
+
+})}
+  ${laptop({
+  width: '175px',
+
+})}
+
 `;
 const Quantity = styled.div`
    flex-grow: 1;

@@ -8,7 +8,7 @@ export const TextP = styled.span`
   position: relative;
   z-index: 1;
   margin-right: 10px; /* Add margin between text and line */
-
+   line-height:12px;
 
 `;
 

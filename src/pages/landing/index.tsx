@@ -23,6 +23,8 @@ import { BackGround } from "./components/backGround";
 import Innovations from "./components/innovations";
 import { useLocation } from "react-router-dom";
 import DubbingService from "./components/dubbingSerivices";
+import { useMediaQuery } from "react-responsive";
+import { MobileSlider } from "./components/slider/MobileSlider";
 const ContainerAnimationSlider = styled.div`
   ${desktop({
     height: "90vh",
@@ -50,7 +52,7 @@ ${xXSmallMobile({
     height: "40vh",
   })}
  ${xxxxSmallMobile({
-    height: "40vh",
+    height: "30vh",
   })}
 `;
 
@@ -58,7 +60,6 @@ const Container = styled.div`
   position: relative;
   background: white;
   z-index: 2;
-
 `;
 
 const InnerContainer = styled.div`
@@ -78,6 +79,7 @@ const InnerContainer = styled.div`
 
 const Landing: FC = () => {
   const location = useLocation();
+  const isSmallScreen = useMediaQuery({ maxWidth: 568 });
   useEffect(() => {
     const sectionId = location.hash.substr(1);
     if (sectionId) {
@@ -89,26 +91,60 @@ const Landing: FC = () => {
   }, [location]);
   return (
     <>
-      <Slider />
-      <section id="home">
-        <ContainerAnimationSlider className="d-flex flex-column justify-content-center align-items-center animation-logo">
-          <div
-            className="d-flex flex-column justify-content-center align-items-center"
-            style={{ textAlign: "center", position: "relative", bottom: "5%" }}
-          >
-            <AnimationLogo />
-            <SentenceRotator
-              sentences={[
-                "Speed in performance",
-                "Quality In Implementation",
-                "Punctuality",
-              ]}
-            />
-          </div>
-          <VerticalSentence />
-        </ContainerAnimationSlider>
-      </section>
-
+      {!isSmallScreen && (
+        <>
+          <Slider />
+          <section id="home">
+            <ContainerAnimationSlider className="d-flex flex-column justify-content-center align-items-center animation-logo">
+              <div
+                className="d-flex flex-column justify-content-center align-items-center"
+                style={{
+                  textAlign: "center",
+                  position: "relative",
+                  bottom: "5%",
+                }}
+              >
+                <AnimationLogo />
+                <SentenceRotator
+                  sentences={[
+                    "Speed in performance",
+                    "Quality In Implementation",
+                    "Punctuality",
+                  ]}
+                />
+              </div>
+              <VerticalSentence />
+            </ContainerAnimationSlider>
+          </section>
+        </>
+      )}
+      {isSmallScreen && (
+        <>
+          <MobileSlider />
+          <section id="home">
+            <ContainerAnimationSlider className="d-flex flex-column justify-content-center align-items-center animation-logo">
+              <div
+                className="d-flex flex-column justify-content-center align-items-center"
+                style={{
+                  textAlign: "center",
+                  position: "relative",
+                  bottom: "5%",
+                }}
+              >
+                <AnimationLogo />
+                <SentenceRotator
+                  sentences={[
+                    "Speed in performance",
+                    "Quality In Implementation",
+                    "Punctuality",
+                  ]}
+                />
+              </div>
+              <VerticalSentence />
+            </ContainerAnimationSlider>
+          </section>
+        </>
+      )}
       <Container className="d-flex justify-content-center">
         <InnerContainer className="d-flex flex-column align-items-center">
           <section id="about" className="w-100">
@@ -134,7 +170,7 @@ const Landing: FC = () => {
         </InnerContainer>
       </Container>
 
-      <BackGround />
+  {  !isSmallScreen &&   <BackGround />}
 
       <Container className="d-flex justify-content-center">
         <InnerContainer className="d-flex flex-column align-items-center">
