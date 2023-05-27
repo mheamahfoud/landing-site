@@ -27,7 +27,6 @@ const Container = styled.div<StyleProps>`
   ${smallMobile({ width: '303px',height:'200px' })}
   ${xSmallMobile({ width: '303px',height:'200px' })}
   ${xXSmallMobile({ width: '303px',height:'200px' })}
-
   ${xxxxSmallMobile({textAlign:'center'})}
 `;
 
@@ -38,9 +37,11 @@ const Title = styled.p`
   position: absolute;
   bottom: 0;
   margin: 0;
-  width: 101%;
+  width: 100%;
   height: 30%;
   text-align:center
+  ${xxxSmallMobile({  textAlign:'start'})}
+  ${xxxxSmallMobile({textAlign:'center'})}
 `;
 const FirstChar = styled.span`
   ${desktop({fontSize:'40px' ,lineHeight:'48px' })}

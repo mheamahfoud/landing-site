@@ -34,7 +34,7 @@ const ContainerRight = styled.div`
 
 const Bottom =styled.div`
   margin: 20px 0;
-  ${xxxSmallMobile({ flexDirection:'column' , gap:'50px'})}
+  ${xxxSmallMobile({ flexDirection:'column' })}
   ${xxxxSmallMobile({ flexDirection:'column' ,alignItems:'center'})}
 `;
 const DubbingService = () => {

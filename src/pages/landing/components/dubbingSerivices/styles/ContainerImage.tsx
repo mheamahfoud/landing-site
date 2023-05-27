@@ -17,16 +17,21 @@ import {
 export const ImageContainer = styled.div`
   position: relative;
   text-align: center;
+
+  ${desktop({ display: 'flex' })}
+  ${laptop({ display: 'flex' })}
+  ${tablet({ display: 'flex' })}
+  ${xxxSmallMobile({ display: 'flex'  })}
 `;
 export const BigImageContainer = styled.div`
-  ${desktop({ width: "366px", height: "254px" })}
-  ${laptop({ width: "335px", minHeight: "228px" })}
-    ${tablet({ width: "300px", minHeight: "200px" })}
-    ${mobile({ width: "300px", minHeight: "200px" })}
+  ${desktop({ width: "366px", height: "254px"  ,position:'relative'})}
+  ${laptop({ width: "335px", height: "228px",position:'relative' })}
+    ${tablet({ width: "300px", height: "200px" ,position:'relative'})}
+    ${mobile({ width: "300px", height: "200px" })}
     ${smallMobile({ width: "300px", minHeight: "200px" })}
     ${xSmallMobile({ width: "250px", minHeight: "150px" })}
     ${xXSmallMobile({ width: "250px", minHeight: "150px" })}
-    ${xxxSmallMobile({ width: "262px", minHeight: "181px" })}
+    ${xxxSmallMobile({ width: "262px", height: "181px"  ,position:'relative'})}
     ${xxxxSmallMobile({ width: "262px", minHeight: "181px" })}
     background-image: url(${BigImageSrc}) ;
     background-size: cover;
@@ -40,17 +45,17 @@ export const SmallImageOverlapContainer = styled.div`
   background-image: url(${SmallImageSrc});
   background-size: cover;
     background-position: center;
-    ${desktop({ width: "230px", height: "200px" })}
-  ${laptop({ width: "185px", height: "165px" })}
-    ${tablet({ width: "185px", height: "165px" })}
+    ${desktop({ width: "230px", height: "200px", marginTop: '120px', marginLeft: '-15px' })}
+  ${laptop({ width: "230px", height: "200px", marginTop: '120px', marginLeft: '-15px' })}
+    ${tablet({ width: "185px", height: "165px", marginTop: '120px', marginLeft: '-15px' })}
     ${mobile({ width: "185px", height: "165px" })}
     ${smallMobile({ width: "160px", height: "145px" })}
     ${xSmallMobile({ width: "165px", height: "145px" })}
     ${xXSmallMobile({ width: "165px", minHeight: "145px" })}
 
-    ${xxxSmallMobile({ width: "165px", minHeight: "145px" , position:'relative', zIndex:'10' })}
+    ${xxxSmallMobile({ width: "165px", height: "145px", position: 'relative', zIndex: '10', marginTop: '120px', marginLeft: '-15px' })}
 
-    ${xxxxSmallMobile({ width: "165px", minHeight: "145px" , position:'relative', zIndex:'10'})}
+    ${xxxxSmallMobile({ width: "165px", minHeight: "145px", position: 'relative', zIndex: '10' })}
     &:hover {
     //opacity: 1;
     background-color: #545454;
@@ -76,15 +81,16 @@ export const SmallImageContainer = styled.div`
   background-image: url(${SmallImageSrc});
   background-size: cover;
     background-position: center;
-    ${desktop({ width: "230px", height: "200px" })}
-  ${laptop({ width: "185px", height: "165px" })}
-    ${tablet({ width: "185px", height: "165px" })}
+    ${desktop({ width: "230px", height: "200px", marginTop: '135px', marginLeft: '-15px' })}
+  ${laptop({ width: "185px", height: "165px", marginTop: '135px', marginLeft: '-15px' })}
+    ${tablet({ width: "185px", height: "165px", marginTop: '135px', marginLeft: '-15px' })}
+
     ${mobile({ width: "185px", height: "165px" })}
     ${smallMobile({ width: "160px", height: "145px" })}
     ${xSmallMobile({ width: "165px", height: "145px" })}
     ${xXSmallMobile({ width: "165px", minHeight: "145px" })}
 
-    ${xxxSmallMobile({ width: "121px", minHeight: "109px" , position:'absolute' , margin :'-80px 0'})}
+    ${xxxSmallMobile({ width: "121px", height: "109px",  marginTop: '115px', marginLeft: '-15px' })}
 
     ${xxxxSmallMobile({ width: "121px", minHeight: "109px" })}
     &:hover {
