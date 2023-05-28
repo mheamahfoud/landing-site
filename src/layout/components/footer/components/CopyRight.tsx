@@ -17,7 +17,7 @@ export const CopyRight = () => {
       className="d-flex flex-column"
     >
       <p id="">NIS. New Interactive Studio</p>
-      <p id="">2022 ©</p>
+      <p id="">2023 ©</p>
     </Container>
 
   );

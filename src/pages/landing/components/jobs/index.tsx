@@ -54,7 +54,7 @@ export const Jobs = () => {
             <span style={{ color: "#7F7F7F" }}>
               {" "}
               is proud that its production volume of dubbed works until the end
-              of 2017 reached up to
+              of 2022 reached up to
             </span>
           </Paragraph>
         </Top>
