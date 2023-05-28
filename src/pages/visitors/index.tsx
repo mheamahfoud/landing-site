@@ -2,21 +2,31 @@ import { FC } from "react";
 import { useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import TitleForm from "./components/TitleForm";
-import { styled } from "@mui/material";
-import { TextField } from "@mui/material";
-import SubmitButton from "./components/SubmitButton";
+import * as Yup from 'yup'
+import Form from "./Form";
+import { Formik } from "formik";
+import { sendEmail } from "../../services/email";
 
-const InputStyle = styled(TextField)({
-  width: '600px',
-  '@media (max-width: 780px)': {
-    width: '288px'
-  }
-  
-  
+
+export const roleSchema = Yup.object().shape({
+  name: Yup.string()
+    .required('Field is required'),
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    custom: Yup.string()
+    .required('Field is required'),
+  msg: Yup.string()
+    .required('Field is required'),
+    phone: Yup.string()
+    .required('Field is required'),
+  company: Yup.string()
+    .required('Field is required'),
+
 })
 export const VisitorInfo: FC = () => {
   const location = useLocation();
   const { url } = location.state;
+
+
   return (
     <div>
       {" "}
@@ -35,35 +45,33 @@ export const VisitorInfo: FC = () => {
       >
         <TitleForm />
 
-        <div style={{display:'flex', flexDirection:'column',gap:'25px' , margin:'20px 0'}}>
-          <InputStyle
-            placeholder="Enter Name"
-            variant="standard"
-          />
-          <InputStyle
-            placeholder="Enter Phone Number"
-            variant="standard"
-          />
-          <InputStyle
-            placeholder="Enter Email"
-            variant="standard"
-          />
-          <InputStyle
-            placeholder="Enter Your Company Name"
-            variant="standard"
-          />
-          <InputStyle
-            placeholder="Country"
-            variant="standard"
-          />
-          <InputStyle
-            placeholder="Write Your Message"
-            variant="standard"
-          />
-        </div>
-        <div>
-          <SubmitButton/>
-        </div>
+        <Formik
+          enableReinitialize={true}
+          validationSchema={roleSchema}
+          initialValues={{}}
+          initialStatus={{ edit: false }}
+          onSubmit={async (values, { setSubmitting}) => {
+            setSubmitting(true)
+            try {
+            await sendEmail(values)
+            //  resetForm();
+
+            } catch (ex) {
+
+            } finally {
+              setSubmitting(true)
+            }
+
+          }}
+          // onReset={(values) => {
+          //   console.log('Formik onReset');
+          // }}
+        >
+
+          <Form />
+        </Formik>
+
+
 
       </div>
     </div>

@@ -71,7 +71,7 @@ export const ThirdItem = () => {
         <ContainerText>
           <Text>
             <span>
-              has done more than 13 thousand hours of dubbing with different
+            <Nis>NiS</Nis>    has done more than 13 thousand hours of dubbing with different
               variations: movies, drama series, documentaries and cartoon films.
               Those works have been screened on the most important TV channels in
               the Arab world.

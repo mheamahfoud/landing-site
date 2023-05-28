@@ -5,7 +5,7 @@ import FilmCover from "../assets/images/categories/coverphoto/cinema-cat.png";
 
 import DramaBackgroud from "../assets/images/categories/background/drama-back.jpg";
 import CartoonBackgroud from "../assets/images/categories/background/carton-back.png";
-import DocumentryBackgroud from "../assets/images/categories/background/drama-back.jpg";
+import DocumentryBackgroud from "../assets/images/categories/background/documentry-back.png";
 import FilmBackgroud from "../assets/images/categories/background/film-back.png";
 
 import MusicCover from "../assets/images/categories/coverphoto/music-cat.jpg";

@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_APP_API_URL,
+  baseURL:'https://nistudio.net/nis_website/api/'// import.meta.env.VITE_APP_API_URL,
 });
 
 type HTTPRequestConfig = AxiosRequestConfig;

@@ -1,7 +1,11 @@
+import { FC } from 'react';
 import { styled } from 'styled-components';
-
+interface Props {
+    isSubmitting: boolean,
+    isValid: boolean,
+}
 const Button = styled.button`
-  width: 191px;
+  width: 200px;
   height: 40px;
   border-radius: 25px;
   border-color: #6B6B6B;
@@ -21,20 +25,20 @@ const Button = styled.button`
     background: #F15722;
     border-color: #F15722;
    }
-  
-
-  
 
  `;
-const SubmitButton = () => {
+const SubmitButton: FC<Props> = ({ isSubmitting, isValid }) => {
     return (
-        <Button className="" >
-
-
-            <p>
-                SUBMIT
-            </p>
-
+        <Button disabled={isSubmitting || !isValid }>
+            {!isSubmitting && <span className='indicator-label'>Submit</span>}
+            {
+                isSubmitting && (
+                    <span className=''>
+                        Please wait...
+                        <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
+                    </span>
+                )
+            }
         </Button>
     );
 }

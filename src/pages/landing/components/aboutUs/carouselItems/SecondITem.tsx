@@ -68,7 +68,7 @@ export const SecondItem = () => {
         <ContainerText>
           <Text>
             <span>
-              <Nis>NiS</Nis>  Among all the companies that work in the dubbing field, in the Arab
+           Among all the companies that work in the dubbing field, in the Arab
               world and the world at large,  <Nis>NiS</Nis>{" "} is remarkable with using
               cutting-edge techniques and software apps, especially those that serve
               administering and organizing the process of dubbing. In all NiS

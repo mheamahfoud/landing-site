@@ -20,14 +20,15 @@ const Container = styled.div<StyleProps>`
   font-family: raleway, sans-serif;
   font-weight: 900;
   position: relative;
-  ${desktop({ width: '320px',height:'250px' })}
-  ${laptop({ width: '320px',height:'250px' })}
-  ${tablet({ width: '320px',height:'250px' })}
-  ${mobile({ width: '303px',height:'200px' })}
-  ${smallMobile({ width: '303px',height:'200px' })}
-  ${xSmallMobile({ width: '303px',height:'200px' })}
-  ${xXSmallMobile({ width: '303px',height:'200px' })}
-  ${xxxxSmallMobile({textAlign:'center'})}
+  ${desktop({ width: '340px',height:'250px' })}
+  ${laptop({ width: '340px',height:'250px' })}
+  ${tablet({ width: '340px',height:'250px' })}
+  ${mobile({ width: '306px',height:'200px' })}
+  ${smallMobile({ width: '260px',height:'200px' })}
+  ${xSmallMobile({ width: '260px',height:'120px' })}
+  ${xXSmallMobile({ width: '200px',height:'120px' })}
+  ${xxxSmallMobile({ width: '200px',height:'120px' })}
+  ${xxxxSmallMobile({width: '200px',height:'120px'})}
 `;
 
 const Title = styled.p`
@@ -39,8 +40,8 @@ const Title = styled.p`
   margin: 0;
   width: 100%;
   height: 30%;
-  text-align:center
-  ${xxxSmallMobile({  textAlign:'start'})}
+  text-align:center;
+  ${xxxSmallMobile({  textAlign:'center'})}
   ${xxxxSmallMobile({textAlign:'center'})}
 `;
 const FirstChar = styled.span`
