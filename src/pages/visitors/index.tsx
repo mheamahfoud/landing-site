@@ -70,7 +70,7 @@ export const VisitorInfo: FC = () => {
         }
         <Formik
 
-          enableReinitialize={true}
+          enableReinitialize={false}
           validationSchema={roleSchema}
           validateOnChange={false} // Disable validation on change
           validateOnBlur={false} // Disable validation on blur
