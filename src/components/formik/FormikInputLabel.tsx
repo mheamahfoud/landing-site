@@ -15,14 +15,14 @@ interface props {
 }
 const FormikInputLabel = (props: props) => {
     const { title, name } = props;
-    const { errors, getFieldProps, isSubmitting } = useFormikContext();
+    const { errors, getFieldProps, isSubmitting,touched } = useFormikContext();
     return (
         <InputStyle
             placeholder={title}
             variant="standard"
             {...getFieldProps({ name })}
-            error={ errors[name] }
-            helperText={errors[name]}
+            error={ errors[name]&& touched[name] }
+            helperText={touched[name] && errors[name]  ? errors[name] : ''}
             // sx={{
             //     '.MuiInputBase-input':{
             //         color: errors[name]  && '#d32f2f'

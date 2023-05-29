@@ -7,12 +7,12 @@
   
   .pagination-container.top {
     position: relative;
-    background-color: #f9f9f9;
+    background-color: white;
   }
   
   .pagination-container.bottom {
     position: relative;
-    background-color: #f9f9f9;
+    background-color: white;
   }
   .pagination-container .pagination .page-link {
     border-color: #f15722;

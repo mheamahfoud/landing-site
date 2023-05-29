@@ -11,10 +11,10 @@ import { ProjectCard } from "../ProjectCard";
 
 interface CardPaginationProps {
   cardsPerPage: number;
-  currentPage:number,
-  setCurrentPage : React.Dispatch<React.SetStateAction<number>>,
-  cards: any ,//CardData[];
-  onClick:(id:number)=>void;
+  currentPage: number,
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>,
+  cards: any,//CardData[];
+  onClick: (id: number) => void;
 }
 
 const CardPagination: React.FC<CardPaginationProps> = ({
@@ -62,21 +62,21 @@ const CardPagination: React.FC<CardPaginationProps> = ({
 
   return (
     <>
-      <div className="pagination-container top">
-        <Pagination>
-          <Pagination.First onClick={() => handlePageChange(1)} />
-          <Pagination.Prev
-            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-          />
-          {renderPaginationButtons()}
-          <Pagination.Next
-            onClick={() =>
-              handlePageChange(Math.min(totalPageCount, currentPage + 1))
-            }
-          />
-          <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
-        </Pagination>
-      </div>
+
+      {cards.length > 24 && <div className="pagination-container top">  <Pagination>
+        <Pagination.First onClick={() => handlePageChange(1)} />
+        <Pagination.Prev
+          onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+        />
+        {renderPaginationButtons()}
+        <Pagination.Next
+          onClick={() =>
+            handlePageChange(Math.min(totalPageCount, currentPage + 1))
+          }
+        />
+        <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
+      </Pagination>
+      </div>}
       <div className="d-flex justify-content-center flex-wrap ">
         {currentCards.map((item) => (
           <div
@@ -85,7 +85,7 @@ const CardPagination: React.FC<CardPaginationProps> = ({
           >
             <ProjectCard
               key={item.id}
-              onClick={()=> onClick(item.id)}
+              onClick={() => onClick(item.id)}
               title={item.info.value}
               url={item.image}
               id={item.id}
@@ -93,7 +93,7 @@ const CardPagination: React.FC<CardPaginationProps> = ({
           </div>
         ))}
       </div>
-      <div className="pagination-container bottom">
+      {cards.length > 24 && <div className="pagination-container bottom">
         <Pagination>
           <Pagination.First onClick={() => handlePageChange(1)} />
           <Pagination.Prev
@@ -107,7 +107,7 @@ const CardPagination: React.FC<CardPaginationProps> = ({
           />
           <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
         </Pagination>
-      </div>
+      </div>}
     </>
   );
 };
