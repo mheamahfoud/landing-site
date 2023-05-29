@@ -13,8 +13,8 @@ const generateRandomCaptcha = () => {
 };
 
 interface Props {
-    isCaptchaValid:boolean,
-    setIsCaptchaValid:React.Dispatch<React.SetStateAction<boolean>>,
+    isCaptchaValid: boolean,
+    setIsCaptchaValid: React.Dispatch<React.SetStateAction<boolean>>,
     setCaptchaValue: (value: string) => void
 }
 
@@ -38,7 +38,7 @@ export const CustomCaptcha: React.FC<Props> = ({
 
     return (
         <div>
-           
+            <button onClick={generateCaptcha} >Generate New CAPTCHA</button>
             <div className='d-flex gap-2 m-2'>
                 <label htmlFor="captcha">Enter CAPTCHA</label>
                 <input
@@ -46,9 +46,9 @@ export const CustomCaptcha: React.FC<Props> = ({
                     id="captcha"
                     name="captcha"
                     onChange={handleInputChange}
+
                 />
                 {captchaValue}
-                <button onClick={generateCaptcha}>Generate CAPTCHA</button>
             </div>
 
             {/* {isCaptchaValid && <div>CAPTCHA is valid!</div>} */}

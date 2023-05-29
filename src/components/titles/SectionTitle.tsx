@@ -24,11 +24,11 @@ const Container = styled.div<StyleProps>`
   ${laptop({ width: '340px',height:'250px' })}
   ${tablet({ width: '340px',height:'250px' })}
   ${mobile({ width: '306px',height:'200px' })}
-  ${smallMobile({ width: '260px',height:'200px' })}
-  ${xSmallMobile({ width: '260px',height:'120px' })}
-  ${xXSmallMobile({ width: '200px',height:'120px' })}
-  ${xxxSmallMobile({ width: '200px',height:'120px' })}
-  ${xxxxSmallMobile({width: '200px',height:'120px'})}
+  ${smallMobile({ width: '270px',height:'200px' })}
+  ${xSmallMobile({ width: '250px',height:'200px' })}
+  ${xXSmallMobile({ width: '170px',height:'200px' })}
+  ${xxxSmallMobile({ width: '170px',height:'150px' })}
+  ${xxxxSmallMobile({width: '170px',height:'150px'})}
 `;
 
 const Title = styled.p`

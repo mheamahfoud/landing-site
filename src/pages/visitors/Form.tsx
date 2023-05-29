@@ -1,12 +1,12 @@
 import FormikInputLabel from '../../components/formik/FormikInputLabel'
-import { CustomCaptcha } from './components/CustomCaptcha';
 import SubmitButton from './components/SubmitButton'
 import { useFormikContext } from 'formik'
+import ReCAPTCHA from "react-google-recaptcha"
 
 
-const Form = ({...props}) => {
-    const {setCaptchaValue,setIsCaptchaValid,isCaptchaValid}=props;
-    const { handleSubmit, isSubmitting, isValid, setFieldValue } = useFormikContext()
+const Form = ({ ...props }) => {
+    const { captchaRef } = props;
+    const { handleSubmit, isSubmitting, isValid } = useFormikContext()
     return (
         <form className='form' onSubmit={handleSubmit} noValidate>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', margin: '20px 0' }}>
@@ -44,11 +44,11 @@ const Form = ({...props}) => {
 
             </div>
             <div>
+                <div className='formGroup'>
+                    <ReCAPTCHA sitekey={'6LdI300mAAAAAF-0PsgGIPHxuhTP9LvKfw1JkJ59'} ref={captchaRef} />
+                </div>
 
                 <SubmitButton isSubmitting={isSubmitting} isValid={isValid} />
-                <CustomCaptcha
-                    setCaptchaValue={setCaptchaValue} setIsCaptchaValid={setIsCaptchaValid} isCaptchaValid={isCaptchaValid}
-                />
             </div>
         </form>
     )

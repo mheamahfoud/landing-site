@@ -59,6 +59,7 @@ export const Jobs = () => {
           </Paragraph>
         </Top>
         <Bottom className="d-flex justify-content-center align-items-center flex-wrap">
+          <div className="d-flex justify-content-center align-items-center ">
           <CardSkill quantity={11000}>
             <p style={{ margin: '0px' }}>Hours Of Drama Series</p>
             <p style={{ margin: '0px' }}>(138 Projects)</p>
@@ -69,19 +70,25 @@ export const Jobs = () => {
           >
             <p style={{ margin: '0px' }}>Documentary Hours</p>
           </CardSkill>
-          <CardSkill
-            // skill={"Hours of TV cartoons(138 Projects)"}
-            quantity={3000}
-          >
-            <p style={{ margin: '0px' }}>Hours of TV cartoons</p>
-            <p style={{ margin: '0px' }}>(138 Projects)</p>
-          </CardSkill>
-          <CardSkill
-            //skill={"Film"}
-            quantity={250}
-          >
-            <p>Film</p>
-          </CardSkill>
+          </div>
+       
+          <div className="d-flex justify-content-center align-items-center ">
+            <CardSkill
+              // skill={"Hours of TV cartoons(138 Projects)"}
+              quantity={3000}
+            >
+              <p style={{ margin: '0px' }}>Hours of TV cartoons</p>
+              <p style={{ margin: '0px' }}>(138 Projects)</p>
+            </CardSkill>
+            <CardSkill
+              //skill={"Film"}
+              quantity={250}
+            >
+              <p>Film</p>
+            </CardSkill>
+          </div>
+
+
         </Bottom>
       </Cover>
     </Container>

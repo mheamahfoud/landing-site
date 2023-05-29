@@ -1,12 +1,12 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import TitleForm from "./components/TitleForm";
 import Form from "./Form";
 import { Formik } from "formik";
-import { sendEmail } from "../../services/email";
-import { CustomCaptcha } from "./components/CustomCaptcha";
+
 import { roleSchema } from "./validationRule";
+import { sendEmail, verifyToken } from "../../services/email";
 
 interface FormValues {
   name: string;
@@ -23,20 +23,27 @@ interface FormValues {
 export const VisitorInfo: FC = () => {
   const location = useLocation();
   const { url } = location.state;
-  const [captchaValue, setCaptchaValue] = useState('');
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
-  useEffect(() => {
-    alert(captchaValue)
-  }, [captchaValue]);
+  const captchaRef = useRef(null)
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
   const handleSubmit = async (values: FormValues, { resetForm }: any) => {
-    alert(isCaptchaValid)
-    if (values.captcha !== values.generatedCaptcha) {
-      return;
+    let token = captchaRef.current.getValue();
+
+    if (token) {
+
+      let valid_token = await verifyToken(token);
+      if (valid_token) {
+        setMessage("Hurray!! you have submitted the form");
+        await sendEmail(values)
+      } else {
+        setError("Sorry!! Token invalid");
+      }
     }
-    //  await sendEmail(values)
-    resetForm();
-    // Implement your email sending logic here
-    console.log('Email sent!');
+    else {
+      setError("You must confirm you are not a robot");
+
+
+    }
   };
   return (
     <div>
@@ -55,7 +62,12 @@ export const VisitorInfo: FC = () => {
         }}
       >
         <TitleForm />
-
+        {
+          error && <p className='textError'>Error!! {error}</p>
+        }
+        {
+          message && <p className='textSuccess'>Success!! {message}</p>
+        }
         <Formik
 
           enableReinitialize={true}
@@ -65,31 +77,12 @@ export const VisitorInfo: FC = () => {
           initialValues={{ name: '', email: '', msg: '', phone: '', company: '', custom: '', captcha: '', generatedCaptcha: '' }}
           initialStatus={{ edit: false }}
           onSubmit={handleSubmit}
-        // onSubmit={async (values, { setSubmitting}) => {
-        //   if (values.captcha !== values.generatedCaptcha) {
-        //     return;
-        //   }
-        //   setSubmitting(true)
-        //   try {
-        //   await sendEmail(values)
-        //   //  resetForm();
-
-        //   } catch (ex) {
-
-        //   } finally {
-        //     setSubmitting(true)
-        //   }
-
-        // }}
-        // onReset={(values) => {
-        //   console.log('Formik onReset');
-        // }}
         >
 
-          <Form setCaptchaValue={setCaptchaValue} isCaptchaValid={isCaptchaValid}   setIsCaptchaValid={setIsCaptchaValid} />
+          <Form captchaRef={captchaRef} />
         </Formik>
 
-      
+
 
       </div>
     </div>
