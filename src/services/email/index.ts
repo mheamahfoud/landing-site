@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Http } from "../Http";
 
 export const sendEmail = async (values) => {

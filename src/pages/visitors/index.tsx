@@ -28,16 +28,16 @@ export const VisitorInfo: FC = () => {
   const handleSubmit = async (values: FormValues, { setSubmitting  }) => {
     setSubmitting(true);
     let token = captchaRef.current.getValue();
-
+    captchaRef.current.reset();
     if (token) {
-      let valid_token = await verifyToken(token);
-      captchaRef.current.reset();
-      if (valid_token.status == 200) {
+      let valid_token : any= await verifyToken(token);
+      //alert(valid_token?.data?.result=='success')
+      if (valid_token?.data?.result=='success') {
         const res = await sendEmail(values);
         console.log(res);
         setMessage("You Have Sended Successfully");
         setError("");
-       // resetForm()
+      // resetForm()
       } else {
         setError("Sorry!! Token invalid");
         setMessage("");
