@@ -63,20 +63,21 @@ const CardPagination: React.FC<CardPaginationProps> = ({
   return (
     <>
 
-      {cards.length > 24 && <div className="pagination-container top">  <Pagination>
-        <Pagination.First onClick={() => handlePageChange(1)} />
-        <Pagination.Prev
-          onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-        />
-        {renderPaginationButtons()}
-        <Pagination.Next
-          onClick={() =>
-            handlePageChange(Math.min(totalPageCount, currentPage + 1))
-          }
-        />
-        <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
-      </Pagination>
-      </div>}
+      <div className="pagination-container top">
+        {cards.length > 24 && <Pagination>
+          <Pagination.First onClick={() => handlePageChange(1)} />
+          <Pagination.Prev
+            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+          />
+          {renderPaginationButtons()}
+          <Pagination.Next
+            onClick={() =>
+              handlePageChange(Math.min(totalPageCount, currentPage + 1))
+            }
+          />
+          <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
+        </Pagination>}
+      </div>
       <div className="d-flex justify-content-center flex-wrap ">
         {currentCards.map((item) => (
           <div
@@ -93,8 +94,8 @@ const CardPagination: React.FC<CardPaginationProps> = ({
           </div>
         ))}
       </div>
-      {cards.length > 24 && <div className="pagination-container bottom">
-        <Pagination>
+      <div className="pagination-container bottom">
+        {cards.length > 24 && <Pagination>
           <Pagination.First onClick={() => handlePageChange(1)} />
           <Pagination.Prev
             onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
@@ -106,8 +107,8 @@ const CardPagination: React.FC<CardPaginationProps> = ({
             }
           />
           <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
-        </Pagination>
-      </div>}
+        </Pagination>}
+      </div>
     </>
   );
 };

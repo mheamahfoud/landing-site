@@ -18,23 +18,26 @@ interface FormValues {
 }
 
 export const VisitorInfo: FC = () => {
+
   const location = useLocation();
   const { url } = location.state;
   const captchaRef = useRef(null);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  const handleSubmit = async (values: FormValues, { setSubmitting }) => {
+  //resetForm
+  const handleSubmit = async (values: FormValues, { setSubmitting  }) => {
     setSubmitting(true);
     let token = captchaRef.current.getValue();
 
     if (token) {
       let valid_token = await verifyToken(token);
-
-      if (valid_token) {
+      captchaRef.current.reset();
+      if (valid_token.status == 200) {
         const res = await sendEmail(values);
         console.log(res);
-        setMessage("Hurray!! you have submitted the form");
+        setMessage("You Have Sended Successfully");
         setError("");
+       // resetForm()
       } else {
         setError("Sorry!! Token invalid");
         setMessage("");

@@ -12,8 +12,11 @@ export const sendEmail = async (values) => {
   };
 //https://www.google.com/recaptcha/api/siteverify?secret=${'6LdI300mAAAAAI_zn-S7QiS8oXOcB6pICZJGzoo2'}&response=${token}
   export const verifyToken = async (token) => {
-    const res = await axios.post<any>(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${ import.meta.VITE_REACT_SECRET_KEY }&response=${token}`,
+    const res = await Http.post<any>(
+      `CAPTCHA`,
+      {
+        token:token
+      }
     );
     return res
   };
