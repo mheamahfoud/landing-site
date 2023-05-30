@@ -98,7 +98,6 @@ const SocialLink = ({ name, url }) => {
     default:
       icon = <FontAwesomeIcon icon={["fas", "circle"]} />;
   }
-
   return (
     <Container
       href={url}
@@ -110,7 +109,6 @@ const SocialLink = ({ name, url }) => {
     </Container>
   );
 };
-
 SocialLink.propTypes = {
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
