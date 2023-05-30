@@ -21,7 +21,7 @@ interface Props {
 export const CustomCaptcha: React.FC<Props> = ({
     setCaptchaValue,
     setIsCaptchaValid,
-    isCaptchaValid
+
 }) => {
     const [captchaValue, setCaptcha] = useState(generateRandomCaptcha());
 

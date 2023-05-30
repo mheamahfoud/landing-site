@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import TitleForm from "./components/TitleForm";
@@ -26,7 +26,7 @@ export const VisitorInfo: FC = () => {
   const captchaRef = useRef(null)
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  const handleSubmit = async (values: FormValues, { resetForm }: any) => {
+  const handleSubmit = async (values: FormValues) => {
     let token = captchaRef.current.getValue();
 
     if (token) {

@@ -27,7 +27,7 @@ const Button = styled.button`
    }
 
  `;
-const SubmitButton: FC<Props> = ({ isSubmitting, isValid }) => {
+const SubmitButton: FC<Props> = ({ isSubmitting }) => {
     return (
         <Button >
             {!isSubmitting && <span className='indicator-label'>Submit</span>}
