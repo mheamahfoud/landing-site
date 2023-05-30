@@ -16,7 +16,7 @@ interface props {
 }
 const FormikInputLabel = (props: props) => {
     const { title, name } = props;
-    const { errors, getFieldProps, isSubmitting, touched } = useFormikContext();
+    const { errors,  touched ,isSubmitting} = useFormikContext();
     React.useEffect(() => {
         if(name=='email'){
             const emailInput = document.getElementById(name);
