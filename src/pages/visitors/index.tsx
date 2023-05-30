@@ -1,32 +1,50 @@
-import { FC } from "react";
+import { FC, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import TitleForm from "./components/TitleForm";
-import * as Yup from 'yup'
 import Form from "./Form";
 import { Formik } from "formik";
-import { sendEmail } from "../../services/email";
+
+import { roleSchema } from "./validationRule";
+import { sendEmail, verifyToken } from "../../services/email";
+
+interface FormValues {
+  name: string;
+  email: string;
+  msg: string;
+  company: string;
+  phone: string;
+  custom: string;
+  captcha: string;
+  generatedCaptcha: string;
+}
 
 
-export const roleSchema = Yup.object().shape({
-  name: Yup.string()
-    .required('Field is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
-    custom: Yup.string()
-    .required('Field is required'),
-  msg: Yup.string()
-    .required('Field is required'),
-    phone: Yup.string()
-    .required('Field is required'),
-  company: Yup.string()
-    .required('Field is required'),
-
-})
 export const VisitorInfo: FC = () => {
   const location = useLocation();
   const { url } = location.state;
+  const captchaRef = useRef(null)
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const handleSubmit = async (values: FormValues) => {
+    let token = captchaRef.current.getValue();
+
+    if (token) {
+
+      let valid_token = await verifyToken(token);
+      if (valid_token) {
+        setMessage("Hurray!! you have submitted the form");
+        await sendEmail(values)
+      } else {
+        setError("Sorry!! Token invalid");
+      }
+    }
+    else {
+      setError("You must confirm you are not a robot");
 
 
+    }
+  };
   return (
     <div>
       {" "}
@@ -44,31 +62,24 @@ export const VisitorInfo: FC = () => {
         }}
       >
         <TitleForm />
-
+        {
+          error && <p className='textError'>Error!! {error}</p>
+        }
+        {
+          message && <p className='textSuccess'>Success!! {message}</p>
+        }
         <Formik
-          enableReinitialize={true}
+
+          enableReinitialize={false}
           validationSchema={roleSchema}
-          initialValues={{}}
+          validateOnChange={false} // Disable validation on change
+          validateOnBlur={false} // Disable validation on blur
+          initialValues={{ name: '', email: '', msg: '', phone: '', company: '', custom: '', captcha: '', generatedCaptcha: '' }}
           initialStatus={{ edit: false }}
-          onSubmit={async (values, { setSubmitting}) => {
-            setSubmitting(true)
-            try {
-            await sendEmail(values)
-            //  resetForm();
-
-            } catch (ex) {
-
-            } finally {
-              setSubmitting(true)
-            }
-
-          }}
-          // onReset={(values) => {
-          //   console.log('Formik onReset');
-          // }}
+          onSubmit={handleSubmit}
         >
 
-          <Form />
+          <Form captchaRef={captchaRef} />
         </Formik>
 
 
