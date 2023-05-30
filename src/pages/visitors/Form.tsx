@@ -45,7 +45,7 @@ const Form = ({ ...props }) => {
             </div>
             <div>
                 <div className='formGroup'>
-                    <ReCAPTCHA sitekey={'6LdI300mAAAAAF-0PsgGIPHxuhTP9LvKfw1JkJ59'} ref={captchaRef} />
+                    <ReCAPTCHA sitekey={ import.meta.env.VITE_REACT_SITE_KEY} ref={captchaRef} />
                 </div>
 
                 <SubmitButton isSubmitting={isSubmitting} isValid={isValid} />

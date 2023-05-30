@@ -16,7 +16,7 @@ interface props {
 }
 const FormikInputLabel = (props: props) => {
     const { title, name } = props;
-    const { errors,  touched ,isSubmitting} = useFormikContext();
+    const { errors,  touched ,isSubmitting,getFieldProps} = useFormikContext();
     React.useEffect(() => {
         if(name=='email'){
             const emailInput = document.getElementById(name);
@@ -43,7 +43,7 @@ const FormikInputLabel = (props: props) => {
             placeholder={title}
             id={name}
             variant="standard"
-            //  {...getFieldProps({ name })}
+              {...getFieldProps({ name })}
             error={errors[name] && touched[name]}
             helperText={touched[name] && errors[name] ? errors[name] : ''}
             // sx={{
@@ -61,3 +61,4 @@ const FormikInputLabel = (props: props) => {
 }
 
 export default FormikInputLabel;
+
