@@ -37,7 +37,7 @@ const ProjectDetails = ({ ...props }) => {
                   {item.value}
                   {info[index + 2]?.key == "Link:" && (
                     <div
-                      style={{ position: "absolute", left:'200px', top:'-16px'}}
+                      style={{ position: "absolute", left:'220px', top:'-16px'}}
                     >
                       <CustomLink url={info[index + 2]?.value}>
                         <img
