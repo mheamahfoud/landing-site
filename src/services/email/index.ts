@@ -14,7 +14,8 @@ export const sendEmail = async (values) => {
     const res = await Http.post<any>(
       `CAPTCHA`,
       {
-        token:token
+        token:token,
+        secretKey:import.meta.env.VITE_REACT_SECRET_KEY
       }
     );
     return res

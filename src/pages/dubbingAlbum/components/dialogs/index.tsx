@@ -1,25 +1,17 @@
-import { ButtonModal } from "../../../../components/buttons/modal";
-import styled from "styled-components";
 import { Modal } from "react-bootstrap";
 import "./style.css";
 import { getProjectDetails } from "../../../../services/categories";
 import { useQuery } from "react-query";
-import ProjectDetails from "./ProjectDetails";
+import ProjectInfo from "./ProjectInfo";
 import { toAbsoluteServerUrl } from "../../../../helpers/AssetHelpers";
-
-
 import { Loader } from "../Loader";
 import { ActorsName } from "./ActorsName";
 import { useRef } from "react";
-const Title = styled.h3`
-  color: #ffffff;
-  background-color: transparent;
-  position: relative;
-`;
+import { Image, ImageDisplayContainer, ModalContainer, ProjectDetailsContainer, ProjectInfoContainer, Title } from "./styles";
+import ButtonSection from "./ButtonSection";
+import { ModalStyle } from "./ModalStyled";
 
-const Containr =styled.div`
 
-`;
 interface Props {
   showModal: boolean;
   currentCardIndex: number;
@@ -28,6 +20,7 @@ interface Props {
   handleCloseModal: () => void;
   handlePrevCard: () => void;
   handleNextCard: () => void;
+  height:string,
 }
 const ModalProject: React.FC<Props> = ({
   id,
@@ -36,14 +29,17 @@ const ModalProject: React.FC<Props> = ({
   handleCloseModal,
   handlePrevCard,
   handleNextCard,
+  height
 }) => {
   const { data } = useQuery(`${"project-id"}-${id}`, () => {
     return getProjectDetails(id);
-  });
-
+  },
+  // {
+  // enabled:true
+  // }
+  );
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
-
   const handleTouchStart = (event) => {
     touchStartX.current = event.touches[0].clientX;
     touchStartY.current = event.touches[0].clientY;
@@ -68,7 +64,7 @@ const ModalProject: React.FC<Props> = ({
         console.log('Swiped left');
       } else if (touchDeltaX < 0) {
         // Swiped right
-    
+
         handlePrevCard()
         console.log('Swiped right');
       }
@@ -79,52 +75,41 @@ const ModalProject: React.FC<Props> = ({
   };
 
   return (
-    <Modal
+    <ModalStyle
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       show={showModal}
       onHide={handleCloseModal}
       centered
       dialogClassName="custom-modal"
+      heightTem={height}
     >
-      <div
-        className="top-section-project-details background-image"
-        style={{ height: "100%" }}
+      <ModalContainer
       >
         {data && (
-          <Containr className="d-flex flex-column">
-            <div>
-              <Title>{title}</Title>
-            </div>
-
-            <div className="project-deteails-content"  >
-              <div className="item" style={{ height: "inherit" }}>
-                <ProjectDetails info={data?.info} />
-              </div>
-              <div className="item img-display-container" style={{padding:'12px 0'}}>
-                <img
-                  className="img-display"
+          <div className="d-flex flex-column">
+            <Title>{title}</Title>
+            <ProjectDetailsContainer>
+              <ProjectInfoContainer className="item">
+                <ProjectInfo info={data?.info} />
+              </ProjectInfoContainer>
+              <ImageDisplayContainer>
+                <Image className="img-display"
                   src={toAbsoluteServerUrl(data?.image)}
                 />
-              </div>
-            </div>
+              </ImageDisplayContainer>
+
+            </ProjectDetailsContainer>
             {data?.actors && data?.actors.length > 0 && (
               <ActorsName names={data?.actors.map((x) => x.name)} />
             )}
-          </Containr>
+          </div>
         )}
         {!data && <Loader />}
-        <div className="bottom-section">
-          <ButtonModal onClick={handlePrevCard}>{"<"}</ButtonModal>
 
-          <ButtonModal onClick={handleCloseModal}>
-            {<span>&times;</span>}
-          </ButtonModal>
-
-          <ButtonModal onClick={handleNextCard}>{">"}</ButtonModal>
-        </div>
-      </div>
-    </Modal>
+        <ButtonSection handlePrevCard={handlePrevCard} handleCloseModal={handleCloseModal} handleNextCard={handleNextCard} />
+      </ModalContainer>
+    </ModalStyle>
   );
 };
 

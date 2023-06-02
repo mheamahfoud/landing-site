@@ -7,8 +7,6 @@ const InputStyle = styled(TextField)({
     '@media (max-width: 780px)': {
         width: '288px'
     }
-
-
 })
 interface props {
     title: string,

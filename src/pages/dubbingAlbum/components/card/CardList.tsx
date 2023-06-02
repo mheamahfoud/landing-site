@@ -13,13 +13,10 @@ export const CardList: FC<Props> = ({ category_id }) => {
   const { data } = useQuery(`${"category_id"}-${category_id}`, () => {
     return getProjectCategory(category_id);
   });
-
   const [showModal, setShowModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage: number = 24;
-
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
-
   const handleClick = useCallback(
     (id: number) => {
       if (data) {
@@ -82,6 +79,7 @@ export const CardList: FC<Props> = ({ category_id }) => {
               handlePrevCard={handlePrevCard}
               id={data[currentCardIndex]?.id}
               currentCardIndex={currentCardIndex}
+              height={'270px'}
             />
           )}
         </WrapperCard>

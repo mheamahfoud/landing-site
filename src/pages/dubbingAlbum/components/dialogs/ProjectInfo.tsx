@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { MainColor } from "../../../../helpers";
 import { CustomLink } from "../../../../components/buttons/normal/CustomLink";
+import YoutubeIcon from  "../../../../assets/images/youtube-icon.png"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,12 +23,12 @@ const ContentField = styled.span`
   line-height: 32px;
   color: ${MainColor};
 `;
-const ProjectDetails = ({ ...props }) => {
+const ProjectInfo = ({ ...props }) => {
   const { info } = props;
   return (
     <Container>
       {info
-        .filter((x) => x.key != "Name Projects")
+        .filter((x) => !x.key.includes("Name Projects"))
         .map((item, index) => {
           return (
             <>
@@ -42,7 +43,7 @@ const ProjectDetails = ({ ...props }) => {
                       <CustomLink url={info[index + 2]?.value}>
                         <img
                           height={"45px"}
-                          src="https://www.nistudio.net/images/you%20tube.png?crc=195068780"
+                          src={YoutubeIcon}
                         ></img>
                       </CustomLink>
                     </div>
@@ -56,4 +57,4 @@ const ProjectDetails = ({ ...props }) => {
   );
 };
 
-export default ProjectDetails;
+export default ProjectInfo;
