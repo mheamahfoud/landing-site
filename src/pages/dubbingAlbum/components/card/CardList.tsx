@@ -1,10 +1,12 @@
-import { FC, useCallback,useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { WrapperCard } from "./WrapperCard";
 import CardPagination from "../../../../components/cards/pagination/CardPagination";
 import ModalProject from "../dialogs";
 import { getProjectCategory } from "../../../../services/categories";
 import { useQuery } from "react-query";
 import Spinner from "../../../../layout/components/loader";
+import { Categories } from "../../../../helpers/Constants";
+import { Heights } from "./height";
 // import { toAbsoluteServerUrl } from "../../../helpers/AssetHelpers";
 interface Props {
   category_id: number;
@@ -30,9 +32,13 @@ export const CardList: FC<Props> = ({ category_id }) => {
 
   const handleNextCard = useCallback(() => {
     if (data) {
+      console.log(currentCardIndex);
+      console.log((currentPage - 1) * cardsPerPage);
+      console.log(currentPage * cardsPerPage);
       if (
         currentCardIndex >= (currentPage - 1) * cardsPerPage &&
-        currentCardIndex < currentPage * cardsPerPage - 1
+        currentCardIndex < currentPage * cardsPerPage - 1 &&
+        currentCardIndex < data.length - 1
       ) {
         setCurrentCardIndex(currentCardIndex + 1);
       } else {
@@ -44,13 +50,16 @@ export const CardList: FC<Props> = ({ category_id }) => {
   const handlePrevCard = useCallback(() => {
     if (data) {
       if (
-        currentCardIndex > (currentPage-1) * cardsPerPage &&
-        currentCardIndex < (currentPage) * cardsPerPage
-
+        currentCardIndex > (currentPage - 1) * cardsPerPage &&
+        currentCardIndex < currentPage * cardsPerPage
       ) {
         setCurrentCardIndex(currentCardIndex - 1);
       } else {
-        setCurrentCardIndex(currentPage * cardsPerPage - 1);
+        if (cardsPerPage < data.length) {
+          setCurrentCardIndex(currentPage * cardsPerPage - 1);
+        } else {
+          setCurrentCardIndex(currentPage * data.length - 1);
+        }
       }
     }
   }, [currentCardIndex, data]);
@@ -78,8 +87,13 @@ export const CardList: FC<Props> = ({ category_id }) => {
               handleNextCard={handleNextCard}
               handlePrevCard={handlePrevCard}
               id={data[currentCardIndex]?.id}
+              category_id={category_id}
               currentCardIndex={currentCardIndex}
-              height={'270px'}
+              height={
+               (category_id == Categories.Drama ||
+                category_id == Categories.Cartoon)? Heights?.large :   category_id == Categories.Film? Heights?.medium
+                  : Heights?.small
+              }
             />
           )}
         </WrapperCard>

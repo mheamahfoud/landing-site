@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ImageBackground from '../../../../assets/images/bacground-modal.jpg'
+import { Categories } from "../../../../helpers/Constants";
 export const Title = styled.h3`
   color: #ffffff;
   background-color: transparent;
@@ -41,10 +42,12 @@ export const ProjectInfoContainer = styled.div`
 
 
 `;
-
-export const ImageDisplayContainer = styled.div`
+interface Props {
+  category :number
+}
+export const ImageDisplayContainer = styled.div<Props>`
  text-align:end;
- padding: 12px 0;
+ padding: ${(props)=>(props.category==Categories.Drama || props.category==Categories.Cartoon ||props.category==Categories.Film  )? '12px 0': '' } ;
 `;
 
 

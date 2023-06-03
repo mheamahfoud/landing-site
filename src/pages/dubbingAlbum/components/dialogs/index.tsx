@@ -1,4 +1,3 @@
-import { Modal } from "react-bootstrap";
 import "./style.css";
 import { getProjectDetails } from "../../../../services/categories";
 import { useQuery } from "react-query";
@@ -20,7 +19,8 @@ interface Props {
   handleCloseModal: () => void;
   handlePrevCard: () => void;
   handleNextCard: () => void;
-  height:string,
+  height:{lg:string,md:string,sm:string},
+  category_id:number
 }
 const ModalProject: React.FC<Props> = ({
   id,
@@ -29,7 +29,8 @@ const ModalProject: React.FC<Props> = ({
   handleCloseModal,
   handlePrevCard,
   handleNextCard,
-  height
+  height,
+  category_id
 }) => {
   const { data } = useQuery(`${"project-id"}-${id}`, () => {
     return getProjectDetails(id);
@@ -73,7 +74,6 @@ const ModalProject: React.FC<Props> = ({
     touchStartX.current = null;
     touchStartY.current = null;
   };
-
   return (
     <ModalStyle
       onTouchStart={handleTouchStart}
@@ -93,7 +93,7 @@ const ModalProject: React.FC<Props> = ({
               <ProjectInfoContainer className="item">
                 <ProjectInfo info={data?.info} />
               </ProjectInfoContainer>
-              <ImageDisplayContainer>
+              <ImageDisplayContainer category={category_id}>
                 <Image className="img-display"
                   src={toAbsoluteServerUrl(data?.image)}
                 />

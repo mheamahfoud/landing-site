@@ -1,9 +1,14 @@
 import { styled } from "@mui/material";
 import { Modal } from "react-bootstrap";
-export const ModalStyle = styled(Modal)(({ heightTem }) => ({
+// interface Props {
+//     lg:string,
+//     md:string,
+//     sm:string
+// }
+export const ModalStyle = styled(Modal)(( {heightTem} ) => ({
     '@media ((min-width: 1060px) )': {
         '.modal-content': {
-            height: '670px',
+            height: heightTem.lg,
         },
         '.modal-dialog': {
             width: '1100px',
@@ -21,7 +26,7 @@ export const ModalStyle = styled(Modal)(({ heightTem }) => ({
     },
     '@media ((min-width: 641px) and (max-width: 960px))': {
         '.modal-content': {
-            height: '1100px',
+            height:heightTem.md,
         },
         '.modal-dialog': {
             width: '750px',
@@ -32,7 +37,7 @@ export const ModalStyle = styled(Modal)(({ heightTem }) => ({
 
     '@media ((min-width: 540px) and (max-width: 640px))': {
         '.modal-content': {
-            height: '1500px',
+            height: heightTem.sm,
         },
         '.modal-dialog': {
             width: '415px',
@@ -42,7 +47,7 @@ export const ModalStyle = styled(Modal)(({ heightTem }) => ({
     },
     '@media ((max-width: 540px))': {
         '.modal-content': {
-            height: '1450px',
+            height:heightTem.sm,
         },
         '.modal-dialog': {
             width: '307px',
