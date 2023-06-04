@@ -90,8 +90,8 @@ export const CardList: FC<Props> = ({ category_id }) => {
               category_id={category_id}
               currentCardIndex={currentCardIndex}
               height={
-               (category_id == Categories.Drama ||
-                category_id == Categories.Cartoon)? Heights?.large :   category_id == Categories.Film? Heights?.medium
+               (category_id == Categories.Drama 
+              )? Heights?.large :   (category_id == Categories.Film||  category_id == Categories.Cartoon)? Heights?.medium
                   : Heights?.small
               }
             />
