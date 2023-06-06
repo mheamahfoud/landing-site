@@ -2,10 +2,10 @@ import {FC, createContext, useContext} from 'react'
 import { WithChildren } from '../helpers/react18MigrationHelpers'
 
 
-const I18N_CONFIG_KEY =import.meta.env.REACT_APP_I18N_CONFIG_KEY || 'i18nConfig'
+const I18N_CONFIG_KEY =import.meta.env.VITE_APP_I18N_CONFIG_KEY || 'i18nConfig'
 
 type Props = {
-  selectedLang: 'de' | 'en' | 'es' | 'fr' | 'ja' | 'zh'
+  selectedLang: 'de' | 'en' | 'es' | 'fr' | 'ja' | 'zh'|'ar'
 }
 const initialState: Props = {
   selectedLang: 'en',
@@ -15,11 +15,14 @@ function getConfig(): Props {
   const ls = localStorage.getItem(I18N_CONFIG_KEY)
   if (ls) {
     try {
+   
       return JSON.parse(ls) as Props
     } catch (er) {
       console.error(er)
     }
   }
+ 
+
   return initialState
 }
 

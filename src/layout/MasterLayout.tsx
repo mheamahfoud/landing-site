@@ -2,9 +2,10 @@ import { Outlet } from "react-router-dom";
 import "./index.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { MenuItems } from "./components/header/util/constant";
 import { useAuth } from "../ContextProvider";
+import { useLang } from "../i18n/Metronici18n";
 export const MasterLayout = () => {
   const { setCurrentPage, linkClicked } = useAuth();
 
@@ -38,9 +39,9 @@ export const MasterLayout = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [linkClicked]);
-
+  const lang = useLang();
   return (
-    <>
+    <div style={{direction:lang=='ar'?'rtl':'ltr'}}>
       <Header />
       {/* <div className="slider-wrapper">
         <Slider />
@@ -49,9 +50,9 @@ export const MasterLayout = () => {
       <div className="content">
         <Outlet />
       </div>
- 
-        <Footer />
-   
-    </>
+
+      <Footer />
+
+    </div>
   );
 };

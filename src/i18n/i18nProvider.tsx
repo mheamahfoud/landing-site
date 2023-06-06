@@ -15,6 +15,7 @@ import esMessages from './messages/es.json'
 import frMessages from './messages/fr.json'
 import jaMessages from './messages/ja.json'
 import zhMessages from './messages/zh.json'
+import ArMessages from './messages/ar.json'
 import { WithChildren } from '../helpers/react18MigrationHelpers'
 
 
@@ -25,6 +26,7 @@ const allMessages = {
   fr: frMessages,
   ja: jaMessages,
   zh: zhMessages,
+  ar:ArMessages
 }
 
 const I18nProvider: FC<WithChildren> = ({children}) => {
