@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { ContactInfoPath, VisitorInfoPath } from "../../../routing/RouteNames";
 import VisitorInfoSrc from "../../../assets/images/innovations/visitor-information.jpg";
 import ContactInfoSrc from "../../../assets/images/contact-info.png";
+import { useIntl } from "react-intl";
 
 const FooterStyle = styled.div`
   background-color: #000000;
@@ -45,6 +46,7 @@ const ContainerMiddle = styled.div`
 `;
 
 export const Footer = () => {
+  const intl=useIntl();
   const isSmallScreen = useMediaQuery({ maxWidth: 549 });
   const navigate = useNavigate();
   // const handleClick = useCallback(() => {
@@ -76,9 +78,9 @@ export const Footer = () => {
                   title={"Add your voice"}
                   url={"https://forms.gle/H5VgoDQQqySeieWB6"}
                 />
-                <ButtonLinkFadeIn title={"Visit info"} onClick={handleClick} />
+                <ButtonLinkFadeIn title={intl.formatMessage({id:"visit_info"})} onClick={handleClick} />
                 <ButtonLinkFadeIn
-                  title={"Nis Location"}
+                  title={intl.formatMessage({id:"nis_location"})}
                   onClick={handleLocation}
                 />
               </ContainerButton>

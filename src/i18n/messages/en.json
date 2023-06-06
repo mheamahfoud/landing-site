@@ -68,5 +68,16 @@
   "ECOMMERCE.CUSTOMERS.EDIT.ADD_MESSAGE": "Customer has been created",
 
 
-  "COLUMN.NAME" : "Name"
+  "COLUMN.NAME" : "Name",
+  "home":"Home",
+  "about":"About US",
+  "dubservice":"Dubbing Service",
+  "services":"Services",
+  "innovation":"Our Innovations",
+ "contact-us":"Contact Us",
+ "nis_specialties":"NiS Specialties",
+ "add_your_voice":"Add Your Voice",
+ "nis_location": "Nis Location",
+ "visit_info": "Visitor Info"
+
 }

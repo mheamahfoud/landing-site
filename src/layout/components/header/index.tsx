@@ -11,6 +11,7 @@ import { smallMobileHeader } from "./responsive";
 import ModalMenu from "./components/modal";
 import { useMediaQuery } from "react-responsive";
 import IconLang from "./components/iconLang";
+import { useIntl } from "react-intl";
 
 interface StyleProps {
   iscrolledtotop?: string;
@@ -31,7 +32,7 @@ const Container = styled.div<StyleProps>`
   ${smallMobileHeader({ justifyContent: 'space-between', padding: '0 8px' })}
 `;
 export const Header = () => {
-
+  const intl = useIntl();
   const isSmallScreen = useMediaQuery({ maxWidth: 767 })
   const navigate = useNavigate();
   const { currentPage, setCurrentPage, setLinkClicked } = useAuth();
@@ -69,7 +70,7 @@ export const Header = () => {
           <IconLogo />
           <IconLang />
         </div>
-        {isSmallScreen && <div className="d-flex align-items-center justify-content-center"  style={{margin:'0 8px'}}>
+        {isSmallScreen && <div className="d-flex align-items-center justify-content-center" style={{ margin: '0 8px' }}>
           <ButtonMenu onClick={() => {
             setShowModal(true)
           }} />
@@ -82,7 +83,7 @@ export const Header = () => {
               <LinkHeader
                 to={item.to}
                 key={index}
-                title={item.name}
+                title={intl.formatMessage({id:item.key}) }
                 active={currentPage === item.id}
                 value={item.id}
                 onClick={handleClick}
