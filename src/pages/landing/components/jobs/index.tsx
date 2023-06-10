@@ -3,6 +3,10 @@ import { styled } from "styled-components";
 import CoverSkills from "../../../../assets/images/jobs-skills.png";
 import { CardSkill } from "../../../../components/cards/CardSkill";
 import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+import { useIntl } from "react-intl";
+import { useLang } from "../../../../i18n/Metronici18n";
+import ARParagraph from "./arParagraph";
+import ENParagraph from "./enParagraph";
 
 const Container = styled.div`
  
@@ -45,30 +49,29 @@ const Paragraph = styled.p`
 const Bottom = styled.div``;
 
 export const Jobs = () => {
+  const intl=useIntl();
+  const lang=useLang();
   return (
     <Container>
       <Cover className="d-flex flex-column justify-content-evenly align-items-center">
         <Top>
           <Paragraph>
-            <span style={{ color: "#F15722" }}>NiS</span>
-            <span style={{ color: "#7F7F7F" }}>
-              {" "}
-              is proud that its production volume of dubbed works until the end
-              of 2022 reached up to
-            </span>
+           {
+            lang=='ar' ? <ARParagraph/> : <ENParagraph/>
+           }
           </Paragraph>
         </Top>
         <Bottom className="d-flex justify-content-center align-items-center flex-wrap">
           <div className="d-flex justify-content-center align-items-center ">
           <CardSkill quantity={11000}>
-            <p style={{ margin: '0px' }}>Hours Of Drama Series</p>
-            <p style={{ margin: '0px' }}>(138 Projects)</p>
+            <p style={{ margin: '0px' }}>{intl.formatMessage({id:'hours_Of_drama_series'})}</p>
+            <p style={{ margin: '0px' }}>(138 {intl.formatMessage({id:'projects'})})</p>
           </CardSkill>
           <CardSkill
             //skill={"Documentary Hours"}
             quantity={7000}
           >
-            <p style={{ margin: '0px' }}>Documentary Hours</p>
+            <p style={{ margin: '0px' }}>{intl.formatMessage({id:'documentry_hours'})}</p>
           </CardSkill>
           </div>
        
@@ -77,14 +80,14 @@ export const Jobs = () => {
               // skill={"Hours of TV cartoons(138 Projects)"}
               quantity={3000}
             >
-              <p style={{ margin: '0px' }}>Hours of TV cartoons</p>
-              <p style={{ margin: '0px' }}>(138 Projects)</p>
+              <p style={{ margin: '0px' }}>{intl.formatMessage({id:'hours_Of_tv_cartoon'})}</p>
+              <p style={{ margin: '0px' }}>(138 {intl.formatMessage({id:'projects'})})</p>
             </CardSkill>
             <CardSkill
               //skill={"Film"}
               quantity={250}
             >
-              <p>Film</p>
+              <p>{intl.formatMessage({id:'film'})}</p>
             </CardSkill>
           </div>
 

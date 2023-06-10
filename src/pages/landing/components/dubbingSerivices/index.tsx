@@ -13,6 +13,7 @@ import {
   xxxxSmallMobile,
 } from "../../../../responsive";
 import { ImageOverLap } from "./ImageOverLap";
+import { useIntl } from "react-intl";
 
 const Container = styled.div`
   position: relative;
@@ -38,11 +39,12 @@ const Bottom =styled.div`
   ${xxxxSmallMobile({ flexDirection:'column' ,alignItems:'center'})}
 `;
 const DubbingService = () => {
+  const intl=useIntl();
   return (
     <Container className="" >
    
         <SectionTitle
-          title={"Dubbing Service"}
+          title={intl.formatMessage({id:'sevices'})}
           sectionNumber="02"
           nisTitle={true}
         />

@@ -11,6 +11,8 @@ import {
   xxxxSmallMobile,
 } from "../../../../responsive";
 import { MainColor } from "../../../../helpers";
+import { useIntl } from "react-intl";
+import { useLang } from "../../../../i18n/Metronici18n";
 const Container = styled.div`
   height: fit-content;
   border: solid;
@@ -53,15 +55,25 @@ const Link = styled.a`
   }
 `;
 export const TazmeenSystem = () => {
+  const intl = useIntl();
+  const lang = useLang();
   return (
     <Container>
-      <Title>Tazmeen System</Title>
-      <Paragraph>
-        Is an innovative software based solution to manage the voice dubbing and
-        localization operations. Tazmeen System is the ultimate support for the
-        main dubbing industry global players, especially companies with multiple
-        studios around the world, to serve all available languages.
-      </Paragraph>
+      <Title>{intl.formatMessage({ id: 'tazmeen_system' })}</Title>
+      {lang == 'ar' ?
+        <Paragraph>
+          نظام حاسوبي مبتكر يساعد في إدارة عمليات الدوبلاج في الشركات التي لديها حجم عمل كبير وأستوديوهات متعددة حول العالم.
+        </Paragraph>
+        :
+        <Paragraph>
+          Is an innovative software based solution to manage the voice dubbing and
+          localization operations. Tazmeen System is the ultimate support for the
+          main dubbing industry global players, especially companies with multiple
+          studios around the world, to serve all available languages.
+        </Paragraph>
+
+
+      }
       <Paragraph>
         <Link
           href="http://www.tazmeen.com"

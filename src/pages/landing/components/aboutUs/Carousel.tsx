@@ -5,6 +5,7 @@ import { ButtonSlider } from "../../../../components/buttons/normal/ButtonSlider
 import { FirstItem } from "./carouselItems/FirstItem";
 import { SecondItem } from "./carouselItems/SecondITem";
 import { ThirdItem } from "./carouselItems/ThirdItem";
+import { useLang } from "../../../../i18n/Metronici18n";
 const items = [
   { id: 1, title: FirstItem },
   { id: 2, title: SecondItem },
@@ -16,6 +17,7 @@ const Icon = styled.i`
   color: #f15722;
 `;
 export const Carousel = () => {
+  const lang=useLang();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const goToPrevSlide = () => {
@@ -61,7 +63,7 @@ export const Carousel = () => {
           onClick={goToPrevSlide}
         >
           <ButtonSlider>
-            <Icon className="bi bi-chevron-left" />
+            <Icon className={`bi ${lang =='ar' ?  'bi-chevron-right':'bi-chevron-left'}`} />
           </ButtonSlider>
         </div>
         <div className="carousel-indicators-about">
@@ -79,7 +81,7 @@ export const Carousel = () => {
         </div>
         <div className="carousel-btn-about next-about" onClick={goToNextSlide}>
           <ButtonSlider>
-            <Icon className="bi bi-chevron-right" />
+          <Icon className={`bi ${lang =='ar' ?  'bi-chevron-left':'bi-chevron-right'}`} />
           </ButtonSlider>
         </div>
       </div>

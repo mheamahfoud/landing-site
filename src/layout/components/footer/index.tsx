@@ -75,7 +75,7 @@ export const Footer = () => {
             <div className="col-4">
               <ContainerButton className="d-flex flex-column  align-items-end justify-content-center h-100">
                 <ButtonLinkFadeIn
-                  title={"Add your voice"}
+                  title={intl.formatMessage({id:"add_your_voice"})}
                   url={"https://forms.gle/H5VgoDQQqySeieWB6"}
                 />
                 <ButtonLinkFadeIn title={intl.formatMessage({id:"visit_info"})} onClick={handleClick} />

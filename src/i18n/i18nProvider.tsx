@@ -1,5 +1,5 @@
 import {FC} from 'react'
-import {useLang} from './Metronici18n'
+import {getConfig, useLang} from './Metronici18n'
 import {IntlProvider} from 'react-intl'
 import '@formatjs/intl-relativetimeformat/polyfill'
 import '@formatjs/intl-relativetimeformat/locale-data/en'
@@ -8,7 +8,8 @@ import '@formatjs/intl-relativetimeformat/locale-data/es'
 import '@formatjs/intl-relativetimeformat/locale-data/fr'
 import '@formatjs/intl-relativetimeformat/locale-data/ja'
 import '@formatjs/intl-relativetimeformat/locale-data/zh'
-
+import { createIntl, createIntlCache } from 'react-intl';
+const cache = createIntlCache();
 import deMessages from './messages/de.json'
 import enMessages from './messages/en.json'
 import esMessages from './messages/es.json'
@@ -19,13 +20,13 @@ import ArMessages from './messages/ar.json'
 import { WithChildren } from '../helpers/react18MigrationHelpers'
 
 
-const allMessages = {
-  de: deMessages,
+export const allMessages = {
+  // de: deMessages,
   en: enMessages,
-  es: esMessages,
-  fr: frMessages,
-  ja: jaMessages,
-  zh: zhMessages,
+  // es: esMessages,
+  // fr: frMessages,
+  // ja: jaMessages,
+  // zh: zhMessages,
   ar:ArMessages
 }
 
@@ -40,4 +41,6 @@ const I18nProvider: FC<WithChildren> = ({children}) => {
   )
 }
 
-export {I18nProvider}
+
+const intlNonCom = createIntl({ locale:getConfig().selectedLang, messages: allMessages[getConfig().selectedLang], }, cache);
+export {I18nProvider,intlNonCom}

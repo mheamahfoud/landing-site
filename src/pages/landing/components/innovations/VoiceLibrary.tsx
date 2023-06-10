@@ -13,9 +13,10 @@ import {
   xxxxSmallMobile,
 } from "../../../../responsive";
 import { useCallback } from "react";
-import { NisSepcialtyPath} from "../../../../routing/RouteNames";
+import { NisSepcialtyPath } from "../../../../routing/RouteNames";
 import { useNavigate } from "react-router-dom";
 import { useIntl } from "react-intl";
+import { useLang } from "../../../../i18n/Metronici18n";
 const Container = styled.div`
   height: fit-content;
   border: solid;
@@ -49,7 +50,8 @@ const Paragraph = styled.p`
   ${xxxxSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
 `;
 export const VoiceLibrary = () => {
-  const intl=useIntl();
+  const intl = useIntl();
+  const lang = useLang();
   const navigate = useNavigate();
   const handleSpecialty = useCallback(() => {
     navigate(NisSepcialtyPath, {
@@ -57,13 +59,15 @@ export const VoiceLibrary = () => {
   }, []);
   return (
     <Container>
-      <Title>Voice Library</Title>
-      <Paragraph>Our company owns a huge library of actors voices.</Paragraph>
-      <div style={{margin:'10px 0'}}>
-        <ButtonLinkFadeOut title={intl.formatMessage({id:'add_your_voice'})} url={'https://forms.gle/H5VgoDQQqySeieWB6'} />
+      <Title>{intl.formatMessage({ id: 'voice_library' })}</Title>
+      {lang == 'ar' ? <Paragraph>تمتلك الشركة مكتبة ضخمة من أصوات الممثلين.
+      </Paragraph> :
+        <Paragraph>Our company owns a huge library of actors voices.</Paragraph>}
+      <div style={{ margin: '10px 0' }}>
+        <ButtonLinkFadeOut title={intl.formatMessage({ id: 'add_your_voice' })} url={'https://forms.gle/H5VgoDQQqySeieWB6'} />
       </div>
-      <div style={{margin:'10px 0'}}>
-        <ButtonLinkFadeOut title={intl.formatMessage({id:'nis_specialties'})} onClick={handleSpecialty} />
+      <div style={{ margin: '10px 0' }}>
+        <ButtonLinkFadeOut title={intl.formatMessage({ id: 'nis_specialties' })} onClick={handleSpecialty} />
       </div>
     </Container>
   );

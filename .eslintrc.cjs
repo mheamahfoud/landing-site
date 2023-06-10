@@ -9,7 +9,11 @@ module.exports = {
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   plugins: ['react-refresh'],
   rules: {
-    "@typescript-eslint/no-unused-vars": "off"
-
+    "@typescript-eslint/no-unused-vars": "off",
+    use: [
+      'style-loader',
+      'css-loader',
+      'sass-loader'
+    ]
   },
 }

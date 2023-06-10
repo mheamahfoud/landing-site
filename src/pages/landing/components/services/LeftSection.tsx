@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import SectionTitle from "../../../../components/titles/SectionTitle";
 import "./style.css";
 import { MainColor } from "../../../../helpers";
+import { useIntl } from "react-intl";
 const Container = styled.div`
  
 `;
@@ -36,9 +37,10 @@ const Summery = styled.p`
 
 
 const LeftSection = () => {
+  const intl=useIntl();
   return (
     <Container className="flex-fill-item">
-        <SectionTitle title={"Sevices"} sectionNumber="04" />
+        <SectionTitle title={intl.formatMessage({id:'services'})} sectionNumber="04" />
         <MainTitle>
           <NisTitel>NiS</NisTitel>
           <span id="u2619-2"> offers serves in the following fields:</span>

@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { smallMobile, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
+import { useIntl } from "react-intl";
 const Container = styled.div`
             color: white;
             display: flex;
@@ -16,6 +17,8 @@ const Container = styled.div`
 `;
 
 function ContactInfo() {
+  const intl=useIntl();
+  
   const styles = {
     address: { color: '#F15722', width: '60px', display: 'inline-block' },
     email: { color: '#F15722', width: '60px', display: 'inline-block' },
@@ -24,10 +27,10 @@ function ContactInfo() {
 
   return (
     <Container >
-      <div style={{ textAlign: 'center' }}> <span>Egypt</span></div>
-      <div> <span style={styles.address}>Address:</span> Cairo - Mohandseen </div>
-      <div> <span style={styles.email}>Email:</span> info@nistudio.net </div>
-      <div> <span style={styles.mobile}>Mobile:</span> +20 10 94 33 00 66</div>
+      <div style={{ textAlign: 'center' }}> <span>{intl.formatMessage({id:'egypt'})}</span></div>
+      <div> <span style={styles.address}>{intl.formatMessage({id:'address'})}:</span>{intl.formatMessage({id:'cairo'})}  - {intl.formatMessage({id:'mohandseen'})} </div>
+      <div> <span style={styles.email}>{intl.formatMessage({id:'email'})}:</span> info@nistudio.net </div>
+      <div> <span style={styles.mobile}>{intl.formatMessage({id:'mobile'})}:</span> <span>{'\u202D'+ '+20 10 94 33 00 66'}</span></div>
     </Container>
   );
 }

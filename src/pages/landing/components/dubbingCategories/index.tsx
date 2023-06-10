@@ -16,6 +16,8 @@ import {
   xxxSmallMobile,
   xxxxSmallMobile,
 } from "../../../../responsive";
+import { useIntl } from "react-intl";
+import { useLang } from "../../../../i18n/Metronici18n";
 
 const Container = styled.div`
   position: relative;
@@ -66,6 +68,9 @@ const TopContainerCard = styled.div`
     justifyContent: "center",
   })}
 `;
+interface Props {
+  lang :'ar|en'
+}
 const BottomContainerCard = styled.div`
   ${desktop({ gap: "90px", marginLeft: "200px" })}
   ${laptop({ gap: "90px", marginLeft: "150px" })}
@@ -97,6 +102,8 @@ const BottomContainerCard = styled.div`
 `;
 
 const DubbingAlbum = () => {
+  const lang=useLang();
+  const intl=useIntl();
   const navigate = useNavigate();
   const handleClick = useCallback((id: number) => {
     navigate(DubbingAlbumPath, {
@@ -109,7 +116,7 @@ const DubbingAlbum = () => {
   return (
     <Container className="row d-flex justify-content-center ">
       <Left className="d-flex">
-        <SectionTitle title={"Dubbing Album"} sectionNumber="03" />
+        <SectionTitle title={intl.formatMessage({id:'dubbing_album'})} sectionNumber="03" />
       </Left>
 
       {
@@ -126,7 +133,7 @@ const DubbingAlbum = () => {
               );
             })}
           </TopContainerCard>
-          <BottomContainerCard className="d-flex flex-wrap ">
+          <BottomContainerCard className="d-flex flex-wrap" >
             {DubbingCategories.filter((x) => x.id <= 2).map((item) => {
               return (
                 <CardAlbum

@@ -37,3 +37,22 @@ export const TechnicalError = () => {
     </Container>
   );
 };
+export const ARTechnicalError = () => {
+  return (
+    <Container className="">
+
+      <Paragraph>
+        <Dash>-</Dash>في حال حدوث أيّ عطل فنّيّ أثناء جلسة التسجيل ..
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>فإنّ زمن الجلسة يبقى سارياً لحين إصلاح العطل، ومتابعة جلسة التسجيل
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>حيث يضاف زمن التوقف بسبب العطل الفنّيّ،
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>إلى الأجر الساعيّ المستحقّ للجلسة
+      </Paragraph>
+    </Container>
+  );
+};

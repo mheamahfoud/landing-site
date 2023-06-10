@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useIntl } from 'react-intl';
 import { styled } from 'styled-components';
 interface Props {
     isSubmitting: boolean,
@@ -28,13 +29,15 @@ const Button = styled.button`
 
  `;
 const SubmitButton: FC<Props> = ({ isSubmitting }) => {
+    const intl = useIntl();
     return (
         <Button >
-            {!isSubmitting && <span className='indicator-label'>Submit</span>}
+            {!isSubmitting && <span className='indicator-label'>{intl.formatMessage({ id: 'submit' })}</span>}
             {
                 isSubmitting && (
                     <span className=''>
-                        Please wait...
+                        {intl.formatMessage({ id: 'please_wait' })}
+                        ...
                         <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                     </span>
                 )

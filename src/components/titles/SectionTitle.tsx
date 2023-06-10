@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import NisTitle from "./NisTitle";
 import { SectionNUmber } from "./styles/SectionNumber";
 import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
+import { useLang } from "../../i18n/Metronici18n";
+import ENTitle from "./ENTitle";
+import ARTitle from "./ArTitle";
+
 interface StyleProps {
   color?: string;
 }
@@ -20,15 +24,15 @@ const Container = styled.div<StyleProps>`
   font-family: raleway, sans-serif;
   font-weight: 900;
   position: relative;
-  ${desktop({ width: '340px',height:'250px' })}
-  ${laptop({ width: '340px',height:'250px' })}
-  ${tablet({ width: '340px',height:'250px' })}
-  ${mobile({ width: '306px',height:'200px' })}
-  ${smallMobile({ width: '270px',height:'200px' })}
-  ${xSmallMobile({ width: '250px',height:'200px' })}
-  ${xXSmallMobile({ width: '170px',height:'200px' })}
-  ${xxxSmallMobile({ width: '170px',height:'150px' })}
-  ${xxxxSmallMobile({width: '170px',height:'150px'})}
+  ${desktop({ width: '340px', height: '250px' })}
+  ${laptop({ width: '340px', height: '250px' })}
+  ${tablet({ width: '340px', height: '250px' })}
+  ${mobile({ width: '306px', height: '200px' })}
+  ${smallMobile({ width: '270px', height: '200px' })}
+  ${xSmallMobile({ width: '250px', height: '200px' })}
+  ${xXSmallMobile({ width: '170px', height: '200px' })}
+  ${xxxSmallMobile({ width: '170px', height: '150px' })}
+  ${xxxxSmallMobile({ width: '170px', height: '150px' })}
 `;
 
 const Title = styled.p`
@@ -41,42 +45,21 @@ const Title = styled.p`
   width: 100%;
   height: 30%;
   text-align:center;
-  ${xxxSmallMobile({  textAlign:'center'})}
-  ${xxxxSmallMobile({textAlign:'center'})}
-`;
-const FirstChar = styled.span`
-  ${desktop({fontSize:'40px' ,lineHeight:'48px' })}
-  ${laptop({fontSize:'40px' ,lineHeight:'48px' })}
-  ${tablet({fontSize:'40px'  ,lineHeight:'48px'})}
-  ${mobile({ fontSize:'28px'  ,lineHeight:'34px'})}
-  ${smallMobile({ fontSize:'28px'  ,lineHeight:'34px'})}
-  ${xSmallMobile({ fontSize:'26px'  ,lineHeight:'31px'})}
-  ${xXSmallMobile({ fontSize:'24px'  ,lineHeight:'29px'})}
-  ${xxxSmallMobile({ fontSize:'22px'  ,lineHeight:'26px'})}
-  ${xxxxSmallMobile({ fontSize:'22px'  ,lineHeight:'26px'})}
-  color: ${(props) => props.color};
-`;
-const MiddleChar = styled.span`
-  ${desktop({fontSize:'30px' ,lineHeight:'36px' })}
-  ${laptop({fontSize:'30px' ,lineHeight:'36px' })}
-  ${tablet({fontSize:'30px'  ,lineHeight:'36px'})}
-  ${mobile({ fontSize:'24px'  ,lineHeight:'29px'})}
-  ${smallMobile({ fontSize:'24px'  ,lineHeight:'29px'})}
-  ${xSmallMobile({ fontSize:'22px'  ,lineHeight:'26px'})}
-  ${xXSmallMobile({ fontSize:'20px'  ,lineHeight:'24px'})}
-  ${xxxSmallMobile({ fontSize:'18px'  ,lineHeight:'22px'})}
-  ${xxxxSmallMobile({ fontSize:'18px'  ,lineHeight:'22px'})}
-  color: ${(props) => props.color};
+  ${xxxSmallMobile({ textAlign: 'center' })}
+  ${xxxxSmallMobile({ textAlign: 'center' })}
 `;
 
+
 const SectionTitle = (props: props) => {
+  const lang = useLang();
   const { sectionNumber, title, nisTitle } = props;
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  
+
   useEffect(() => {
+
     const options = {
       root: null,
       rootMargin: "0px",
@@ -112,17 +95,9 @@ const SectionTitle = (props: props) => {
 
       <div>
         <Title
-          className={`title-section ${hasAnimated ? 'animated' : ''}`}
+          className={`title-section ${hasAnimated ? 'animated' : ''} fs-md-1`}
           ref={sectionRef}>
-          {nisTitle && <NisTitle />}{" "}
-          {title.split(" ").map((word) => {
-            return (
-              <>
-                <FirstChar>{word.charAt(0)}</FirstChar>
-                <MiddleChar>{word.slice(1)} </MiddleChar>
-              </>
-            );
-          })}
+          {lang == 'ar' ? <ARTitle title={title} nisTitle={nisTitle} /> : <ENTitle title={title} nisTitle={nisTitle} />}
         </Title>
       </div>
     </Container>

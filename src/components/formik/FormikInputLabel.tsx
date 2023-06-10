@@ -2,10 +2,14 @@ import { useFormikContext } from 'formik';
 import { styled } from "@mui/material";
 import { TextField } from "@mui/material";
 import React from 'react';
+import { getConfig } from '../../i18n/Metronici18n';
 const InputStyle = styled(TextField)({
     width: '600px',
     '@media (max-width: 780px)': {
         width: '288px'
+    },
+    '& .Mui-error':{
+        textAlign:getConfig().selectedLang =='ar' ? 'right' :'left'
     }
 })
 interface props {

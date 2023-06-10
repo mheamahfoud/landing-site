@@ -35,3 +35,22 @@ export const MissedRecording = () => {
     </Container>
   );
 };
+
+
+export const ARMissedRecording = () => {
+  return (
+    <Container className="">
+
+      <Paragraph>
+        <Dash>-</Dash> في حال تبيّن للشركة وجود أخطاء أو نواقص في تسجيل بعض العبارات في جلسات سابقة ..
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>فإنّ زمن الجلسة يبقى سارياً عند تسجيل النواقص أو تصحيح الأخطاء،
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>حيث يضاف هذا الزمن، إلى الأجر الساعيّ المستحقّ للجلسة
+      </Paragraph>
+     
+    </Container>
+  );
+};

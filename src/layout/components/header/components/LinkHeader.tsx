@@ -21,8 +21,6 @@ const TitleLink = styled.div`
   top: 13px;
   color: #f15722;
   text-align: center;
-
-  font-family: roboto, sans-serif;
   font-weight: 400;
   white-space: nowrap;
   padding: 0 10px;

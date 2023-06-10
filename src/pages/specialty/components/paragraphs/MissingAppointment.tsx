@@ -41,3 +41,28 @@ export const MissingAppointment = () => {
     </Container>
   );
 };
+
+
+export const ARMissingAppointment = () => {
+  return (
+    <Container className="">
+
+      <Paragraph>
+        <Dash>-</Dash> في حال اعتذرت الشركة عن جلسة التسجيل
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>بعد وصول الفنّان إلى مقرّ الشركة،
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash> فإنّ أجر جلسة التسجيل يكون مأجوراً بالكامل،
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>ويحصل الفنّان على بطاقة جلسة تسجيل
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>ويكون زمنها هو زمن الجلسة الذي تم الاتفاق عليه عند تحديد الموعد
+      </Paragraph>
+    
+    </Container>
+  );
+};

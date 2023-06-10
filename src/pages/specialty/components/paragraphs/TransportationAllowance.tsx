@@ -32,3 +32,18 @@ export const TransportationAllowance = () => {
     </Container>
   );
 };
+
+export const ARTransportationAllowance = () => {
+  return (
+    <Container className="">
+
+      <Paragraph>
+        <Dash>-</Dash>تمنح الشركة بدلاً ثابتاً لأجور المواصلات للفنّان عن كلّ جلسة تسجيل مهما كان زمنها ..
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>حيث يضاف هذا البدل إلى الأجر المستحقّ لكلّ جلسة
+      </Paragraph>
+      
+    </Container>
+  );
+};

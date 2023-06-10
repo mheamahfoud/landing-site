@@ -7,6 +7,7 @@ import { Formik } from "formik";
 import "./index.css";
 import { roleSchema } from "./validationRule";
 import { sendEmail, verifyToken } from "../../services/email";
+import { useIntl } from "react-intl";
 
 interface FormValues {
   name: string;
@@ -18,7 +19,7 @@ interface FormValues {
 }
 
 export const VisitorInfo: FC = () => {
-
+ const intl =useIntl()
   const location = useLocation();
   const { url } = location.state;
   const captchaRef = useRef(null);

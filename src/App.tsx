@@ -1,13 +1,23 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { I18nProvider } from './i18n/i18nProvider'
 import { LayoutSplashScreen } from './layout/MetronicSplashScreen'
 import ScrollToTop from './routing/ScrollToTop'
+import { useLang } from './i18n/Metronici18n'
 // import { ToastProvider } from 'react-toast-notifications'
 
 
 const App = () => {
+  const lang =useLang();
+  useEffect(() => {
+
+    if (lang === 'ar') {
+      document.body.style.fontFamily = 'Arial, Helvetica Neue, Helvetica, sans-serif';
+    } else {
+      document.body.style.fontFamily = 'roboto, sans-serif'; // Default font for other languages
+    }
+  }, []);
   return (
     <Suspense fallback={<LayoutSplashScreen />}>
       {/* <ToastProvider autoDismiss={true}> */}

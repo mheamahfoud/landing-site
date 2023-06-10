@@ -40,3 +40,22 @@ export const WaitingTime = () => {
     </Container>
   );
 };
+export const ARWaitingTime = () => {
+  return (
+    <Container className="">
+
+      <Paragraph>
+        <Dash>-</Dash>  حضور الفنان إلى جلسة التسجيل قبل الموعد المحدد
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash> يمنح الفنان ميزة: (الانتظار المأجور)
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash>  والذي يبدأ من موعد جلسة التسجيل وحتى دخول الفنان إلى الأستوديو
+      </Paragraph>
+      <Paragraph>
+        <Dash>-</Dash> حيث يضاف زمن هذا الانتظار إلى الأجر الساعي المستحق للجلسة
+      </Paragraph>
+    </Container>
+  );
+};

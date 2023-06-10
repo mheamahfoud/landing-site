@@ -5,7 +5,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 import "./assets/sass/style.react.scss";
-//import "./assets/sass/style.scss";
+import "./assets/sass/style.scss";
 import { MetronicI18nProvider } from "./i18n/Metronici18n";
 import { AppRoutes } from "./routing/AppRoutes";
 import ErrorBoundary from "./ErrorBoundary";

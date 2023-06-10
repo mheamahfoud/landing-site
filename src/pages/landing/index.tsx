@@ -25,6 +25,7 @@ import { useLocation } from "react-router-dom";
 import DubbingService from "./components/dubbingSerivices";
 import { useMediaQuery } from "react-responsive";
 import { MobileSlider } from "./components/slider/MobileSlider";
+import { useIntl } from "react-intl";
 const ContainerAnimationSlider = styled.div`
   ${desktop({
     height: "90vh",
@@ -78,6 +79,7 @@ const InnerContainer = styled.div`
 `;
 
 const Landing: FC = () => {
+  const intl=useIntl();
   const location = useLocation();
   const isSmallScreen = useMediaQuery({ maxWidth: 568 });
   useEffect(() => {
@@ -134,6 +136,9 @@ const Landing: FC = () => {
                 <AnimationLogo />
                 <SentenceRotator
                   sentences={[
+                    intl.formatMessage({id:'speed_performance'}),
+                    intl.formatMessage({id:'quality_implementatiy'}),
+                    intl.formatMessage({id:'speed_performance'}),
                     "Speed in performance",
                     "Quality In Implementation",
                     "Punctuality",

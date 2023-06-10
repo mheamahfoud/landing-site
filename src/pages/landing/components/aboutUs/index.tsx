@@ -13,6 +13,7 @@ import {
   xxxxSmallMobile,
   tabletColumn,
 } from "../../../../responsive";
+import { useIntl } from "react-intl";
 
 const Container = styled.div`
   ${tabletColumn({ flexDirection: "column" })}
@@ -37,10 +38,11 @@ const Right = styled.div`
 `;
 
 const index = () => {
+  const intl=useIntl();
   return (
     <Container className="d-flex justify-content-between">
       <Left className="d-flex">
-        <SectionTitle title={"About Us"} sectionNumber="01" />
+        <SectionTitle title={intl.formatMessage({id:'about_us'})} sectionNumber="01" />
       </Left>
       <Right >
         <Carousel />
