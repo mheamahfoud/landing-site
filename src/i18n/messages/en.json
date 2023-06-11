@@ -115,7 +115,35 @@
   "missing_appointments":"Missing appointments by NiS is compensable",
   "technical_error_compensable":"Technical error is compensable",
   "transportation_allowance":"Transportation allowance",
-  "missed_recordings_and_corrections":"Missed recordings and corrections are compensable"
+  "missed_recordings_and_corrections":"Missed recordings and corrections are compensable",
 
 
+  "classical_arabic":"Classical Arabic",
+  "syrian_accent":"Syrian accent",
+  "egyptian_accent":"Egyptian Accent",
+  "turkish":"Turkish",
+  "persian":"Persian",
+  "kurdish":"Kurdish",
+  "drama":"Drama",
+  "documentry":"Documentry",
+  "carton":"carton",
+  "cenima":"Film",
+  "music":"Music",
+  "songs":"Songs",
+  "sfx":"SFX",
+  "graphics_and_editing":"Graphics and editing",
+  "subtitling":"Subtitling",
+  "inserting_sound_effects":"Inserting sound effects",
+  "composing_music_and_songs":"Composing music and songs",
+  "extra_services_offerd_by":"Extra Services Offerd By",
+  "post_production_services":"Post-production services",
+  "editing":"editing",
+  "graphics":"graphics",
+  "colour_correction":"colour correction",
+  "recording_and_inserting_sound_effects":"Recording and inserting sound effects.",
+  "music_composition":"Music composition.",
+  "audio_mixing":"Audio mixing",
+  "with_5_technique":"with the 5.1 technique.",
+  "electronic_translation":"Electronic translation."
+  
 }

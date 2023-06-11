@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { MainColor } from "../../../../helpers";
+import { useIntl } from "react-intl";
 interface Props {
     url:string,
     title:string
@@ -37,11 +38,12 @@ const Title = styled.h4`
   
 `;
 export const ImageContainer = (props:Props) => {
+  const intl=useIntl();
 const {url,title}=props;
   return (
     <Container>
       <Image url={url} />
-      <Title>{title}</Title>
+      <Title>{intl.formatMessage({id:title})}</Title>
     </Container>
   );
 };

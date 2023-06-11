@@ -11,6 +11,8 @@ import {
   xxxSmallMobile,
   xxxxSmallMobile,
 } from "../../../../responsive";
+import { useIntl } from "react-intl";
+import { useLang } from "../../../../i18n/Metronici18n";
 const Container = styled.div`
   z-index: 88;
   min-height: 351px;
@@ -37,41 +39,57 @@ const Dot = styled.span`
   color: #f15722;
 `;
 const Right: FC = () => {
+  const intl = useIntl();
+  const lang = useLang();
   return (
     <Container className="">
-      <Paragraph>
-        {" "}
-        <Nis>Nis</Nis>{" "}
-        <span id="u1790-2">
-          {" "}
-          offers services in the field of audio dubbing for all artistic works:
-        </span>
-      </Paragraph>
-      <Paragraph>
-        <span id="u1790-4">
-          Drama, movies, documentaries, cartoon films… etc; transforming any
-          original language into the following languages
-        </span>{" "}
-        <span id="u1790-6">and accents:</span>
-      </Paragraph>
+      {lang == "ar" ? (
+        <Paragraph>
+          تقدم شركة <Nis>Nis</Nis>{" "}
+          <span> خدماتها في مجال الدوبلاج لجميع الأعمال الفنية:</span>
+        </Paragraph>
+      ) : (
+        <Paragraph>
+          <Nis>Nis</Nis>{" "}
+          <span >
+            offers services in the field of audio dubbing for all artistic   works:
+          
+          </span>
+        </Paragraph>
+      )}
+      {lang == "ar" ? (
+        <Paragraph>
+          <span>
+            (الدراما - الأفلام السينمائية - الأفلام الوثائقية - الرسوم المتحركة
+            .. وغيرها) من أي لغة في العالم إلى اللغات واللهجات التالية:
+          </span>
+        </Paragraph>
+      ) : (
+        <Paragraph>
+          <span>
+            Drama, movies, documentaries, cartoon films… etc; transforming any
+            original language into the following languages and accents:
+          </span>
+        </Paragraph>
+      )}
       <Paragraph>
         <Dot>• </Dot>
-        <span id="u1790-9">Classical Arabic</span>
+        <span>{intl.formatMessage({id:'classical_arabic'})}</span>
       </Paragraph>
       <Paragraph>
-        <Dot>•</Dot> <span id="u1790-13">Syrian accent</span>
+        <Dot>•</Dot> <span>{intl.formatMessage({id:'syrian_accent'})} </span>
       </Paragraph>
       <Paragraph>
-        <Dot>•</Dot> <span id="u1790-17">Egyptian Accent</span>
+        <Dot>•</Dot> <span>{intl.formatMessage({id:'egyptian_accent'})}</span>
       </Paragraph>
       <Paragraph>
-        <Dot>•</Dot> <span id="u1790-21">Turkish</span>
+        <Dot>•</Dot> <span>{intl.formatMessage({id:'turkish'})} </span>
       </Paragraph>
       <Paragraph>
-        <Dot>•</Dot> <span id="u1790-25">Persian</span>
+        <Dot>•</Dot> <span>{intl.formatMessage({id:'persian'})}</span>
       </Paragraph>
       <Paragraph>
-        <Dot>•</Dot> <span id="u1790-29">Kurdish</span>
+        <Dot>•</Dot> <span>{intl.formatMessage({id:'kurdish'})}</span>
       </Paragraph>
     </Container>
   );

@@ -36,7 +36,7 @@ export const Carousel = () => {
     <div className="carousel-about">
       <div
         className="carousel-items-about"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        style={{ transform: `translateX(${lang=='ar'? '+' :'-'}${activeIndex * 100}%)` }}
       >
         {items.map((item, index) => (
           <div

@@ -5,8 +5,8 @@ import { CardSkill } from "../../../../components/cards/CardSkill";
 import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
 import { useIntl } from "react-intl";
 import { useLang } from "../../../../i18n/Metronici18n";
-import ARParagraph from "./arParagraph";
-import ENParagraph from "./enParagraph";
+import ARParagraph from "./ARParagraph";
+import ENParagraph from "./ENParagraph";
 
 const Container = styled.div`
  

@@ -29,25 +29,25 @@ export const MainColor = "#f15722";
 export const DubbingCategories = [
   {
     id: Categories.Drama,
-    title: "Drama",
+    title: "drama",
     imgCover: DramaCover,
     url: DramaBackgroud,
   },
   {
     id: Categories.Documentary,
-    title: "Documentry",
+    title: "documentry",
     imgCover: DocumentryCover,
     url: DocumentryBackgroud,
   },
   {
     id: Categories.Cartoon,
-    title: "Carton",
+    title: "carton",
     imgCover: CartoonCover,
     url: CartoonBackgroud,
   },
   {
     id: Categories.Film,
-    title: "Film",
+    title: "film",
     imgCover: FilmCover,
     url: FilmBackgroud,
   },
@@ -56,19 +56,19 @@ export const DubbingCategories = [
 export const ServiceCategories = [
   {
     id: Categories.Music,
-    title: "Music",
+    title: "music",
     imgCover: MusicCover,
     url: MusicBackgroud,
   },
   {
     id: Categories.Songs,
-    title: "Songs",
+    title: "songs",
     imgCover: SongsCover,
     url: SongsBackgroud,
   },
   {
     id: Categories.SFX,
-    title: "SFX",
+    title: "sfx",
     imgCover: SFXCover,
     url: SFXBackgroud,
   },

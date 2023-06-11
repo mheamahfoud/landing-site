@@ -50,7 +50,7 @@ const NumberDisplay: React.FC<NumberDisplayProps> = ({ value }) => {
   }, [value, displayValue]);
 
   return <>
-  <span >+</span><span ref={numberRef}>{displayValue.toLocaleString("en-US")}</span>
+  <span ref={numberRef}>{'\u202D'+ '+' +displayValue.toLocaleString("en-US")}</span>
 </>
   
  

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { desktop, laptop, smallMobile, tablet, xSmallMobile, xXSmallMobile , mobile, xxxSmallMobile, xxxxSmallMobile} from "../../../../../../responsive";
+import { getConfig } from "../../../../../../i18n/Metronici18n";
 
 export const ImageContainer = styled.span`
   padding: 2px;
-  float: right;
+  float: ${getConfig().selectedLang=='ar' ? 'left' :'right'};
 
 `;
 

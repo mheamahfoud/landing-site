@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import { MainColor } from "../../../helpers";
 import { xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../responsive";
-import { useIntl } from "react-intl";
 import { useLang } from "../../../i18n/Metronici18n";
 const Title = styled.p`
     font-size: 48px;

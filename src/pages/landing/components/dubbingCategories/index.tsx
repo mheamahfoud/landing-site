@@ -17,7 +17,6 @@ import {
   xxxxSmallMobile,
 } from "../../../../responsive";
 import { useIntl } from "react-intl";
-import { useLang } from "../../../../i18n/Metronici18n";
 
 const Container = styled.div`
   position: relative;
@@ -68,9 +67,7 @@ const TopContainerCard = styled.div`
     justifyContent: "center",
   })}
 `;
-interface Props {
-  lang :'ar|en'
-}
+
 const BottomContainerCard = styled.div`
   ${desktop({ gap: "90px", marginLeft: "200px" })}
   ${laptop({ gap: "90px", marginLeft: "150px" })}
@@ -102,7 +99,6 @@ const BottomContainerCard = styled.div`
 `;
 
 const DubbingAlbum = () => {
-  const lang=useLang();
   const intl=useIntl();
   const navigate = useNavigate();
   const handleClick = useCallback((id: number) => {
@@ -126,7 +122,7 @@ const DubbingAlbum = () => {
               return (
                 <CardAlbum
                   onClick={handleClick}
-                  title={item.title}
+                  title={intl.formatMessage({id:item.title})}
                   url={item.url}
                   id={item.id}
                 />
@@ -138,7 +134,7 @@ const DubbingAlbum = () => {
               return (
                 <CardAlbum
                   onClick={handleClick}
-                  title={item.title}
+                  title={intl.formatMessage({id:item.title})}
                   url={item.url}
                   id={item.id}
                 />

@@ -109,9 +109,9 @@ const Landing: FC = () => {
                 <AnimationLogo />
                 <SentenceRotator
                   sentences={[
-                    "Speed in performance",
-                    "Quality In Implementation",
-                    "Punctuality",
+                    intl.formatMessage({id:'speed_performance'}),
+                    intl.formatMessage({id:'quality_implementatiy'}),
+                    intl.formatMessage({id:'speed_performance'}),
                   ]}
                 />
               </div>
@@ -139,9 +139,6 @@ const Landing: FC = () => {
                     intl.formatMessage({id:'speed_performance'}),
                     intl.formatMessage({id:'quality_implementatiy'}),
                     intl.formatMessage({id:'speed_performance'}),
-                    "Speed in performance",
-                    "Quality In Implementation",
-                    "Punctuality",
                   ]}
                 />
               </div>

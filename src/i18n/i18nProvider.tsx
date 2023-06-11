@@ -10,12 +10,12 @@ import '@formatjs/intl-relativetimeformat/locale-data/ja'
 import '@formatjs/intl-relativetimeformat/locale-data/zh'
 import { createIntl, createIntlCache } from 'react-intl';
 const cache = createIntlCache();
-import deMessages from './messages/de.json'
+//import deMessages from './messages/de.json'
 import enMessages from './messages/en.json'
-import esMessages from './messages/es.json'
-import frMessages from './messages/fr.json'
-import jaMessages from './messages/ja.json'
-import zhMessages from './messages/zh.json'
+// import esMessages from './messages/es.json'
+// import frMessages from './messages/fr.json'
+// import jaMessages from './messages/ja.json'
+// import zhMessages from './messages/zh.json'
 import ArMessages from './messages/ar.json'
 import { WithChildren } from '../helpers/react18MigrationHelpers'
 

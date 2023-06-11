@@ -1,23 +1,9 @@
-import React from 'react';
-import NisTitle from './NisTitle';
 import styled from 'styled-components';
 import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
 interface Props {
     title: string | undefined;
     nisTitle?: boolean;
 }
-const FirstChar = styled.span`
-  ${desktop({ fontSize: '40px', lineHeight: '48px' })}
-  ${laptop({ fontSize: '40px', lineHeight: '48px' })}
-  ${tablet({ fontSize: '40px', lineHeight: '48px' })}
-  ${mobile({ fontSize: '28px', lineHeight: '34px' })}
-  ${smallMobile({ fontSize: '28px', lineHeight: '34px' })}
-  ${xSmallMobile({ fontSize: '26px', lineHeight: '31px' })}
-  ${xXSmallMobile({ fontSize: '24px', lineHeight: '29px' })}
-  ${xxxSmallMobile({ fontSize: '22px', lineHeight: '26px' })}
-  ${xxxxSmallMobile({ fontSize: '22px', lineHeight: '26px' })}
-  color: ${(props) => props.color};
-`;
 const MiddleChar = styled.span`
   ${desktop({ fontSize: '30px', lineHeight: '36px' })}
   ${laptop({ fontSize: '30px', lineHeight: '36px' })}
@@ -31,7 +17,7 @@ const MiddleChar = styled.span`
   color: ${(props) => props.color};
 `;
 const ARTitle = (props: Props) => {
-    const { title, nisTitle } = props;
+    const { title} = props;
     return (
         <>
             {title.split(" ").map((word) => {

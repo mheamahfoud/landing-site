@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
 import "./style.css";
 import { useEffect, useRef, useState } from "react";
-import NisTitle from "./NisTitle";
+// import NisTitle from "./NisTitle";
 import { SectionNUmber } from "./styles/SectionNumber";
 import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
 import { useLang } from "../../i18n/Metronici18n";
 import ENTitle from "./ENTitle";
-import ARTitle from "./ArTitle";
+import ARTitle from "./ARTitle";
+// import ARTitle from "./ArTitle";
 
 interface StyleProps {
   color?: string;

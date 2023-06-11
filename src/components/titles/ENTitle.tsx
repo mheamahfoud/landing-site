@@ -1,4 +1,3 @@
-import React from 'react';
 import NisTitle from './NisTitle';
 import styled from 'styled-components';
 import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
