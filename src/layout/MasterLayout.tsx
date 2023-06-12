@@ -39,9 +39,8 @@ export const MasterLayout = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [linkClicked]);
-  const lang = useLang();
   return (
-    <div style={{direction:lang=='ar'?'rtl':'ltr'}}>
+    <div >
       <Header />
       {/* <div className="slider-wrapper">
         <Slider />

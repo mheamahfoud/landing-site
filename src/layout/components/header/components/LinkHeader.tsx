@@ -1,10 +1,11 @@
 import { styled } from "styled-components";
 import './linkHeader.css'
 import { mobileHeader } from "../responsive";
+import { getConfig } from "../../../../i18n/Metronici18n";
 //menu-active
 const Container = styled.div`
   position: relative;
-  font-size: 13px;
+  font-size: ${getConfig().selectedLang =='ar' ?' 1rem' : '0.8rem'};
   letter-spacing: 2px;
   line-height: 16px;
   ${mobileHeader({fontSize:'12px', letterSpacing:'1px', lineHeight:'14px'})}
@@ -39,7 +40,7 @@ const LinkHeader = ({ ...props }) => {
   return (
     <Container onClick={() => onClick(value, to)}>
       <TagLink className={`nonblock nontext sdsa  clearfix `}>
-        <TitleLink className={`NoWrap ${active ? "menu-active" : ""}`}>
+        <TitleLink className={`fw-bold NoWrap ${active ? "menu-active" : ""}`}>
           {title}
         </TitleLink>
       </TagLink>

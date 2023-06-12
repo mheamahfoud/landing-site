@@ -10,6 +10,7 @@ import {
   xxxSmallMobile,
   xxxxSmallMobile,
 } from "../../../responsive";
+import { getConfig } from "../../../i18n/Metronici18n";
 const Container = styled.a`
   background-color: #f15722;
   border-radius: 10px;
@@ -44,7 +45,7 @@ const Title = styled.p`
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Firefox */
-
+font-size: ${getConfig().selectedLang=='ar' ? '1.09rem' : '1rem'};
   text-align: center;
   color: #f8f6e1;
   background-color: #f15722;

@@ -13,7 +13,6 @@ const Container = styled.img`
   ${mobile({width: '175px',height: '175px'})}
   ${smallMobile({width: '160px',height: '160px'})}
   ${xSmallMobile({width: '160px',height: '160px'})}
-
   ${xXSmallMobile({width: '125px',height: '125px'})}
   ${xxxSmallMobile({width: '125px',height: '125px'})}
   ${xxxxSmallMobile({width: '125px',height: '125px'})}

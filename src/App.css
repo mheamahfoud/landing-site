@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+[dir='rtl'] {
+  font-size: 18px; /* Font size for RTL text */
+}
+
+[dir='ltr'] {
+  font-size: 14px; /* Font size for LTR text */
+}

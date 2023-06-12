@@ -48,7 +48,6 @@ export const VisitorInfo: FC = () => {
   };
   return (
     <div>
-      {" "}
       <Header url={url} />
       <div
         className="d-flex justify-content-center flex-column"

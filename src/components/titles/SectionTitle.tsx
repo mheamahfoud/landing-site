@@ -96,7 +96,7 @@ const SectionTitle = (props: props) => {
 
       <div>
         <Title
-          className={`title-section ${hasAnimated ? 'animated' : ''} fs-md-1`}
+          className={`title-section ${hasAnimated ? 'animated' : ''} `}
           ref={sectionRef}>
           {lang == 'ar' ? <ARTitle title={title} nisTitle={nisTitle} /> : <ENTitle title={title} nisTitle={nisTitle} />}
         </Title>

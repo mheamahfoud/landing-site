@@ -110,7 +110,7 @@ const Landing: FC = () => {
                 <SentenceRotator
                   sentences={[
                     intl.formatMessage({id:'speed_performance'}),
-                    intl.formatMessage({id:'quality_implementatiy'}),
+                    intl.formatMessage({id:'puntuality'}),
                     intl.formatMessage({id:'speed_performance'}),
                   ]}
                 />
@@ -137,7 +137,7 @@ const Landing: FC = () => {
                 <SentenceRotator
                   sentences={[
                     intl.formatMessage({id:'speed_performance'}),
-                    intl.formatMessage({id:'quality_implementatiy'}),
+                    intl.formatMessage({id:'puntuality'}),
                     intl.formatMessage({id:'speed_performance'}),
                   ]}
                 />

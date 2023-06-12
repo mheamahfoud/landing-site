@@ -60,8 +60,10 @@ export const paragraphs: {
           </Paragraph>
         ) : (
           <Paragraph>
-            قامت شركة <NisTitel>NiS</NisTitel> بتسجيل عشرات الأغاني والشارات
-            للأعمال الدرامية ومسلسلات الرسوم المتحركة.
+            <NisTitel>NiS</NisTitel> performed soundtracks and music production
+            for a large number of drama works; Syrian, Egyptian, Gulf and works
+            with dubbing. The company has a cadre of professional musicians in
+            this industry field.
           </Paragraph>
         )}
       </>

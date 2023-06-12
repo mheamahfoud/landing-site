@@ -14,8 +14,12 @@ const App = () => {
 
     if (lang === 'ar') {
       document.body.style.fontFamily = 'Arial, Helvetica Neue, Helvetica, sans-serif';
+      document.documentElement.setAttribute("dir", "rtl");
+      document.body.style.direction = 'rtl';
     } else {
       document.body.style.fontFamily = 'roboto, sans-serif'; // Default font for other languages
+      document.body.style.direction = 'ltr';
+      document.documentElement.setAttribute("dir", "ltr");
     }
   }, []);
   return (

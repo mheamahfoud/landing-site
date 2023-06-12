@@ -15,7 +15,14 @@ body {
   padding: 0px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: $root-font-size !important;
+ // font-size: $root-font-size !important;
+  // [dir='rtl'] {
+  //   font-size: 18px; /* Font size for RTL text */
+  // }
+  
+  // [dir='ltr'] {
+  //   font-size: 16px; /* Font size for LTR text */
+  // }
   font-weight: $font-weight-base;
   font-family: $font-family-sans-serif;
     position: relative;
@@ -48,4 +55,11 @@ canvas {
 // Angular integration
 router-outlet {
   display: none;
+}
+[dir='rtl'] {
+  font-size: 18px; /* Font size for RTL text */
+}
+
+[dir='ltr'] {
+  font-size: 16px; /* Font size for LTR text */
 }

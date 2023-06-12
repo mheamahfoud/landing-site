@@ -69,8 +69,8 @@ const TopContainerCard = styled.div`
 `;
 
 const BottomContainerCard = styled.div`
-  ${desktop({ gap: "90px", marginLeft: "200px" })}
-  ${laptop({ gap: "90px", marginLeft: "150px" })}
+  ${desktop({ gap: "90px",justifyContent: "end"})}
+  ${laptop({ gap: "90px",justifyContent: "end"  })}
   ${tablet({ justifyContent: "space-evenly" })}
   ${mobile({ justifyContent: "space-evenly" })}
   ${smallMobile({ justifyContent: "space-evenly" })}
@@ -110,13 +110,13 @@ const DubbingAlbum = () => {
     });
   }, []);
   return (
-    <Container className="row d-flex justify-content-center ">
+    <Container className="row d-flex justify-content-center fs-md-2 ">
       <Left className="d-flex">
         <SectionTitle title={intl.formatMessage({id:'dubbing_album'})} sectionNumber="03" />
       </Left>
 
       {
-        <Bottom className="d-flex flex-column" style={{ gap: "20px" }}>
+        <Bottom className="d-flex flex-column">
           <TopContainerCard className="d-flex flex-wrap ">
             {DubbingCategories.filter((x) => x.id > 2).map((item) => {
               return (
