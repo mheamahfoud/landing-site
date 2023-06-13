@@ -5,10 +5,8 @@ import { getConfig } from "../../../../i18n/Metronici18n";
 //menu-active
 const Container = styled.div`
   position: relative;
-  font-size: ${getConfig().selectedLang =='ar' ?' 1rem' : '0.8rem'};
   letter-spacing: 2px;
-  line-height: 16px;
-  ${mobileHeader({fontSize:'12px', letterSpacing:'1px', lineHeight:'14px'})}
+
 `;
 
 const TagLink = styled.a`
@@ -38,7 +36,7 @@ const TitleLink = styled.div`
 const LinkHeader = ({ ...props }) => {
   const { active, title, onClick, value, to } = props;
   return (
-    <Container onClick={() => onClick(value, to)}>
+    <Container onClick={() => onClick(value, to)} className="fs-md-7 fs-sm-12" >
       <TagLink className={`nonblock nontext sdsa  clearfix `}>
         <TitleLink className={`fw-bold NoWrap ${active ? "menu-active" : ""}`}>
           {title}

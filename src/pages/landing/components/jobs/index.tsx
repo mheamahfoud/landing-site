@@ -2,7 +2,6 @@
 import { styled } from "styled-components";
 import CoverSkills from "../../../../assets/images/jobs-skills.png";
 import { CardSkill } from "../../../../components/cards/CardSkill";
-import { desktop, laptop, mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile, xxxSmallMobile, xxxxSmallMobile } from "../../../../responsive";
 import { useIntl } from "react-intl";
 import { useLang } from "../../../../i18n/Metronici18n";
 import ARParagraph from "./ARParagraph";
@@ -33,16 +32,6 @@ const Top = styled.div`
   min-height: 35px;
 `;
 const Paragraph = styled.p`
-  ${desktop({ fontSize: '20px', lineHeight: '36px' })}
-  ${laptop({ fontSize: '20px', lineHeight: '36px' })}
-  ${tablet({ fontSize: '16px', lineHeight: '29px' })}
-  ${mobile({ fontSize: '14px', lineHeight: '25px' })}
-  ${smallMobile({ fontSize: '14px', lineHeight: '25px' })}
-  ${xSmallMobile({ fontSize: '14px', lineHeight: '25px' })}
-  ${xXSmallMobile({ fontSize: '14px', lineHeight: '25px' })}
-  ${xxxSmallMobile({ fontSize: '14px', lineHeight: '25px' })}
-  ${xxxxSmallMobile({ fontSize: '14px', lineHeight: '25px' })}
- 
   white-space: break-spaces;
   padding: 20px 20px;
 `;
@@ -61,8 +50,8 @@ export const Jobs = () => {
            }
           </Paragraph>
         </Top>
-        <Bottom className="d-flex justify-content-center align-items-center flex-wrap">
-          <div className="d-flex justify-content-center align-items-center ">
+        <Bottom className="d-flex justify-content-center align-items-center flex-wrap gap-4">
+          <div className="d-flex justify-content-center align-items-center gap-4">
           <CardSkill quantity={11000}>
             <p style={{ margin: '0px' }}>{intl.formatMessage({id:'hours_Of_drama_series'})}</p>
             <p style={{ margin: '0px' }}>(138 {intl.formatMessage({id:'projects'})})</p>
@@ -75,7 +64,7 @@ export const Jobs = () => {
           </CardSkill>
           </div>
        
-          <div className="d-flex justify-content-center align-items-center ">
+          <div className="d-flex justify-content-center align-items-center gap-4">
             <CardSkill
               // skill={"Hours of TV cartoons(138 Projects)"}
               quantity={3000}

@@ -38,74 +38,24 @@ const Seperator = styled.div`
 `;
 const Quantity = styled.div`
    flex-grow: 1;
-  ${desktop({
-  width: '285px',
-  height:'70px',
-  fontSize: '60px', lineHeight: '72px'
-})}
-  ${laptop({
-  width: '213px',
-   height:'70px',
-  fontSize: '50px', lineHeight: '60px'
-})}
-  ${tablet({
-  width: '213px',
-  minHeight :'70px',
-  fontSize: '45px', lineHeight: '54px'
-})}
-  ${mobile({
-  width: '213px',
-  height:'60px',
-  fontSize: '45px', lineHeight: '54px'
-})}
-${smallMobile({
-  width: '213px',
-   height:'60px',
-  fontSize: '45px', lineHeight: '54px'
-})}
-${xSmallMobile({
-  width: '213px',
-  minHeight :'60px',
-  fontSize: '35px', lineHeight: '43px'
-})}
-${xXSmallMobile({
-  width: '150px',
-  height:'40px',
-  fontSize: '35px', lineHeight: '36px'
-})}
-${xxxSmallMobile({
-  width: '150px',
-  height:'40px',
-  fontSize: '35px', lineHeight: '36px'
-})}
-${xxxxSmallMobile({
-  width: '150px',
-  height:'40px',
-  fontSize: '30px', lineHeight: '36px'
-})}`;
+
+
+ `;
   
  
   
 
 const Title = styled.div` 
  height:83px;
-${xXSmallMobile({
-  fontSize: '10px', lineHeight: '12px'
-})};
-${xxxSmallMobile({
-  fontSize: '10px', lineHeight: '12px'
-})};
-${xxxxSmallMobile({
-  fontSize: '10px', lineHeight: '12px'
-})}`;
+`;
   
 
 
 export const CardSkill = (props: props) => {
   const { children, quantity } = props;
   return (
-    <Container className="d-flex flex-column">
-      <Quantity>
+    <Container className="d-flex flex-column ">
+      <Quantity className="fs-lg-3x fs-md-3x fs-sm-2x">
         <NumberDisplay value={quantity} />
       </Quantity>
       <Seperator />

@@ -8,7 +8,7 @@ html {
   text-size-adjust: 100%;
 }
 
-html,
+
 body {
   height: 100%;
   margin: 0px;
@@ -27,13 +27,21 @@ body {
   font-family: $font-family-sans-serif;
     position: relative;
   // Tablet mode
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-up(lg) {
     font-size: $root-font-size-lg !important;
   }
-
+  @include media-breakpoint-up(md) {
+    font-size: $root-font-size-lg !important;
+  }
   // Mobile mode
   @include media-breakpoint-down(md) {
     font-size: $root-font-size-md !important;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 14px!important;
+  }
+  @include media-breakpoint-down(xs) {
+    font-size: 12px!important;
   }
 }
 

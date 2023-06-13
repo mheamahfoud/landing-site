@@ -2,14 +2,10 @@ import { styled } from "styled-components";
 import Image from "./assset/item-3.jpg";
 import { ImageContainer, ImageCover, ImageText } from "./styles/ImageContainer";
 import {
-  middleFont,
-  xSmallMobile,
-  xXSmallMobile,
-  xmiddleFont,
   xxxSmallMobile,
   xxxxSmallMobile,
 } from "../../../../../responsive";
-import { getConfig, useLang } from "../../../../../i18n/Metronici18n";
+import {  useLang } from "../../../../../i18n/Metronici18n";
 import { useIntl } from "react-intl";
 const Nis = styled.span`
   color: #f15722;
@@ -18,6 +14,7 @@ interface Props {
   lang: "en" | "ar";
 }
 const Container = styled.div<Props>`
+
   height: 100%;
   z-index: 164;
   min-height: 415px;
@@ -25,40 +22,23 @@ const Container = styled.div<Props>`
   color: #7f7f7f;
 
   position: relative;
-  font-size: ${(props) => (props.lang == "ar" ? "20px" : "17px")};
   width: 100%;
   font-weight: ${(props) => (props.lang == "ar" ? "bold" : "")};
-  line-height: ${(props) => (props.lang == "ar" ? "32px" : "")};
 
-  ${xmiddleFont({
-    fontSize: getConfig().selectedLang == "ar" ? "20px" : "17px",
-  })}
-  ${xSmallMobile({
-    fontSize: getConfig().selectedLang == "ar" ? "17px" : "15px",
-  })}
-  ${middleFont({
-    fontSize: getConfig().selectedLang == "ar" ? "15px" : "14px",
-  })}
-  ${xXSmallMobile({
-    fontSize: getConfig().selectedLang == "ar" ? "15px" : "14px",
-  })}
+
+ 
   ${xxxSmallMobile({
-    fontSize: "13px",
     display: "flex",
     flexDirection: "column",
   })}
   ${xxxxSmallMobile({
-    fontSize: "10px",
     display: "flex",
     flexDirection: "column",
   })}
 `;
 const Paragraph = styled.p`
-  line-height: 27px;
   padding-right: 10px;
   padding-left: 10px;
-  ${xxxSmallMobile({ lineHeight: "20px" })}
-  ${xxxxSmallMobile({ lineHeight: "18px" })}
   margin: 0;
 `;
 
@@ -85,7 +65,7 @@ export const ThirdItem = () => {
   const lang = useLang();
   const intl = useIntl();
   return (
-    <Container lang={lang}>
+    <Container lang={lang} className="fs-md-3 fs-sm-6 fs-xs-8">
       <Paragraph>
         <ImageContainer>
           <ImageCover>
@@ -95,7 +75,7 @@ export const ThirdItem = () => {
 
         <ContainerText>
           <Text>
-            {lang ? (
+            {lang == 'ar' ? (
               <span>
                 قامت شركة <Nis>NiS</Nis> بتنفيذ ما يزيد عن 13000 ساعة دوبلاج
                 متنوعة من الأفلام السينمائية والمسلسلات الدرامية والأفلام

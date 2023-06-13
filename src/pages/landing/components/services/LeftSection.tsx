@@ -4,30 +4,28 @@ import "./style.css";
 import { MainColor } from "../../../../helpers";
 import { useIntl } from "react-intl";
 import { useLang } from "../../../../i18n/Metronici18n";
-const Container = styled.div``;
+const Container = styled.div`
+
+`;
 const NisTitel = styled.span`
   color: ${MainColor};
 `;
 const Dot = styled.span`
   color: ${MainColor};
 `;
-
 //Left
 const MainTitle = styled.p`
-  line-height: 32px;
-  font-weight: bold;
   margin: 0;
+  font-size: 1.1rem;
 `;
 const SecondaryTitle = styled.p`
-  line-height: 22px;
   margin: 0;
+  font-size: 1rem;
 `;
 const Summery = styled.p`
-  line-height: 27px;
   color: #7f7f7f;
-  font-family: raleway, sans-serif;
   padding-top: 27px;
-  font-weight: 900;
+  font-size: 1.1rem;
 `;
 
 //end lf
@@ -36,12 +34,12 @@ const LeftSection = () => {
   const intl = useIntl();
   const lang = useLang();
   return (
-    <Container className="flex-fill-item">
+    <Container className="flex-fill-item fw-bold">
       <SectionTitle
         title={intl.formatMessage({ id: "services" })}
         sectionNumber="04"
       />
-      <MainTitle>
+      <MainTitle className="fw-bold">
         {lang == "ar" ? (
           <span>
             {" "}
@@ -71,13 +69,13 @@ const LeftSection = () => {
       </SecondaryTitle>
 
       {lang == "ar" ? (
-        <Summery>
+        <Summery className="fw-bold">
           حيث تمتلك شركة <NisTitel>NiS</NisTitel> التجهيزات والمعدات اللازمة
           للعمليات الفنية على الصورة بالإضافة إلى مكتبة ضخمة من المؤثرات الصوتية
           والموسيقى والأغاني.
         </Summery>
       ) : (
-        <Summery>
+        <Summery className="fw-bold">
           The significance of <NisTitel>NiS</NisTitel> is derived from the
           equipment and tools necessary for carrying out the artistic and
           technical tasks, which are applied to the image, in addition to the

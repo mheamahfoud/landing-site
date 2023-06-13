@@ -9,33 +9,15 @@ import SFXCover from "../../../../assets/images/categories/coverphoto/sfx-cat.jp
 import MusicBackgroud from "../../../../assets/images/categories/background/music-back.png";
 import SongsBackgroud from "../../../../assets/images/categories/background/song-back.png";
 import SFXBackgroud from "../../../../assets/images/categories/background/sfx-back.png";
-import {
-  desktop,
-  laptop,
-  mobile,
-  smallMobile,
-  tablet,
-  xSmallMobile,
-  xXSmallMobile,
-  xxxSmallMobile,
-  xxxxSmallMobile,
-} from "../../../../responsive";
 import { Categories } from "../../../../helpers/Constants";
 import { getConfig } from "../../../../i18n/Metronici18n";
 
 const Paragraph = styled.div`
   color: #2f2c24;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0 10px;
-  ${desktop({ fontSize: "20px", lineHeight: "24px" })}
-  ${laptop({ fontSize: "20px", lineHeight: "24px" })}
-  ${tablet({ fontSize: "20px", lineHeight: "24px" })}
-  ${mobile({ fontSize: "17px", lineHeight: "20px" })}
-  ${smallMobile({ fontSize: "17px", lineHeight: "20px" })}
-  ${xSmallMobile({ fontSize: "16px", lineHeight: "19px" })}
-  ${xXSmallMobile({ fontSize: "16px", lineHeight: "19px" })}
-  ${xxxSmallMobile({ fontSize: "16px", lineHeight: "19px" })}
-  ${xxxxSmallMobile({ fontSize: "16px", lineHeight: "19px" })}
+font-size: 1.1rem;
+
 `;
 const NisTitel = styled.span`
   color: ${MainColor};

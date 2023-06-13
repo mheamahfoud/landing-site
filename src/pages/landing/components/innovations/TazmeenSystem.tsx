@@ -1,15 +1,4 @@
 import { styled } from "styled-components";
-import {
-  desktop,
-  laptop,
-  mobile,
-  smallMobile,
-  tablet,
-  xSmallMobile,
-  xXSmallMobile,
-  xxxSmallMobile,
-  xxxxSmallMobile,
-} from "../../../../responsive";
 import { MainColor } from "../../../../helpers";
 import { useIntl } from "react-intl";
 import { useLang } from "../../../../i18n/Metronici18n";
@@ -26,24 +15,14 @@ const Container = styled.div`
   padding: 5px;
 `;
 const Title = styled.p`
-  ${desktop({ fontSize: "28px", lineHeight: "34px", fontWeight: "bold" })}
-  ${laptop({ fontSize: "26px", lineHeight: "31px", fontWeight: "bold" })}
-  ${tablet({ fontSize: "22px", lineHeight: "26px", fontWeight: "bold" })}
-  ${mobile({ fontSize: "16px", lineHeight: "21px", fontWeight: "bold" })}
   margin:0;
+  font-size:1.5rem;
 `;
 const Paragraph = styled.p`
   margin: 0;
   text-indent: 5px;
-  ${desktop({ fontSize: "20px", lineHeight: "20px" })}
-  ${laptop({ fontSize: "16px", lineHeight: "21px" })}
-  ${tablet({ fontSize: "16px", lineHeight: "19px" })}
-  ${mobile({ fontSize: "14px", lineHeight: "14px" })}
-  ${smallMobile({ fontSize: "14px", lineHeight: "14px" })}
-  ${xSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
-  ${xXSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
-  ${xxxSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
-  ${xxxxSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
+  font-size:1.2rem;
+
 `;
 
 const Link = styled.a`
@@ -59,13 +38,13 @@ export const TazmeenSystem = () => {
   const lang = useLang();
   return (
     <Container>
-      <Title>{intl.formatMessage({ id: 'tazmeen_system' })}</Title>
+      <Title className="fw-bolder">{intl.formatMessage({ id: 'tazmeen_system' })}</Title>
       {lang == 'ar' ?
-        <Paragraph>
+        <Paragraph className="fw-normal">
           نظام حاسوبي مبتكر يساعد في إدارة عمليات الدوبلاج في الشركات التي لديها حجم عمل كبير وأستوديوهات متعددة حول العالم.
         </Paragraph>
         :
-        <Paragraph>
+        <Paragraph className="fw-normal">
           Is an innovative software based solution to manage the voice dubbing and
           localization operations. Tazmeen System is the ultimate support for the
           main dubbing industry global players, especially companies with multiple

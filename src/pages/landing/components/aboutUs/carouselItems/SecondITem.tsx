@@ -2,10 +2,7 @@ import { styled } from "styled-components";
 import Image from "./assset/item-2.jpg";
 import { ImageContainer, ImageCover, ImageText } from "./styles/ImageContainer";
 import {
-  middleFont,
-  xSmallMobile,
-  xXSmallMobile,
-  xmiddleFont,
+ 
   xxxSmallMobile,
   xxxxSmallMobile,
 } from "../../../../../responsive";
@@ -19,28 +16,18 @@ const Container = styled.div`
   min-height: 415px;
   background-color: transparent;
   color: #7f7f7f;
-  font-size: 17px;
   position: relative;
-  ${middleFont({ fontSize: "14px" })}
-  ${xmiddleFont({ fontSize: "17px" })}
-  ${xSmallMobile({ fontSize: "15px" })}
-  ${xXSmallMobile({ fontSize: "14px" })}
   ${xxxSmallMobile({
-    fontSize: "13px",
     display: "flex",
     flexDirection: "column",
   })}
   ${xxxxSmallMobile({
-    fontSize: "10px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
   })}
 `;
 const Paragraph = styled.p`
-  line-height: 23px;
-  ${xxxSmallMobile({ lineHeight: "15px" })}
-  ${xxxxSmallMobile({ lineHeight: "12px" })}
   margin: 0;
 `;
 
@@ -66,7 +53,7 @@ const Text = styled.span`
 export const SecondItem = () => {
   const lang = useLang();
   return (
-    <Container>
+    <Container className="fs-md-3 fs-sm-6 fs-xs-8">
       <Paragraph>
         <ImageContainer>
           <ImageCover>
@@ -77,11 +64,7 @@ export const SecondItem = () => {
           <Text>
             {lang == "ar" ? (
               <span
-                style={{
-                  fontSize: "20px",
-                  fontWeight: "bold",
-                  lineHeight: "32px",
-                }}
+              className="fw-bolder "
               >
                 <span className="">
                   تحتل شركة NiS مكانتها كواحدة من أكبر الشركات العاملة في مجال
@@ -97,7 +80,7 @@ export const SecondItem = () => {
                 </span>
               </span>
             ) : (
-              <span>
+              <span   >
                 Among all the companies that work in the dubbing field, in the
                 Arab world and the world at large, <Nis>NiS</Nis> is remarkable
                 with using cutting-edge techniques and software apps, especially
@@ -116,19 +99,15 @@ export const SecondItem = () => {
       <p></p>
       {lang == "ar" ? (
         <Paragraph
-          style={{
-            fontSize: "20px",
-            fontWeight: "bold",
-            lineHeight: "32px",
-          }}
+        className="fw-bolder"
         >
-          تفخر شركة NiS ببيئتها الإدارية المنظّمة وبفريق عملها من الفنيين
+          تفخر شركة <Nis>NiS</Nis> ببيئتها الإدارية المنظّمة وبفريق عملها من الفنيين
           والإداريين والتقنيين المحترفين والمتفانين في عملهم، وبخبراتهم التي لا
           تقل عن خمس سنوات وتصل إلى إثني عشرة سنة، والذين يجسّدون بعملهم نموذجاً
           لروح الفريق.
         </Paragraph>
       ) : (
-        <Paragraph>
+        <Paragraph className="">
           The professional pride of <Nis>NiS</Nis> stems from its well-organized
           administration environment, along with its work team, including the
           technical and administrative staff, who are extremely devoted to their

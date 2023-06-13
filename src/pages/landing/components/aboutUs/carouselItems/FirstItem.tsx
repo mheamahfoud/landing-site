@@ -3,10 +3,6 @@ import Image from "./assset/item-1.jpg";
 import { ImageContainer, ImageCover, ImageText } from "./styles/ImageContainer";
 import { ContainerText, TextP } from "./styles/TextContainer";
 import {
-  middleFont,
-  xSmallMobile,
-  xXSmallMobile,
-  xmiddleFont,
   xxxSmallMobile,
   xxxxSmallMobile,
 } from "../../../../../responsive";
@@ -15,12 +11,9 @@ import { useLang } from "../../../../../i18n/Metronici18n";
 const Nis = styled.span`
   color: #f15722;
 `;
-
 const Paragraph = styled.p`
   line-height: 23px;
   margin: 0;
-  ${xxxSmallMobile({ lineHeight: "15px" })}
-  ${xxxxSmallMobile({ lineHeight: "12px" })}
 `;
 
 const ContainerItem = styled.div`
@@ -29,19 +22,13 @@ const ContainerItem = styled.div`
   min-height: 415px;
   background-color: transparent;
   color: #7f7f7f;
-  font-size: 17px;
   position: relative;
-  ${middleFont({ fontSize: "14px" })}
-  ${xmiddleFont({ fontSize: "17px" })}
-  ${xSmallMobile({ fontSize: "15px" })}
-  ${xXSmallMobile({ fontSize: "14px" })}
+
   ${xxxSmallMobile({
-    fontSize: "13px",
     display: "flex",
     flexDirection: "column",
   })}
   ${xxxxSmallMobile({
-    fontSize: "10px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -51,7 +38,7 @@ const ContainerItem = styled.div`
 export const FirstItem = () => {
   const lang = useLang();
   return (
-    <ContainerItem>
+    <ContainerItem className="fs-md-3 fs-sm-6 fs-xs-8">
       <ImageContainer>
         <ImageCover>
           <ImageText src={Image} />
@@ -61,13 +48,7 @@ export const FirstItem = () => {
         <ContainerText>
           <TextP>
             {lang == "ar" ? (
-              <span
-                style={{
-                  fontSize: "20px",
-                  fontWeight: "bold",
-                  lineHeight: "32px",
-                }}
-              >
+              <span className="fw-bolder ">
                 {" "}
                 تأسست شركة <Nis>NiS</Nis> في عام 2003 كشركة متخصصة في صناعة
                 الدوبلاج والخدمات الصوتية لجميع الأعمال الفنية: "الأفلام
@@ -94,20 +75,14 @@ export const FirstItem = () => {
       <p></p>
       {lang == "ar" ? (
         <>
-          <Paragraph
-            style={{
-              fontSize: "20px",
-              fontWeight: "bold",
-              lineHeight: "32px",
-            }}
-          >
+          <Paragraph className="fw-bolder">
             بالإضافة إلى خدمات ما بعد الإنتاج للفيديو: "المونتاج – تصحيح الألوان
             – العمليات الفنية على الصورة .. إلخ".
           </Paragraph>
         </>
       ) : (
         <>
-          <Paragraph>
+          <Paragraph >
             in addition to post-production services; like video editing, colour
             correction, graphical editing of the footage ... etc.
           </Paragraph>

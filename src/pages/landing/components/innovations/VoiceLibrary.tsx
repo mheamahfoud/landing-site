@@ -1,17 +1,5 @@
 import { styled } from "styled-components";
 import { ButtonLinkFadeOut } from "../../../../components/buttons/normal/ButtonLinkFadeOut";
-
-import {
-  desktop,
-  laptop,
-  mobile,
-  smallMobile,
-  tablet,
-  xSmallMobile,
-  xXSmallMobile,
-  xxxSmallMobile,
-  xxxxSmallMobile,
-} from "../../../../responsive";
 import { useCallback } from "react";
 import { NisSepcialtyPath } from "../../../../routing/RouteNames";
 import { useNavigate } from "react-router-dom";
@@ -31,23 +19,12 @@ const Container = styled.div`
 `;
 const Title = styled.p`
   margin: 0;
-  ${desktop({ fontSize: "28px", lineHeight: "34px", fontWeight: "bold" })}
-  ${laptop({ fontSize: "26px", lineHeight: "31px", fontWeight: "bold" })}
-  ${tablet({ fontSize: "22px", lineHeight: "26px", fontWeight: "bold" })}
-  ${mobile({ fontSize: "16px", lineHeight: "21px", fontWeight: "bold" })}
+  font-size:1.5rem;
 `;
 const Paragraph = styled.p`
   text-indent: 5px;
   margin: 0;
-  ${desktop({ fontSize: "20px", lineHeight: "20px" })}
-  ${laptop({ fontSize: "16px", lineHeight: "21px" })}
-  ${tablet({ fontSize: "16px", lineHeight: "19px" })}
-  ${mobile({ fontSize: "16px", lineHeight: "21px" })}
-  ${smallMobile({ fontSize: "14px", lineHeight: "14px" })}
-  ${xSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
-  ${xXSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
-  ${xxxSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
-  ${xxxxSmallMobile({ fontSize: "10px", lineHeight: "12px" })}
+  font-size:1.2rem;
 `;
 export const VoiceLibrary = () => {
   const intl = useIntl();
@@ -59,10 +36,10 @@ export const VoiceLibrary = () => {
   }, []);
   return (
     <Container>
-      <Title>{intl.formatMessage({ id: 'voice_library' })}</Title>
-      {lang == 'ar' ? <Paragraph>تمتلك الشركة مكتبة ضخمة من أصوات الممثلين.
-      </Paragraph> :
-        <Paragraph>Our company owns a huge library of actors voices.</Paragraph>}
+      <Title className="fw-bolder">{intl.formatMessage({ id: 'voice_library' })}</Title>
+      {lang == 'ar' ? <Paragraph className="fw-normal">تمتلك الشركة مكتبة ضخمة من أصوات الممثلين.
+      </Paragraph > :
+        <Paragraph className="fw-normal">Our company owns a huge library of actors voices.</Paragraph>}
       <div style={{ margin: '10px 0' }}>
         <ButtonLinkFadeOut title={intl.formatMessage({ id: 'add_your_voice' })} url={'https://forms.gle/H5VgoDQQqySeieWB6'} />
       </div>

@@ -45,7 +45,7 @@ const Title = styled.p`
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Firefox */
-font-size: ${getConfig().selectedLang=='ar' ? '1.09rem' : '1rem'};
+//font-size: ${getConfig().selectedLang=='ar' ? '1.09rem' : '1rem'};
   text-align: center;
   color: #f8f6e1;
   background-color: #f15722;

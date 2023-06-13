@@ -5,7 +5,6 @@ import { Footer } from "./components/footer";
 import { useEffect } from "react";
 import { MenuItems } from "./components/header/util/constant";
 import { useAuth } from "../ContextProvider";
-import { useLang } from "../i18n/Metronici18n";
 export const MasterLayout = () => {
   const { setCurrentPage, linkClicked } = useAuth();
 

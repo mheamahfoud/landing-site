@@ -41,15 +41,7 @@ const Title = styled.p`
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Firefox */
-  ${desktop({ fontSize: "17px", lineHeight: "21px" })}
-  ${laptop({ fontSize: "17px", lineHeight: "21px" })}
-${tablet({ fontSize: "17px", lineHeight: "21px" })}
-${mobile({ fontSize: "14px", lineHeight: "18px" })}
-${smallMobile({ fontSize: "14px", lineHeight: "18px" })}
-${xSmallMobile({ fontSize: "normal", lineHeight: "18px", paddingTop: "2px" })}
-${xXSmallMobile({ fontSize: "12px", lineHeight: "16px", paddingTop: "2px" })}
-${xxxSmallMobile({ fontSize: "12px", lineHeight: "16px", paddingTop: "2px" })}
-${xxxxSmallMobile({ fontSize: "12px", lineHeight: "16px", paddingTop: "2px" })}
+
 
 background-color: #f15722;
   border-radius: 10px;
