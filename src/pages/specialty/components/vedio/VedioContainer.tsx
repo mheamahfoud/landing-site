@@ -12,9 +12,6 @@ interface Props {
   children: React.ReactNode;
 }
 const VedioTitle = styled.div`
-  font-size: 27px;
-  line-height: 32px;
-
   margin: 0;
   color: #7f7f7f;
 `;
@@ -44,7 +41,7 @@ export const VedioContainer: FC<Props> = ({ vedioId, title, children }) => {
       {!isXSmallercreen && (
         <Container className="d-flex  mb-5">
           <div className="d-flex  flex-column" style={{ margin: "0  1.4rem " ,width:'400px' }}>
-            <VedioTitle>
+            <VedioTitle className="fs-4 fw-bold">
               <Title>{title}</Title>{" "}
             </VedioTitle>
             {children}

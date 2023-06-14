@@ -3,7 +3,6 @@ import { vedioResponsive } from "../../../../responsive";
 
 const Container = styled.div`
   line-height: 26px;
-  font-size: 17px;
   color: #7f7f7f;
   width: 400px;
   ${vedioResponsive({fontSize:'14px', lineHeight:'18px', width:'300px'})}
@@ -20,7 +19,7 @@ const Dash = styled.span`
 
 export const MissedRecording = () => {
   return (
-    <Container className="">
+    <Container className="fs-6">
 
       <Paragraph>
         <Dash>-</Dash> In case the company finds errors or missed recordings in some utterances in previous sessions
@@ -39,7 +38,7 @@ export const MissedRecording = () => {
 
 export const ARMissedRecording = () => {
   return (
-    <Container className="">
+    <Container className="fs-6">
 
       <Paragraph>
         <Dash>-</Dash> في حال تبيّن للشركة وجود أخطاء أو نواقص في تسجيل بعض العبارات في جلسات سابقة ..

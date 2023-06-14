@@ -38,7 +38,7 @@ const ContainerItem = styled.div`
 export const FirstItem = () => {
   const lang = useLang();
   return (
-    <ContainerItem className="fs-md-3 fs-sm-6 fs-xs-8">
+    <ContainerItem className="fs-md-4 fs-sm-6 ">
       <ImageContainer>
         <ImageCover>
           <ImageText src={Image} />

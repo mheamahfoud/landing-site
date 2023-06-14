@@ -2,8 +2,6 @@ import { styled } from "styled-components";
 import { vedioResponsive } from "../../../../responsive";
 
 const Container = styled.div`
-  line-height: 26px;
-  font-size: 17px;
   color: #7f7f7f;
   width: 400px;
   ${vedioResponsive({fontSize:'14px', lineHeight:'18px', width:'300px'})}
@@ -20,7 +18,8 @@ const Dash = styled.span`
 
 export const WaitingTime = () => {
   return (
-    <Container className="">
+    <Container className="fs-6"
+>
 
       <Paragraph>
         <Dash>-</Dash> The artist's presence for the recording session ahead of
@@ -42,7 +41,7 @@ export const WaitingTime = () => {
 };
 export const ARWaitingTime = () => {
   return (
-    <Container className="">
+    <Container className="fs-6">
 
       <Paragraph>
         <Dash>-</Dash>  حضور الفنان إلى جلسة التسجيل قبل الموعد المحدد

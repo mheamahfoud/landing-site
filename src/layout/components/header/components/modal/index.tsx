@@ -8,6 +8,7 @@ import { useAuth } from "../../../../../ContextProvider";
 import CloseButton from "./CloseButton";
 import "./style.css";
 import IconLogo from "../IconLogo";
+import { useIntl } from "react-intl";
 
 const Container = styled.div`
       position: fixed;
@@ -26,6 +27,7 @@ interface Props {
   setShowModal: Dispatch<SetStateAction<boolean>>
 }
 const ModalMenu: React.FC<Props> = ({ showModal, setShowModal }) => {
+  const intl = useIntl();
   const navigate = useNavigate();
   const { currentPage, setCurrentPage, setLinkClicked } = useAuth();
   const handleClick = useCallback(
@@ -76,8 +78,9 @@ const ModalMenu: React.FC<Props> = ({ showModal, setShowModal }) => {
           return (
             <LinkHeader
               to={item.to}
+              title={intl.formatMessage({id:item.key}) }
               key={index}
-              title={item.name}
+          //    title={item.name}
               active={currentPage === item.id}
               value={item.id}
               onClick={handleClick}

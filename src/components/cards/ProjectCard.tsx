@@ -41,8 +41,6 @@ const TilteContainr = styled.div<TitleContainerProps>`
 
 const Title = styled.p`
   letter-spacing: 0px;
-  font-size: 35px;
-  text-align: center;
 `;
 
 export const ProjectCard = (props: Props) => {
@@ -70,7 +68,7 @@ export const ProjectCard = (props: Props) => {
       />
 
       <TilteContainr display={showDiv}>
-        <Title>{title}</Title>
+        <Title className="fs-md-1 fs-sm-4 fs-2 text-center">{title}</Title>
       </TilteContainr>
     </Container>
   );

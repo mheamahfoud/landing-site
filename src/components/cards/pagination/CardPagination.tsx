@@ -1,8 +1,9 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
 
-import './style.css'
+import "./style.css";
 import { ProjectCard } from "../ProjectCard";
+import { setPagination } from "../../../pages/dubbingAlbum/core/categoryHelper";
 // interface CardData {
 //   id: number;
 //   title: string;
@@ -11,10 +12,11 @@ import { ProjectCard } from "../ProjectCard";
 
 interface CardPaginationProps {
   cardsPerPage: number;
-  currentPage: number,
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>,
-  cards: any,//CardData[];
+  currentPage: number;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  cards: any; //CardData[];
   onClick: (id: number) => void;
+  categoryId: number;
 }
 
 const CardPagination: React.FC<CardPaginationProps> = ({
@@ -23,9 +25,8 @@ const CardPagination: React.FC<CardPaginationProps> = ({
   currentPage,
   cards,
   onClick,
+  categoryId,
 }) => {
-
-
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = cards?.slice(indexOfFirstCard, indexOfLastCard);
@@ -50,7 +51,10 @@ const CardPagination: React.FC<CardPaginationProps> = ({
         <Pagination.Item
           key={i}
           active={i === currentPage}
-          onClick={() => handlePageChange(i)}
+          onClick={() => {
+            handlePageChange(i);
+            setPagination(i, categoryId);
+          }}
         >
           {i}
         </Pagination.Item>
@@ -62,28 +66,43 @@ const CardPagination: React.FC<CardPaginationProps> = ({
 
   return (
     <>
-
       <div className="pagination-container top">
-        {cards.length > 24 && <Pagination>
-          <Pagination.First onClick={() => handlePageChange(1)} />
-          <Pagination.Prev
-            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-          />
-          {renderPaginationButtons()}
-          <Pagination.Next
-            onClick={() =>
-              handlePageChange(Math.min(totalPageCount, currentPage + 1))
-            }
-          />
-          <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
-        </Pagination>}
+        {cards.length > 24 && (
+          <Pagination>
+            <Pagination.First
+              onClick={() => {
+                setPagination(1, categoryId);
+                handlePageChange(1);
+              }}
+            />
+            <Pagination.Prev
+              onClick={() => {
+                setPagination(Math.max(1, currentPage - 1), categoryId);
+                handlePageChange(Math.max(1, currentPage - 1));
+              }}
+            />
+            {renderPaginationButtons()}
+            <Pagination.Next
+              onClick={() => {
+                setPagination(
+                  Math.min(totalPageCount, currentPage + 1),
+                  categoryId
+                );
+                handlePageChange(Math.min(totalPageCount, currentPage + 1));
+              }}
+            />
+            <Pagination.Last
+              onClick={() => {
+                handlePageChange(totalPageCount);
+                setPagination(totalPageCount, categoryId);
+              }}
+            />
+          </Pagination>
+        )}
       </div>
       <div className="d-flex justify-content-center flex-wrap ">
         {currentCards.map((item) => (
-          <div
-            className=""
-            style={{ position: "relative", margin: "12px 0" }}
-          >
+          <div className="" style={{ position: "relative", margin: "12px 0" }}>
             <ProjectCard
               key={item.id}
               onClick={() => onClick(item.id)}
@@ -95,19 +114,38 @@ const CardPagination: React.FC<CardPaginationProps> = ({
         ))}
       </div>
       <div className="pagination-container bottom">
-        {cards.length > 24 && <Pagination>
-          <Pagination.First onClick={() => handlePageChange(1)} />
-          <Pagination.Prev
-            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-          />
-          {renderPaginationButtons()}
-          <Pagination.Next
-            onClick={() =>
-              handlePageChange(Math.min(totalPageCount, currentPage + 1))
-            }
-          />
-          <Pagination.Last onClick={() => handlePageChange(totalPageCount)} />
-        </Pagination>}
+        {cards.length > 24 && (
+          <Pagination>
+            <Pagination.First
+              onClick={() => {
+                handlePageChange(1);
+                setPagination(1, categoryId);
+              }}
+            />
+            <Pagination.Prev
+              onClick={() => {
+                handlePageChange(Math.max(1, currentPage - 1));
+                setPagination(Math.max(1, currentPage - 1), categoryId);
+              }}
+            />
+            {renderPaginationButtons()}
+            <Pagination.Next
+              onClick={() => {
+                handlePageChange(Math.min(totalPageCount, currentPage + 1));
+                setPagination(
+                  Math.min(totalPageCount, currentPage + 1),
+                  categoryId
+                );
+              }}
+            />
+            <Pagination.Last
+              onClick={() => {
+                handlePageChange(totalPageCount);
+                setPagination(totalPageCount, categoryId);
+              }}
+            />
+          </Pagination>
+        )}
       </div>
     </>
   );

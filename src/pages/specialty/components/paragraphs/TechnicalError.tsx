@@ -20,7 +20,7 @@ const Dash = styled.span`
 
 export const TechnicalError = () => {
   return (
-    <Container className="">
+    <Container className="fs-6">
 
       <Paragraph>
         <Dash>-</Dash>In case of any potential technical error during the recording session
@@ -39,7 +39,7 @@ export const TechnicalError = () => {
 };
 export const ARTechnicalError = () => {
   return (
-    <Container className="">
+    <Container className="fs-6">
 
       <Paragraph>
         <Dash>-</Dash>في حال حدوث أيّ عطل فنّيّ أثناء جلسة التسجيل ..

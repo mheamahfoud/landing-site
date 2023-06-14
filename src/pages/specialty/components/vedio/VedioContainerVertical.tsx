@@ -9,9 +9,6 @@ interface Props {
   children: React.ReactNode;
 }
 const VedioTitle = styled.div`
-  font-size: 18px;
-  line-height: 21px;
-
   margin: 0;
   color: #7f7f7f;
 `;
@@ -44,7 +41,7 @@ export const VedioContainerVertical: FC<Props> = ({
         className="d-flex flex-column"
         style={{ margin: "1.4rem   1.4rem ", gap: "1.4rem"  , textAlign:'center'}}
       >
-        <VedioTitle>
+        <VedioTitle className="fs-4 fw-bold">
           <Title>{title}</Title>{" "}
         </VedioTitle>
         <div className="d-flex justify-content-center align-items-center">

@@ -73,11 +73,11 @@ const IconLang = () => {
   }, []);
   return (
     <Container className="" ref={dropdownRef}>
-      <ImageContainer src={IconLAngImg} alt="Icon" onClick={toggleMenu}  onMouseOver={toggleMenu}  />
+      <ImageContainer src={IconLAngImg} alt="Icon" onClick={toggleMenu}  onMouseOver={toggleMenu}  className="w-md-45px w-sm-40px"  />
       {isOpen && (
-        <MenuOPtios isOpen={isOpen} onMouseLeave={()=>{setIsOpen(!isOpen)}}>
+        <MenuOPtios isOpen={isOpen} onMouseLeave={()=>{setIsOpen(!isOpen)}} >
           {menuItems.map((item) => (
-            <MenuList
+            <MenuList 
               key={item.id}
               onClick={() => {
                 setLanguage(item.key);

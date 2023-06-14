@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import './linkHeader.css'
-import { mobileHeader } from "../responsive";
-import { getConfig } from "../../../../i18n/Metronici18n";
+import { useLang } from "../../../../i18n/Metronici18n";
 //menu-active
 const Container = styled.div`
   position: relative;
@@ -35,10 +34,11 @@ const TitleLink = styled.div`
 
 const LinkHeader = ({ ...props }) => {
   const { active, title, onClick, value, to } = props;
+  const lang =useLang();
   return (
-    <Container onClick={() => onClick(value, to)} className="fs-md-7 fs-sm-12" >
+    <Container onClick={() => onClick(value, to)} className="" >
       <TagLink className={`nonblock nontext sdsa  clearfix `}>
-        <TitleLink className={`fw-bold NoWrap ${active ? "menu-active" : ""}`}>
+        <TitleLink className={`${active ? "menu-active" : ""} ${lang=='ar'? 'fw-bold' : 'fw-normal'} `}>
           {title}
         </TitleLink>
       </TagLink>

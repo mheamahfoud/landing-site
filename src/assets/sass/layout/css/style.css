@@ -7,7 +7,7 @@
    * Copyright 2011-2022 The Bootstrap Authors
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
-  :root,
+  /* :root,
   [data-bs-theme=light] {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -198,7 +198,7 @@
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
+  } */
   
   hr {
     margin: 1rem 0;
@@ -393,11 +393,7 @@
   figure {
     margin: 0 0 1rem;
   }
-  
-  img,
-  svg {
-    vertical-align: middle;
-  }
+
   
   table {
     caption-side: bottom;
@@ -6183,7 +6179,7 @@
     content: "";
   }
   
-  .carousel-item {
+  /* .carousel-item {
     position: relative;
     display: none;
     float: right;
@@ -6369,7 +6365,7 @@
   [data-bs-theme=dark] .carousel .carousel-caption {
     color: #000000;
   }
-  
+   */
   .spinner-grow,
   .spinner-border {
     display: inline-block;
@@ -46776,7 +46772,7 @@
     --bs-app-footer-box-shadow: none;
   }
   
-  html {
+  /* html {
     font-family: sans-serif;
     text-size-adjust: 100%;
   }
@@ -46803,9 +46799,9 @@
     body {
       font-size: 12px !important;
     }
-  }
+  } */
   
-  body {
+  /* body {
     display: flex;
     flex-direction: column;
   }
@@ -46817,9 +46813,9 @@
   
   canvas {
     user-select: none;
-  }
+  } */
   
-  router-outlet {
+  /* router-outlet {
     display: none;
   }
   
@@ -46863,7 +46859,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
   
   @media (min-width: 992px) {
     .app-container {

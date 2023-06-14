@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import './style.css'
 import NumberDisplay from "../animations/NumberDisplay";
-import { desktop, laptop,  mobile, smallMobile, tablet, xSmallMobile, xXSmallMobile,  xxxSmallMobile, xxxxSmallMobile } from "../../responsive";
+import { desktop, laptop,  } from "../../responsive";
 interface props {
   children: React.ReactNode;
   quantity: number;
@@ -55,7 +55,7 @@ export const CardSkill = (props: props) => {
   const { children, quantity } = props;
   return (
     <Container className="d-flex flex-column ">
-      <Quantity className="fs-lg-3x fs-md-3x fs-sm-2x">
+      <Quantity className="fs-1">
         <NumberDisplay value={quantity} />
       </Quantity>
       <Seperator />

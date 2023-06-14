@@ -50,7 +50,7 @@ export const CardAlbum = (props: Props) => {
       onClick={()=> onClick(id)}
     >
       <TilteContainr display={showDiv}>
-        <Title>{title}</Title>
+        <Title className="fs-1 fw-bold">{title}</Title>
       </TilteContainr>
     </SquareCardContainer>
   );

@@ -7,6 +7,7 @@ import { useQuery } from "react-query";
 import Spinner from "../../../../layout/components/loader";
 import { Categories } from "../../../../helpers/Constants";
 import { Heights } from "./height";
+import { getCurrentPage } from "../../core/categoryHelper";
 // import { toAbsoluteServerUrl } from "../../../helpers/AssetHelpers";
 interface Props {
   category_id: number;
@@ -16,7 +17,7 @@ export const CardList: FC<Props> = ({ category_id }) => {
     return getProjectCategory(category_id);
   });
   const [showModal, setShowModal] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(getCurrentPage(category_id));
   const cardsPerPage: number = 24;
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const handleClick = useCallback(
@@ -78,6 +79,7 @@ export const CardList: FC<Props> = ({ category_id }) => {
             onClick={handleClick}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
+            categoryId={category_id}
           ></CardPagination>
           {showModal && (
             <ModalProject

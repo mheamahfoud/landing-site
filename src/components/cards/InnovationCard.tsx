@@ -48,7 +48,7 @@ export const InnovationCard = (props: Props) => {
       url={url}
     >
       <TilteContainr display={showDiv} className="rounded-circle">
-        <Title>{title}</Title>
+        <Title className="fs-1 fw-normal">{title}</Title>
       </TilteContainr>
     </CircleCardContainer>
   );

@@ -3,7 +3,6 @@ import { vedioResponsive } from "../../../../responsive";
 
 const Container = styled.div`
   line-height: 26px;
-  font-size: 17px;
   color: #7f7f7f;
   width: 400px;
   ${vedioResponsive({fontSize:'14px', lineHeight:'18px', width:'300px'})}
@@ -20,7 +19,7 @@ const Dash = styled.span`
 
 export const MissingAppointment = () => {
   return (
-    <Container className="">
+    <Container className="fs-6">
 
       <Paragraph>
         <Dash>-</Dash> in case NiS calls off the recording session
@@ -45,7 +44,7 @@ export const MissingAppointment = () => {
 
 export const ARMissingAppointment = () => {
   return (
-    <Container className="">
+    <Container className="fs-6">
 
       <Paragraph>
         <Dash>-</Dash> في حال اعتذرت الشركة عن جلسة التسجيل

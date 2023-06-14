@@ -16,7 +16,10 @@ const Services = () => {
     <Container className="d-flex justify-content-center row">
 
       <div className="col-md-6 col-sm-12 col-sx-12">
+       
         <LeftSection />
+   
+
       </div>
       <div className="col-md-6 col-sm-12 col-sx-12">
         <RightSection />
