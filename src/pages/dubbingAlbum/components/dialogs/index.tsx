@@ -101,7 +101,7 @@ const ModalProject: React.FC<Props> = ({
 
             </ProjectDetailsContainer>
             {data?.actors && data?.actors.length > 0 && (
-              <ActorsName names={data?.actors.map((x) => x.name)} />
+              <ActorsName names={data?.actors.filter(x=>x)?.map((x) => x.name)} />
             )}
           </div>
         )}

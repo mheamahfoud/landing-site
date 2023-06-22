@@ -24,19 +24,23 @@ export const VisitorInfo: FC = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   //resetForm
-  const handleSubmit = async (values: FormValues, { setSubmitting  }) => {
+  const handleSubmit = async (
+    values: FormValues,
+    { setSubmitting, resetForm }
+  ) => {
     setSubmitting(true);
     let token = captchaRef.current.getValue();
     captchaRef.current.reset();
     if (token) {
-      let valid_token : any= await verifyToken(token);
+      let valid_token: any = await verifyToken(token);
       //alert(valid_token?.data?.result=='success')
-      if (valid_token?.data?.result=='success') {
-        const res = await sendEmail(values);
-        console.log(res);
+      if (valid_token?.data?.result == "success") {
+        await sendEmail(values);
+        resetForm();
         setMessage("You Have Sended Successfully");
         setError("");
-      // resetForm()
+
+        // resetForm()
       } else {
         setError("Sorry!! Token invalid");
         setMessage("");
